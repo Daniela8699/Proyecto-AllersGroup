@@ -10,6 +10,17 @@ namespace Aplicación_Allers_Group
     {
         static void Main(string[] args)
         {
+
+            //listo
+            Controlador controlador = new Controlador();
+            controlador.CargarDatosPrueba();
+
+
+            controlador.generarAsociaciones();
+
+            Console.Read();
+
+
         }
     }
 }
