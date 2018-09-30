@@ -35,7 +35,7 @@ namespace AllersGroup
         public double MinSupport { get => minSupport; set => minSupport = value; }
         public double MinCon { get => minCon; set => minCon = value; }
 
-        public Controlador(double minSup, double minCon)
+        public Controlador(double minSup, double minConf)
         {
             articulos = new List<Articulo>();
             clientes = new List<Cliente>();
@@ -45,7 +45,7 @@ namespace AllersGroup
             respuestasPorTamano = new List<List<int>>();
             suportPorTamano = new List<List<double>>();
             ConfianzaPorTamano = new List<List<double>>();
-            MinCon = minCon;
+            MinCon= minConf;
             MinSupport = minSup;
         }
 
@@ -1133,8 +1133,18 @@ namespace AllersGroup
         //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
        
        // APLICACIÓN ESTRATEGIA A-PRIORI *****************
-       public void Apriori()
+       public void Apriori(int tamanho)
         {
+            int supCount = (int) MinSupport * getNumVentas();
+            int i = 1;
+            List<int> temp = new List<int>();
+            int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
+            while (i <= tamanho)
+            {
+               
+
+
+            }
             
         }
 

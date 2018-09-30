@@ -16,7 +16,7 @@ namespace AllersGroup
             Console.WriteLine("Introduzca la confianza mínima");
             double minConf = Convert.ToDouble(Console.ReadLine());
             Controlador controlador = new Controlador(minSup,minConf);
-            controlador.CargarDatos();
+            controlador.CargarDatosPrueba();
 
 
             controlador.generarAsociaciones();
