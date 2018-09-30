@@ -12,7 +12,7 @@ namespace AllersGroup
         {
             //listo
             Controlador controlador = new Controlador();
-            controlador.CargarDatosPrueba();
+            controlador.CargarDatos();
 
 
             controlador.generarAsociaciones();

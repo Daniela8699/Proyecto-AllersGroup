@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+
 namespace AllersGroup
 {
     public class Controlador
@@ -186,6 +188,68 @@ namespace AllersGroup
         public double minSuport = 0.2;
         public double minCon = 0.5;
 
+
+
+        public int[] masFrecuentesMetodo(int num)
+        {
+            int[] respuesta= new int[num];
+            Dictionary<string, int> apariciones = new Dictionary<string, int>();
+            foreach (var a in ventas)
+            {
+                if (!apariciones.ContainsKey(a.ItemCode))
+                {
+                    apariciones.Add(a.ItemCode, 0);
+                }
+            }
+            ventas.ForEach((a =>apariciones[a.ItemCode]= apariciones[a.ItemCode]+1));
+            int[] respuestas= apariciones.Values.ToArray();
+            Organizar(respuestas);
+            for (int i = 0; i < num; i++)
+            {
+                String Key = apariciones.FirstOrDefault(x => x.Value == respuestas[i]).Key;
+                respuesta[i] = Convert.ToInt32(Key);
+                apariciones[Key] = -1;
+            }
+            return respuesta;
+        }
+
+        public void Organizar(int[] A)
+        {
+            QuickSort(A, 0, A.Length - 1);
+        }
+
+        public void QuickSort(int[] A, int p, int r)
+        {
+            if (p < r)
+            {
+                int q = Partition(A, p, r);
+                QuickSort(A, p, q - 1);
+                QuickSort(A, q + 1, r);
+            }
+        }
+
+        private int Partition(int[] A, int p, int r)
+        {
+            int x = A[r];
+            int temp;
+
+            int i = p;
+            for (int j = p; j < r; j++)
+            {
+                if (A[j] >= x)
+                {
+                    temp = A[j];
+                    A[j] = A[i];
+                    A[i] = temp;
+                    i++;
+                }
+            }
+
+            A[r] = A[i];
+            A[i] = x;
+            return i;
+        }
+
         public void generarAsociaciones()
         {
             //int numArticulos = getNumArticulos();
@@ -197,6 +261,24 @@ namespace AllersGroup
             Console.WriteLine("Bread - 1 \nMilk - 2 \nDiapers - 3 \nBeer - 4 \nEggs - 5 \nCola - 6 \n");
 
             int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
+
+            Stopwatch t = Stopwatch.StartNew();
+            int[] apariciones = masFrecuentesMetodo(28);
+            Console.WriteLine( ". " + t.Elapsed.TotalMilliseconds + "\n");
+
+            for (int i = 0; i < apariciones.Length; i++)
+            {
+                Console.WriteLine(apariciones[i]);
+            }
+            Console.WriteLine("-------------");
+            t = Stopwatch.StartNew();
+            int[] aparicionesDos = MasFrecuentes();
+            Console.WriteLine(". " + t.Elapsed.TotalMilliseconds + "\n");
+
+            for (int i = 0; i < aparicionesDos.Length; i++)
+            {
+                Console.WriteLine(aparicionesDos[i]);
+            }
 
             for (int i = 0; i < numArticulos; i++)
             {
