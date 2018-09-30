@@ -104,66 +104,69 @@ namespace TestAlgoritmos
         public void TestRepeticionEnVentas()
         {
 
-            /*
+            
             Escenario();
             controlador.CargarDatos();
 
-            List<List<int>> numeros = controlador.CombinacionPrueba();
+            int[] arreglo = { 1, 2, 3 };
+            List<List<int>> numeros = controlador.CombinacionHasta7(2,arreglo);
             List<int> combinacion = new List<int>();
             combinacion = numeros[0];
 
             int cantRepeticiones = 0;
             cantRepeticiones = controlador.RepeticionEnVentasP(combinacion);
-            Assert.AreEqual(cantRepeticiones, 33);
-            */
+            Assert.AreEqual(cantRepeticiones, 0);
+            
         }
 
 
         [TestMethod]
         public void TestGenerarAsociaciones()
-        {/*
+        {
             Escenario();
+            int tamahno = 3;
+            int articulos = 5;
 
+            //controlador.generarAsociaciones(tamahno, articulos);
 
-            controlador.generarAsociaciones();
-            Assert.IsNotNull(controlador.CombinacionesPorTamano);
-            Assert.IsNotNull(controlador.RespuestasPorTamano);
-            Assert.IsNotNull(controlador.SuportPorTamano);
-            */
+            //Assert.IsNotNull(controlador.CombinacionesPorTamano);
+            //Assert.IsNotNull(controlador.RespuestasPorTamano);
+            //Assert.IsNotNull(controlador.SuportPorTamano);
+            
         }
         
         [TestMethod]
         public void TestSoporteAsociaciones()
-        {/*
+        {
             Escenario();
 
             //controlador.CargarDatos();
             controlador.CargarDatosPrueba();
 
-            controlador.generarAsociaciones();
+            controlador.generarAsociaciones(3,5);
             int[] arreglo = { 1, 2, 3 };
             List<List<int>> todo = controlador.CombinacionHasta7(2, arreglo);
             Assert.IsNotNull(todo);
             List<double> soporte = controlador.soporteAsociaciones(todo, 0);
             Assert.AreEqual(soporte[0], 0.8);
 
-            */
+            
         }
 
         [TestMethod]
         public void TestConfianzaAsocianes()
-        {/*
+        {
             Escenario();
 
             controlador.CargarDatosPrueba();
-            controlador.generarAsociaciones();
+            controlador.generarAsociaciones(3,5);
 
             int[] arreglo = { 1, 2, 3, 4, 5 };
             List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);
             Assert.IsNotNull(todo);
             List<double> confianza = controlador.confianzaAsociaciones(todo, 1);
             Assert.AreEqual(confianza[0], 0, 75);
-            */
+            
         }
 
 
