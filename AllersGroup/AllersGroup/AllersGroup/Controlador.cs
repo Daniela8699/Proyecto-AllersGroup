@@ -170,19 +170,16 @@ namespace AllersGroup
 
         }
 
+
+        //APLICACIÓN DE ESTRATEGIA DE FUERZA BRUTA***************
+
+
         private List<List<List<int>>> combinacionesPorTamano;
-
-
         public List<List<List<int>>> CombinacionesPorTamano { get => combinacionesPorTamano; set => combinacionesPorTamano = value; }
-
         private List<List<int>> respuestasPorTamano;
-
-
         public List<List<int>> RespuestasPorTamano { get => respuestasPorTamano; set => respuestasPorTamano = value; }
-
         private List<List<double>> suportPorTamano;
         public List<List<double>> SuportPorTamano { get => suportPorTamano; set => suportPorTamano = value; }
-
         private List<List<double>> confianzaPorTamano;
         public List<List<double>> ConfianzaPorTamano { get => confianzaPorTamano; set => confianzaPorTamano = value; }
 
@@ -573,6 +570,9 @@ namespace AllersGroup
 
             return resultado;
         }
+
+
+
 
         public int[] MasFrecuentes()
         {
@@ -1060,50 +1060,22 @@ namespace AllersGroup
             return code;
         }
 
-        //Método de Support
-        //public void cantRepeticionesPorGrupo(List<List<int>> grupos)
-        //{
-        //    for (int i = 1; i <= grupos.Count(); i++)
-        //    {
-
-        //        int a = repetecionEnVentas(grupos[i - 1]);
-
-        //        Console.WriteLine("Grupos {0}, Repeticiones {1}", i, a);
-        //    }
-
-        //}
-
-
-        //Método de asociaciones
-
-
-        /*private static int Partition(int[] A, int p, int r)
-            Usar partition para realizar metodo de soporte!!!!!!
-        {
-            int x = A[r];
-            int temp;
-
-            int i = p;
-            for (int j = p; j < r; j++)
-            {
-                if (A[j] <= x)
-                {
-                    temp = A[j];
-                    A[j] = A[i];
-                    A[i] = temp;
-                    i++;
-                }
-            }
-
-            A[r] = A[i];
-            A[i] = x;
-            return i;
-        }*/
+        //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
+       
+       // APLICACIÓN ESTRATEGIA A-PRIORI *****************
 
 
 
-        //--------------------------------------------------------------------
+
+
+
+        // FIN APLICACIÓN ESTRATEGIA A-PRIORI *******************
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------
         //Método para UnitTest
+
         public List<List<int>> CombinacionPrueba()
         {
             List<List<int>> resultado = new List<List<int>>();
@@ -1175,60 +1147,9 @@ namespace AllersGroup
             Console.WriteLine(mensaje + "\n" + count);
             return count;
         }
+    
+        //------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-        public List<List<int>> CombinacionP(int[] arreglo)
-        {
-            List<List<int>> resultado = new List<List<int>>();
-            int[] code = arreglo;
-
-            for (int i = 0; i < code.Length; i++)
-            {
-                for (int j = i + 1; j < code.Length; j++)
-                {
-                    for (int k = j + 1; k < code.Length; k++)
-                    {
-                        List<int> combinacion = new List<int>();
-
-                        combinacion.Add(code[i]);
-                        combinacion.Add(code[j]);
-                        combinacion.Add(code[k]);
-                        resultado.Add(combinacion);
-
-                    }
-
-                }
-            }
-
-
-
-            return resultado;
-        }
-
-
-        public bool encontrarCombinacion(List<List<int>> combinaciones, List<int> combinacionEncontrar)
-        {
-            bool encontrado = false;
-            List<int> combinacioAComparar = new List<int>();
-            for (int i = 0; i < combinaciones.Count; i++)
-            {
-
-                combinacioAComparar = combinaciones[i];
-
-                for (int j = 0; j < combinacioAComparar.Count; i++)
-                {
-                    if (combinacioAComparar[j] == combinacionEncontrar[j])
-                    {
-                        encontrado = true;
-                    }
-                }
-
-            }
-
-
-            return encontrado;
-        }
 
     }
 }

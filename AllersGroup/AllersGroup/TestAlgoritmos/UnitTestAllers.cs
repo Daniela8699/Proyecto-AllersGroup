@@ -126,11 +126,7 @@ namespace TestAlgoritmos
             Assert.IsNotNull(controlador.SuportPorTamano);
 
         }
-
-
-
-
-
+        
         [TestMethod]
         public void TestSoporteAsociaciones()
         {
@@ -144,7 +140,6 @@ namespace TestAlgoritmos
             List<List<int>> todo = controlador.CombinacionHasta7(2, arreglo);
             Assert.IsNotNull(todo);
             List<double> soporte = controlador.soporteAsociaciones(todo, 0);
-            // Assert.AreEqual(soporte[0],0);
             Assert.AreEqual(soporte[0], 0.8);
 
 
