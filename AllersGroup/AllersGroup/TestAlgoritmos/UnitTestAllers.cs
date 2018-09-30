@@ -127,11 +127,12 @@ namespace TestAlgoritmos
             int tamahno = 3;
             int articulos = 5;
 
-            //controlador.generarAsociaciones(tamahno, articulos);
+            controlador.CargarDatosPrueba();
+            controlador.generarAsociaciones(tamahno, articulos);
 
-            //Assert.IsNotNull(controlador.CombinacionesPorTamano);
-            //Assert.IsNotNull(controlador.RespuestasPorTamano);
-            //Assert.IsNotNull(controlador.SuportPorTamano);
+            Assert.IsNotNull(controlador.CombinacionesPorTamano);
+            Assert.IsNotNull(controlador.RespuestasPorTamano);
+            Assert.IsNotNull(controlador.SuportPorTamano);
             
         }
         
@@ -166,6 +167,50 @@ namespace TestAlgoritmos
             Assert.IsNotNull(todo);
             List<double> confianza = controlador.confianzaAsociaciones(todo, 1);
             Assert.AreEqual(confianza[0], 0, 75);
+            
+        }
+
+        [TestMethod]
+        public void TestRefrescarItem()
+        {
+            Escenario();
+            controlador.CargarDatosPrueba();
+            controlador.generarAsociaciones(3, 5);
+
+            int[] arreglo = { 1, 2, 3, 4, 5 };
+            List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);
+
+            int []result = controlador.refrescarItemCodes(todo);
+            Assert.AreEqual(result[0],1);
+
+        }
+
+
+        [TestMethod]
+        public void TestApriori()
+        {
+            Escenario();
+            controlador.CargarDatosPrueba();
+
+            List<List<int>> listResult = controlador.AprioriP(3,5);
+
+            List<int> existente = new List<int>() { 1, 2, 3 };
+            List<int> creada = new List<int>();
+                 
+        
+            for (int i = 0; i < listResult.Count; i++)
+            {
+                creada = listResult[i];
+                for (int j = 0; j < creada.Count; j++)
+                {
+                    if (creada[j] == existente[j])
+                    {
+                        Assert.AreEqual(creada[j], existente[j]);
+                    }
+
+                }
+
+            }
             
         }
 

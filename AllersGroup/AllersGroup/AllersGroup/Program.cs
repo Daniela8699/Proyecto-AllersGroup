@@ -22,7 +22,6 @@ namespace AllersGroup
             Controlador controlador = new Controlador(minConf, minSup);
 
             controlador.CargarDatos();
-
             controlador.generarAsociaciones(tamanho, numArticulos);
             
             

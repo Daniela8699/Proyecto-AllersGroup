@@ -718,43 +718,7 @@ namespace AllersGroup
         //---------------------------------------------------------------------------------------------------------------------------------------------
         //Método para UnitTest
 
-       /* public List<List<int>> CombinacionPrueba()
-        {
-            List<List<int>> resultado = new List<List<int>>();
-            int[] code = { 1,2,3,4,5,6,7};
-            for (int i = 0; i < code.Length; i++)
-            {
-                for (int j = i + 1; j < code.Length; j++)
-                {
-                    for (int k = j + 1; k < code.Length; k++)
-                    {
-                        for (int l = k + 1; l < code.Length; l++)
-                        {
-                            for (int m = l + 1; m < code.Length; m++)
-                            {
-                                for (int n = m + 1; n < code.Length; n++)
-                                {
-                                    for (int o = n + 1; o < code.Length; o++)
-                                    {
-                                        List<int> combinacion = new List<int>();
-                                        combinacion.Add(code[i]);
-                                        combinacion.Add(code[j]);
-                                        combinacion.Add(code[k]);
-                                        combinacion.Add(code[l]);
-                                        combinacion.Add(code[m]);
-                                        combinacion.Add(code[n]);
-                                        combinacion.Add(code[o]);
-                                        resultado.Add(combinacion);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return resultado;
-        }
-        */
+
         public int RepeticionEnVentasP(List<int> combinaciones)
         {
             int tamanho = combinaciones.Count();
@@ -789,7 +753,48 @@ namespace AllersGroup
             Console.WriteLine(mensaje + "\n" + count);
             return count;
         }
-    
+
+        public List<List<int>> AprioriP(int tamanho, int numArti)
+        {
+            Console.WriteLine("Tamaño =  " + tamanho);
+            int supCount = (int)(minSuport * getNumVentas());
+            Console.WriteLine("Num Ventas = " + getNumVentas());
+            Console.WriteLine("SupCount = " + supCount + "\n");
+            int i = 1;
+            List<List<int>> temp = new List<List<int>>();
+
+            int[] darItemCode = masFrecuentesMetodo(numArti);
+            int[] poda = darItemCode;
+            while (i <= tamanho)
+            {
+                List<List<int>> combinacion = CombinacionHasta7(i, poda);
+                List<int> repeticiones = RepeticionEnVentas(combinacion);
+                int temp2 = repeticiones.Count();
+                for (int x = 0; x < temp2; x++)
+                {
+                    if (repeticiones.ElementAt(x) >= supCount)
+                    {
+                        temp.Add(combinacion.ElementAt(x));
+                    }
+                }
+                if (tamanho == i)
+                {
+                    break;
+                }
+                else
+                {
+                    poda = refrescarItemCodes(temp);
+                    temp = new List<List<int>>();
+                    i++;
+
+                }
+            }
+            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n ");
+            temp.ForEach(n => ImprimirCombinaciones(n));
+            return temp;
+        }
+
+
         //------------------------------------------------------------------------------------------------------------------------------------------
 
 
