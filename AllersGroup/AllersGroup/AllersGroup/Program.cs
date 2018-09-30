@@ -11,7 +11,11 @@ namespace AllersGroup
         static void Main(string[] args)
         {
             //listo
-            Controlador controlador = new Controlador();
+            Console.WriteLine("Introduzca el support mínimo");
+            double minSup = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Introduzca la confianza mínima");
+            double minConf = Convert.ToDouble(Console.ReadLine());
+            Controlador controlador = new Controlador(minSup,minConf);
             controlador.CargarDatos();
 
 

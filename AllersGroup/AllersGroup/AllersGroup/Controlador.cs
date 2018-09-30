@@ -23,15 +23,19 @@ namespace AllersGroup
         private List<Articulo> articulos;
         private List<Cliente> clientes;
         private List<Venta> ventas;
+        private double minSupport;
+        private double minCon;
+
 
         List<List<Articulo>> combinaciones;
 
         public List<Articulo> Articulos { get => articulos; set => articulos = value; }
         public List<Cliente> Clientes { get => clientes; set => clientes = value; }
         public List<Venta> Ventas { get => ventas; set => ventas = value; }
+        public double MinSupport { get => minSupport; set => minSupport = value; }
+        public double MinCon { get => minCon; set => minCon = value; }
 
-
-        public Controlador()
+        public Controlador(double minSup, double minCon)
         {
             articulos = new List<Articulo>();
             clientes = new List<Cliente>();
@@ -41,6 +45,8 @@ namespace AllersGroup
             respuestasPorTamano = new List<List<int>>();
             suportPorTamano = new List<List<double>>();
             ConfianzaPorTamano = new List<List<double>>();
+            MinCon = minCon;
+            MinSupport = minSup;
         }
 
         public void CargarDatos()
@@ -185,10 +191,6 @@ namespace AllersGroup
         private List<List<double>> confianzaPorTamano;
         public List<List<double>> ConfianzaPorTamano { get => confianzaPorTamano; set => confianzaPorTamano = value; }
 
-        public double minSuport = 0.2;
-        public double minCon = 0.5;
-
-
 
         public int[] masFrecuentesMetodo(int num)
         {
@@ -320,7 +322,7 @@ namespace AllersGroup
             //Imprimir asociaciones que cumplen con el minimo
 
 
-            imprimirPorCriterio(minSuport, minCon, CombinacionesPorTamano);
+            imprimirPorCriterio(MinSupport, MinCon, CombinacionesPorTamano);
 
 
         }
@@ -1145,7 +1147,10 @@ namespace AllersGroup
         //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
        
        // APLICACIÓN ESTRATEGIA A-PRIORI *****************
-
+       public void Apriori()
+        {
+            
+        }
 
 
 
