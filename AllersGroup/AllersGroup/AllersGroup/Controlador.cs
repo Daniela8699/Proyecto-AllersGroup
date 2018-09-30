@@ -200,8 +200,12 @@ namespace AllersGroup
                 {
                     apariciones.Add(a.ItemCode, 0);
                 }
+                else
+                {
+                    apariciones[a.ItemCode] = apariciones[a.ItemCode] + 1;
+                }
+
             }
-            ventas.ForEach((a =>apariciones[a.ItemCode]= apariciones[a.ItemCode]+1));
             int[] respuestas= apariciones.Values.ToArray();
             Organizar(respuestas);
             for (int i = 0; i < num; i++)
