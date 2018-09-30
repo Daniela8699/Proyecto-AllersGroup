@@ -19,11 +19,10 @@ namespace AllersGroup
             int tamanho = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Introduzca el numero de articulos frecuentes que desea");
             int numArticulos = Convert.ToInt32(Console.ReadLine());
-            Controlador controlador = new Controlador(minConf,minSup);
+            Controlador controlador = new Controlador(minConf, minSup);
             controlador.CargarDatos();
 
-
-            controlador.generarAsociaciones(tamanho,numArticulos);
+            controlador.generarAsociaciones(tamanho, numArticulos);
 
 
             Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
@@ -34,6 +33,7 @@ namespace AllersGroup
             controlador.Apriori(tamanho, numArticulos);
 
             Console.Read();
+           
 
         }
     }
