@@ -202,8 +202,12 @@ namespace AllersGroup
                 {
                     apariciones.Add(a.ItemCode, 0);
                 }
+                else
+                {
+                    apariciones[a.ItemCode] = apariciones[a.ItemCode] + 1;
+                }
+
             }
-            ventas.ForEach((a =>apariciones[a.ItemCode]= apariciones[a.ItemCode]+1));
             int[] respuestas= apariciones.Values.ToArray();
             Organizar(respuestas);
             for (int i = 0; i < num; i++)
@@ -263,24 +267,6 @@ namespace AllersGroup
             Console.WriteLine("Bread - 1 \nMilk - 2 \nDiapers - 3 \nBeer - 4 \nEggs - 5 \nCola - 6 \n");
 
             int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
-
-            Stopwatch t = Stopwatch.StartNew();
-            int[] apariciones = masFrecuentesMetodo(28);
-            Console.WriteLine( ". " + t.Elapsed.TotalMilliseconds + "\n");
-
-            for (int i = 0; i < apariciones.Length; i++)
-            {
-                Console.WriteLine(apariciones[i]);
-            }
-            Console.WriteLine("-------------");
-            t = Stopwatch.StartNew();
-            int[] aparicionesDos = MasFrecuentes();
-            Console.WriteLine(". " + t.Elapsed.TotalMilliseconds + "\n");
-
-            for (int i = 0; i < aparicionesDos.Length; i++)
-            {
-                Console.WriteLine(aparicionesDos[i]);
-            }
 
             for (int i = 0; i < numArticulos; i++)
             {
