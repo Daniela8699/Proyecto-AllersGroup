@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AllersGroup
 {
-    class Articulo
+    public class Articulo
     {
         private int itemCode;
         private String itemName;
