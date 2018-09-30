@@ -15,11 +15,21 @@ namespace AllersGroup
             double minSup = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Introduzca la confianza mínima");
             double minConf = Convert.ToDouble(Console.ReadLine());
-            Controlador controlador = new Controlador(minSup,minConf);
+            Console.WriteLine("(Solo Apriori) Introduzca el tamaño de agrupaciones de productos [1;7]");
+            int tamanho = Convert.ToInt32(Console.ReadLine());
+            Controlador controlador = new Controlador(minConf,minSup);
             controlador.CargarDatosPrueba();
 
 
             controlador.generarAsociaciones();
+
+
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
+
+            Console.WriteLine("Apriori \n");
+
+            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
+            controlador.Apriori(tamanho);
 
             Console.Read();
 

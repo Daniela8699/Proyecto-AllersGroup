@@ -23,8 +23,9 @@ namespace AllersGroup
         private List<Articulo> articulos;
         private List<Cliente> clientes;
         private List<Venta> ventas;
-        private double minSupport;
-        private double minCon;
+        public double minSuport = 0;
+        public double minCon = 0;
+
 
 
         List<List<Articulo>> combinaciones;
@@ -32,10 +33,8 @@ namespace AllersGroup
         public List<Articulo> Articulos { get => articulos; set => articulos = value; }
         public List<Cliente> Clientes { get => clientes; set => clientes = value; }
         public List<Venta> Ventas { get => ventas; set => ventas = value; }
-        public double MinSupport { get => minSupport; set => minSupport = value; }
-        public double MinCon { get => minCon; set => minCon = value; }
 
-        public Controlador(double minSup, double minConf)
+        public Controlador(double minConf, double minSup)
         {
             articulos = new List<Articulo>();
             clientes = new List<Cliente>();
@@ -45,8 +44,9 @@ namespace AllersGroup
             respuestasPorTamano = new List<List<int>>();
             suportPorTamano = new List<List<double>>();
             ConfianzaPorTamano = new List<List<double>>();
-            MinCon= minConf;
-            MinSupport = minSup;
+            minCon = minConf;
+            minSuport = minSup;
+
         }
 
         public void CargarDatos()
@@ -169,14 +169,25 @@ namespace AllersGroup
         public void ImprimirCombinaciones(List<int> n)
         {
             String mensaje = "";
+            String temp = "";
             int tamanho = n.Count();
             for (int i = 0; i < tamanho; i++)
             {
-                mensaje += (i + 1) + ". " + n.ElementAt(i) + "\n";
+                
+                int x = n.ElementAt(i);
+                if (x == 1) temp = "Bread";
+                else if (x == 2) temp = "Milk";
+                else if (x == 3) temp = "Diapers";
+                else if (x == 4) temp = "Beer";
+                else if (x == 5) temp = "Eggs";
+                else if (x == 6) temp = "Cola";
+                mensaje += (i + 1) + ". " +temp  + "\n";
+                temp = "";
             }
             Console.WriteLine(mensaje);
 
         }
+
 
 
         //APLICACIÓN DE ESTRATEGIA DE FUERZA BRUTA***************
@@ -308,7 +319,7 @@ namespace AllersGroup
             //Imprimir asociaciones que cumplen con el minimo
 
 
-            imprimirPorCriterio(MinSupport, MinCon, CombinacionesPorTamano);
+            imprimirPorCriterio(minSuport, minCon, CombinacionesPorTamano);
 
 
         }
@@ -1131,23 +1142,63 @@ namespace AllersGroup
         }
 
         //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
-       
-       // APLICACIÓN ESTRATEGIA A-PRIORI *****************
-       public void Apriori(int tamanho)
+
+        // APLICACIÓN ESTRATEGIA A-PRIORI *****************
+        public void Apriori(int tamanho)
         {
-            int supCount = (int) MinSupport * getNumVentas();
+                Console.WriteLine("Tamaño =  " + tamanho);
+            int supCount = (int) (minSuport * getNumVentas());
+            Console.WriteLine("Num Ventas = " + getNumVentas());
+            Console.WriteLine("SupCount = " + supCount);
             int i = 1;
-            List<int> temp = new List<int>();
+            List<List<int>> temp = new List<List<int>>();
+        
             int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
+            int[] poda = darItemCode;
             while (i <= tamanho)
             {
-               
+               List<List<int>> combinacion = CombinacionHasta7(i, poda);
+               List<int> repeticiones = RepeticionEnVentas(combinacion);
+                int temp2 = repeticiones.Count();
+                for (int x = 0; x < temp2; x++)
+                {
+                    if(repeticiones.ElementAt(x) >= supCount)
+                    {
+                        temp.Add(combinacion.ElementAt(x));
+                    }
+                }
+                if(tamanho == i)
+                {
+                    break;
+                }
+                else
+                {
+                    poda = refrescarItemCodes(temp);
+                    temp = new List<List<int>>();
+                    i++;
 
+                }
+            }
+            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de 3 elementos que cumplen con el Support Count definido son: \n ");
+            temp.ForEach(n => ImprimirCombinaciones(n));
+
+        }
+        public int[] refrescarItemCodes(List<List<int>> combinaciones)
+        {
+            List<int> codigo = new List<int>();
+            foreach (var n in combinaciones)
+            {
+                foreach(var x in n)
+                {
+                    if (!codigo.Contains(x))
+                    {
+                        codigo.Add(x);
+                    }
+                }
 
             }
-            
+            return codigo.OrderBy(n => n).ToArray();
         }
-
 
 
 
