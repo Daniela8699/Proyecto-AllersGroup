@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C44A9FE1-BF05-4250-BB9D-B8622CD69681}</ProjectGuid>
+    <ProjectGuid>{165E4D33-343A-44DC-B011-412C9EFDCD7E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Aplicación_Allers_Group</RootNamespace>
     <AssemblyName>Aplicación Allers Group</AssemblyName>
