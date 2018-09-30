@@ -718,10 +718,10 @@ namespace AllersGroup
         //---------------------------------------------------------------------------------------------------------------------------------------------
         //Método para UnitTest
 
-        public List<List<int>> CombinacionPrueba()
+       /* public List<List<int>> CombinacionPrueba()
         {
             List<List<int>> resultado = new List<List<int>>();
-            int[] code = MasFrecuentes();
+            int[] code = { 1,2,3,4,5,6,7};
             for (int i = 0; i < code.Length; i++)
             {
                 for (int j = i + 1; j < code.Length; j++)
@@ -754,7 +754,7 @@ namespace AllersGroup
             }
             return resultado;
         }
-
+        */
         public int RepeticionEnVentasP(List<int> combinaciones)
         {
             int tamanho = combinaciones.Count();
