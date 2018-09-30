@@ -175,12 +175,13 @@ namespace AllersGroup
             {
                 
                 int x = n.ElementAt(i);
-                if (x == 1) temp = "Bread";
-                else if (x == 2) temp = "Milk";
-                else if (x == 3) temp = "Diapers";
-                else if (x == 4) temp = "Beer";
-                else if (x == 5) temp = "Eggs";
-                else if (x == 6) temp = "Cola";
+                //if (x == 1) temp = "Bread";
+                //else if (x == 2) temp = "Milk";
+                //else if (x == 3) temp = "Diapers";
+                //else if (x == 4) temp = "Beer";
+                //else if (x == 5) temp = "Eggs";
+                //else if (x == 6) temp = "Cola";
+                temp += x;
                 mensaje += (i + 1) + ". " +temp  + "\n";
                 temp = "";
             }
@@ -267,19 +268,18 @@ namespace AllersGroup
             return i;
         }
 
-        public void generarAsociaciones()
+        public void generarAsociaciones(int tamanho, int numArti)
         {
             //int numArticulos = getNumArticulos();
-            int numArticulos = 6;
+           
             //List<int> darItemCode = new List<int>();
             //articulos.ForEach(a=> darItemCode.Add(a.ItemCode));
-            Console.WriteLine("Indices: \n");
 
-            Console.WriteLine("Bread - 1 \nMilk - 2 \nDiapers - 3 \nBeer - 4 \nEggs - 5 \nCola - 6 \n");
 
-            int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
+            int[] darItemCode = masFrecuentesMetodo(numArti);
+           
 
-            for (int i = 0; i < numArticulos; i++)
+            for (int i = 0; i < tamanho; i++)
             {
                 List<List<int>> combinacion = new List<List<int>>();
                 combinacionesPorTamano.Add(CombinacionHasta7(i + 1, darItemCode));
@@ -1144,7 +1144,7 @@ namespace AllersGroup
         //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
 
         // APLICACIÓN ESTRATEGIA A-PRIORI *****************
-        public void Apriori(int tamanho)
+        public void Apriori(int tamanho, int numArti)
         {
                 Console.WriteLine("Tamaño =  " + tamanho);
             int supCount = (int) (minSuport * getNumVentas());
@@ -1153,7 +1153,7 @@ namespace AllersGroup
             int i = 1;
             List<List<int>> temp = new List<List<int>>();
         
-            int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
+            int[] darItemCode = masFrecuentesMetodo(numArti);
             int[] poda = darItemCode;
             while (i <= tamanho)
             {
@@ -1179,7 +1179,7 @@ namespace AllersGroup
 
                 }
             }
-            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de 3 elementos que cumplen con el Support Count definido son: \n ");
+            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n ");
             temp.ForEach(n => ImprimirCombinaciones(n));
 
         }
