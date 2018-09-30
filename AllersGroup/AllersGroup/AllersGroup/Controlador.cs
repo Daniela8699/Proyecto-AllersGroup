@@ -266,24 +266,6 @@ namespace AllersGroup
 
             int[] darItemCode = { 1, 2, 3, 4, 5, 6 };
 
-            Stopwatch t = Stopwatch.StartNew();
-            int[] apariciones = masFrecuentesMetodo(28);
-            Console.WriteLine( ". " + t.Elapsed.TotalMilliseconds + "\n");
-
-            for (int i = 0; i < apariciones.Length; i++)
-            {
-                Console.WriteLine(apariciones[i]);
-            }
-            Console.WriteLine("-------------");
-            t = Stopwatch.StartNew();
-            int[] aparicionesDos = MasFrecuentes();
-            Console.WriteLine(". " + t.Elapsed.TotalMilliseconds + "\n");
-
-            for (int i = 0; i < aparicionesDos.Length; i++)
-            {
-                Console.WriteLine(aparicionesDos[i]);
-            }
-
             for (int i = 0; i < numArticulos; i++)
             {
                 List<List<int>> combinacion = new List<List<int>>();
