@@ -13,7 +13,10 @@ namespace TestAlgoritmos
         Controlador controlador;
         public void Escenario()
         {
-            controlador = new Controlador();
+            
+            double minSup = 0.03;
+            double mincof = 0.5;
+            controlador = new Controlador(mincof,minSup);
         }
 
         [TestMethod]
@@ -101,18 +104,19 @@ namespace TestAlgoritmos
         public void TestRepeticionEnVentas()
         {
 
-
+            
             Escenario();
             controlador.CargarDatos();
 
-            List<List<int>> numeros = controlador.CombinacionPrueba();
+            int[] arreglo = { 1, 2, 3 };
+            List<List<int>> numeros = controlador.CombinacionHasta7(2,arreglo);
             List<int> combinacion = new List<int>();
             combinacion = numeros[0];
 
             int cantRepeticiones = 0;
             cantRepeticiones = controlador.RepeticionEnVentasP(combinacion);
-            Assert.AreEqual(cantRepeticiones, 33);
-
+            Assert.AreEqual(cantRepeticiones, 0);
+            
         }
 
 
@@ -120,11 +124,16 @@ namespace TestAlgoritmos
         public void TestGenerarAsociaciones()
         {
             Escenario();
-            controlador.generarAsociaciones();
+            int tamahno = 3;
+            int articulos = 5;
+
+            controlador.CargarDatosPrueba();
+            controlador.generarAsociaciones(tamahno, articulos);
+
             Assert.IsNotNull(controlador.CombinacionesPorTamano);
             Assert.IsNotNull(controlador.RespuestasPorTamano);
             Assert.IsNotNull(controlador.SuportPorTamano);
-
+            
         }
         
         [TestMethod]
@@ -135,14 +144,14 @@ namespace TestAlgoritmos
             //controlador.CargarDatos();
             controlador.CargarDatosPrueba();
 
-            controlador.generarAsociaciones();
+            controlador.generarAsociaciones(3,5);
             int[] arreglo = { 1, 2, 3 };
             List<List<int>> todo = controlador.CombinacionHasta7(2, arreglo);
             Assert.IsNotNull(todo);
             List<double> soporte = controlador.soporteAsociaciones(todo, 0);
             Assert.AreEqual(soporte[0], 0.8);
 
-
+            
         }
 
         [TestMethod]
@@ -151,14 +160,58 @@ namespace TestAlgoritmos
             Escenario();
 
             controlador.CargarDatosPrueba();
-            controlador.generarAsociaciones();
+            controlador.generarAsociaciones(3,5);
 
             int[] arreglo = { 1, 2, 3, 4, 5 };
             List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);
             Assert.IsNotNull(todo);
             List<double> confianza = controlador.confianzaAsociaciones(todo, 1);
             Assert.AreEqual(confianza[0], 0, 75);
+            
+        }
 
+        [TestMethod]
+        public void TestRefrescarItem()
+        {
+            Escenario();
+            controlador.CargarDatosPrueba();
+            controlador.generarAsociaciones(3, 5);
+
+            int[] arreglo = { 1, 2, 3, 4, 5 };
+            List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);
+
+            int []result = controlador.refrescarItemCodes(todo);
+            Assert.AreEqual(result[0],1);
+
+        }
+
+
+        [TestMethod]
+        public void TestApriori()
+        {
+            Escenario();
+            controlador.CargarDatosPrueba();
+
+            List<List<int>> listResult = controlador.AprioriP(3,5);
+
+            List<int> existente = new List<int>() { 1, 2, 3 };
+            List<int> creada = new List<int>();
+                 
+        
+            for (int i = 0; i < listResult.Count; i++)
+            {
+                creada = listResult[i];
+                for (int j = 0; j < creada.Count; j++)
+                {
+                    if (creada[j] == existente[j])
+                    {
+                        Assert.AreEqual(creada[j], existente[j]);
+                    }
+
+                }
+
+            }
+            
         }
 
 
