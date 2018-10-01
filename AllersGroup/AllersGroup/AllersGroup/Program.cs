@@ -23,15 +23,15 @@ namespace AllersGroup
 
             controlador.CargarDatos();
             controlador.generarAsociaciones(tamanho, numArticulos);
-            
-            
+
+             
             Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
 
             Console.WriteLine("Apriori \n");
 
             Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
             controlador.Apriori(tamanho, numArticulos);
-            
+
             Console.Read();
            
 
