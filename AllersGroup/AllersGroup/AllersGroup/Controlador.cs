@@ -718,77 +718,77 @@ namespace AllersGroup
         //---------------------------------------------------------------------------------------------------------------------------------------------
         //Método para UnitTest
 
-        public List<List<int>> CombinacionPrueba()
-        {
-            List<List<int>> resultado = new List<List<int>>();
-            int[] code = MasFrecuentes();
-            for (int i = 0; i < code.Length; i++)
-            {
-                for (int j = i + 1; j < code.Length; j++)
-                {
-                    for (int k = j + 1; k < code.Length; k++)
-                    {
-                        for (int l = k + 1; l < code.Length; l++)
-                        {
-                            for (int m = l + 1; m < code.Length; m++)
-                            {
-                                for (int n = m + 1; n < code.Length; n++)
-                                {
-                                    for (int o = n + 1; o < code.Length; o++)
-                                    {
-                                        List<int> combinacion = new List<int>();
-                                        combinacion.Add(code[i]);
-                                        combinacion.Add(code[j]);
-                                        combinacion.Add(code[k]);
-                                        combinacion.Add(code[l]);
-                                        combinacion.Add(code[m]);
-                                        combinacion.Add(code[n]);
-                                        combinacion.Add(code[o]);
-                                        resultado.Add(combinacion);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return resultado;
-        }
+        //public List<List<int>> CombinacionPrueba()
+        //{
+        //    List<List<int>> resultado = new List<List<int>>();
+        //    int[] code = MasFrecuentes();
+        //    for (int i = 0; i < code.Length; i++)
+        //    {
+        //        for (int j = i + 1; j < code.Length; j++)
+        //        {
+        //            for (int k = j + 1; k < code.Length; k++)
+        //            {
+        //                for (int l = k + 1; l < code.Length; l++)
+        //                {
+        //                    for (int m = l + 1; m < code.Length; m++)
+        //                    {
+        //                        for (int n = m + 1; n < code.Length; n++)
+        //                        {
+        //                            for (int o = n + 1; o < code.Length; o++)
+        //                            {
+        //                                List<int> combinacion = new List<int>();
+        //                                combinacion.Add(code[i]);
+        //                                combinacion.Add(code[j]);
+        //                                combinacion.Add(code[k]);
+        //                                combinacion.Add(code[l]);
+        //                                combinacion.Add(code[m]);
+        //                                combinacion.Add(code[n]);
+        //                                combinacion.Add(code[o]);
+        //                                resultado.Add(combinacion);
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return resultado;
+        //}
 
-        public int RepeticionEnVentasP(List<int> combinaciones)
-        {
-            int tamanho = combinaciones.Count();
-            int count = 0;
-            int count2 = 0;
-            String mensaje = "";
-            for (int i = 0; i < tamanho; i++)
-            {
-                mensaje += combinaciones.ElementAt(i) + " ";
-            }
-            var x = ventas.GroupBy(n => n.CardCode);
-            foreach (var m in x)
-            {
-                if (m.Count() >= 7)
-                {
-                    count2 = 0;
-                    foreach (var s in m)
-                    {
-                        if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
-                        {
-                            count2++;
-                        }
-                    }
-                    if (count2 == 7)
-                    {
-                        count++;
+        //public int RepeticionEnVentasP(List<int> combinaciones)
+        //{
+        //    int tamanho = combinaciones.Count();
+        //    int count = 0;
+        //    int count2 = 0;
+        //    String mensaje = "";
+        //    for (int i = 0; i < tamanho; i++)
+        //    {
+        //        mensaje += combinaciones.ElementAt(i) + " ";
+        //    }
+        //    var x = ventas.GroupBy(n => n.CardCode);
+        //    foreach (var m in x)
+        //    {
+        //        if (m.Count() >= 7)
+        //        {
+        //            count2 = 0;
+        //            foreach (var s in m)
+        //            {
+        //                if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
+        //                {
+        //                    count2++;
+        //                }
+        //            }
+        //            if (count2 == 7)
+        //            {
+        //                count++;
 
-                    }
+        //            }
 
-                }
-            }
-            Console.WriteLine(mensaje + "\n" + count);
-            return count;
-        }
+        //        }
+        //    }
+        //    Console.WriteLine(mensaje + "\n" + count);
+        //    return count;
+        //}
     
         //------------------------------------------------------------------------------------------------------------------------------------------
 
