@@ -649,6 +649,34 @@ namespace AllersGroup
 
             return resul;
         }
+        public int RepeticionEnVentasUnitario(List<int> todo)
+        {
+                int tamanho = todo.Count();
+                int count = 0;
+                int count2 = 0;
+                var x = ventas.GroupBy(n => n.CardCode);
+                foreach (var m in x)
+                {
+                    if (m.Count() >= tamanho)
+                    {
+                        count2 = 0;
+                        foreach (var s in m)
+                        {
+                            if (todo.Contains(Convert.ToInt32(s.ItemCode)))
+                            {
+                                count2++;
+                            }
+                        }
+                        if (count2 == combinaciones.Count)
+                        {
+                            count++;
+                        }
+
+                    }
+                }
+              
+            return count;
+        }
         //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
 
         // APLICACIÓN ESTRATEGIA A-PRIORI *****************
@@ -687,8 +715,23 @@ namespace AllersGroup
 
                 }
             }
-            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n ");
+            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n");
             temp.ForEach(n => ImprimirCombinaciones(n));
+
+            Console.WriteLine("Generación de reglas: \n");
+            List<List<List<int>>> reglas = new List<List<List<int>>>();
+            foreach(var n in temp)
+            {
+                List<List<int>> combinacion = AprioriGenRules(n);
+                if(combinacion.Count() != 0)
+                {
+                    reglas.Add(combinacion);
+                }
+            }
+            reglas.ForEach(n => n.ForEach(s =>  ImprimirAsociaciones(s)));
+
+
+            
 
         }
         public int[] refrescarItemCodes(List<List<int>> combinaciones)
@@ -708,12 +751,91 @@ namespace AllersGroup
             return codigo.OrderBy(n => n).ToArray();
         }
 
+        public List<List<int>> AprioriGenRules(List<int> combinacion)
+        {
+            int[] indices = combinacion.ToArray();
+            List<List<int>> respuestas = new List<List<int>>();
+            if(indices.Length >= 2)
+            {
+                for (int i = 0; i < indices.Length; i++)
+                {
+                    List<int> temp = new List<int>();
+                    for (int j = 0; j < indices.Length; j++)
+                    {
+                        if (i != j)
+                        {
+                            temp.Add(indices[j]);
+                        }
+                    }
+                    temp = RecursionAprioriGenRules(temp, indices[i]);
+                    if(temp != null)
+                    {
+
+                        respuestas.Add(temp);
+                    }
+
+               }
+                return respuestas;
+            }
+            return null;
+
+        }
+        public List<int> RecursionAprioriGenRules(List<int> temporal, int generar)
+        {
+            double countPequeña = (double) RepeticionEnVentasUnitario(temporal) / getNumVentas();
+            temporal.Add(generar);
+            double countGrande = (double) RepeticionEnVentasUnitario(temporal) / getNumVentas(); 
+
+            double conf = countGrande / countPequeña;
+            if(conf >= minCon)
+            {
+                return temporal;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public void ImprimirAsociaciones(List<int> n)
+        {
+            String mensaje = "La combinación a continuación cumple con: \n";
+            int tamanho = n.Count();
+            for (int i = 0; i < tamanho; i++)
+            {
+
+                int x = n.ElementAt(i);
+                //if (x == 1) temp = "Bread";
+                //else if (x == 2) temp = "Milk";
+                //else if (x == 3) temp = "Diapers";
+                //else if (x == 4) temp = "Beer";
+                //else if (x == 5) temp = "Eggs";
+                //else if (x == 6) temp = "Cola";
+              
+                if(i == tamanho - 1)
+                {
+                    mensaje += x + " \n ";
+                }
+                else if(i == tamanho - 2)
+                {
+                  mensaje += x + " ==> ";
+                }
+                else
+                {
+                mensaje += x + " - ";
+
+                }
+            }
+            Console.WriteLine(mensaje);
+
+        }
 
 
 
         // FIN APLICACIÓN ESTRATEGIA A-PRIORI *******************
 
-        
+
 
         //---------------------------------------------------------------------------------------------------------------------------------------------
         //Método para UnitTest
@@ -793,7 +915,7 @@ namespace AllersGroup
             temp.ForEach(n => ImprimirCombinaciones(n));
             return temp;
         }
-
+        
 
         //------------------------------------------------------------------------------------------------------------------------------------------
 
