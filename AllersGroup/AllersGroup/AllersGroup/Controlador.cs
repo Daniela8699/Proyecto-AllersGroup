@@ -488,8 +488,11 @@ namespace AllersGroup
                     foreach (var e in a)
                     {
                         //ImprimirCombinaciones(e);
+                        
                         double resSuport = suportPorTamano.ElementAt(loop).ElementAt(loop1);
                         double resConfianza = confianzaPorTamano.ElementAt(loop).ElementAt(loop1);
+                        //Console.WriteLine(resConfianza);
+
                         if (resSuport >= suport && resConfianza >= confianza)
                         {
                             ImprimirCombinaciones(e);
@@ -530,6 +533,8 @@ namespace AllersGroup
             {
 
                 //ImprimirCombinaciones(combinaciones);
+                //Console.WriteLine(respuestasPorTamano.ElementAt(indice).ElementAt(loop));
+                //Console.WriteLine(RepeticionEnVentasUnitario(combinaciones));
                 double respuesta = (double)(respuestasPorTamano.ElementAt(indice).ElementAt(loop)) / (getNumVentas());
                 resultados.Add(respuesta);
                 //Console.WriteLine(respuesta);
@@ -545,7 +550,7 @@ namespace AllersGroup
             int loop = 0;
             foreach (var combinaciones in todo)
             {
-                // ImprimirCombinaciones(combinaciones);
+                ImprimirCombinaciones(combinaciones);
                 List<int> ayuda = new List<int>();
                 for (int i = 0; i < combinaciones.Count() - 1; i++)
                 {
@@ -562,7 +567,7 @@ namespace AllersGroup
                     respuesta = (double)(respuestaGrande) / (respuestaPeque);
                 }
                 resultados.Add(respuesta);
-                //Console.WriteLine(respuesta);
+                Console.WriteLine(respuesta);
                 loop++;
             }
             return resultados;
@@ -607,31 +612,33 @@ namespace AllersGroup
             List<int> resultados = new List<int>();
             foreach (var combinaciones in todo)
             {
+                //ImprimirCombinaciones(combinaciones);
+                //int tamanho = combinaciones.Count();
+                //int count = 0;
+                //int count2 = 0;
+                //var x = ventas.GroupBy(n => n.CardCode);
+                //foreach (var m in x)
+                //{
+                //    if (m.Count() >= tamanho)
+                //    {
+                //        count2 = 0;
+                //        foreach (var s in m)
+                //        {
+                //            if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
+                //            {
+                //                count2++;
+                //            }
+                //        }
+                //        if (count2 == combinaciones.Count)
+                //        {
+                //            count++;
+                //        }
 
-                int tamanho = combinaciones.Count();
-                int count = 0;
-                int count2 = 0;
-                var x = ventas.GroupBy(n => n.CardCode);
-                foreach (var m in x)
-                {
-                    if (m.Count() >= tamanho)
-                    {
-                        count2 = 0;
-                        foreach (var s in m)
-                        {
-                            if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
-                            {
-                                count2++;
-                            }
-                        }
-                        if (count2 == combinaciones.Count)
-                        {
-                            count++;
-                        }
-
-                    }
-                }
-                resultados.Add(count);
+                //    }
+                //}
+                //Console.WriteLine(count);
+                //Console.WriteLine(RepeticionEnVentasUnitario(combinaciones));
+                resultados.Add(RepeticionEnVentasUnitario(combinaciones));
             }
             return resultados;
         }
