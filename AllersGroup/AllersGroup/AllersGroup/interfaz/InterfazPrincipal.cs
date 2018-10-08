@@ -1,4 +1,4 @@
-﻿using AllersGroup.interfaz;
+﻿using AllersGroup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +16,11 @@ namespace AllersGroup
         int support;
         int confianza;
         Controlador modelo;
-        Form resul;
+       
        public String reporte;
         public InterfazPrincipal()
         {
-            resul = new Resultados(this);
+           
             InitializeComponent();
            
         }

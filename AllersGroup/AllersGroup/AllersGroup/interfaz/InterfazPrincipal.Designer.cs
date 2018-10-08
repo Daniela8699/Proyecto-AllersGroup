@@ -48,7 +48,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.SystemColors.WindowText;
+            this.trackBar1.BackColor = System.Drawing.Color.White;
             this.trackBar1.Location = new System.Drawing.Point(182, 140);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
@@ -59,7 +59,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.BackColor = System.Drawing.SystemColors.WindowText;
+            this.trackBar2.BackColor = System.Drawing.Color.White;
             this.trackBar2.Location = new System.Drawing.Point(182, 191);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(596, 250);
             this.Controls.Add(this.button1);
@@ -203,7 +203,7 @@
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.trackBar1);
             this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InterfazPrincipal";
             this.Text = "AllersGroup";
