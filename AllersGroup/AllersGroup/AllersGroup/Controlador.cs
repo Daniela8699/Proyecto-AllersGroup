@@ -478,6 +478,7 @@ namespace AllersGroup
             double maxC = -1;
             int maxId1 = -1;
             int maxId2 = -1;
+            List<List<int>> cumplen = new List<List<int>>();
 
             foreach (var a in combinacionesPorTamano)
             {
@@ -521,6 +522,7 @@ namespace AllersGroup
                 }
                 loop++;
             }
+
         }
         public List<double> soporteAsociaciones(List<List<int>> todo, int indice)
         {
@@ -727,8 +729,17 @@ namespace AllersGroup
                 {
                     reglas.Add(combinacion);
                 }
+                
             }
+
+            if(reglas.Count() == 0)
+            {
+                Console.WriteLine("No existe ninguna regla que cumpla con el criterio de confianza");
+            }
+            else
+            {
             reglas.ForEach(n => n.ForEach(s =>  ImprimirAsociaciones(s)));
+            }
 
 
             
@@ -789,6 +800,11 @@ namespace AllersGroup
             double conf = countGrande / countPequeña;
             if(conf >= minCon)
             {
+                if(conf >= 1)
+                {
+                    Console.WriteLine("Dato atípico \n");
+                    ImprimirCombinaciones(temporal);
+                }
                 return temporal;
             }
             else
@@ -800,7 +816,7 @@ namespace AllersGroup
 
         public void ImprimirAsociaciones(List<int> n)
         {
-            String mensaje = "La combinación a continuación cumple con: \n";
+            String mensaje = "La combinación a continuación cumple con las siguientes asociaciones BASES: \n";
             int tamanho = n.Count();
             for (int i = 0; i < tamanho; i++)
             {
@@ -830,6 +846,7 @@ namespace AllersGroup
             Console.WriteLine(mensaje);
 
         }
+
 
 
 

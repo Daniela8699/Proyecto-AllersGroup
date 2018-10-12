@@ -22,9 +22,9 @@ namespace AllersGroup
             Controlador controlador = new Controlador(minConf, minSup);
 
             controlador.CargarDatos();
-            controlador.generarAsociaciones(tamanho, numArticulos);
-            
-            
+            //controlador.generarAsociaciones(tamanho, numArticulos);
+
+
             Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
 
             Console.WriteLine("Apriori \n");
