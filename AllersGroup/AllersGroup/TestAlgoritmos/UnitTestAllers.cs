@@ -215,6 +215,34 @@ namespace TestAlgoritmos
         }
 
 
+        [TestMethod]
+        public void TestAprioriGenRules()
+        {
+            Escenario();
+
+            List<int> prueba = new List<int> { 1, 2, 3 };
+            List<int> salida = new List<int>();
+            List<int> existente = new List<int>() { 2, 3, 1, 1, 3, 2, 1, 2, 3 };
+            List<List<int>> result = new List<List<int>>();
+
+            result = controlador.AprioriGenRules(prueba);
+            for (int i = 0; i < result.Count; i++)
+            {
+                salida = result[i];
+                for (int j = 0; j < salida.Count; j++)
+                {
+                    Assert.AreEqual(existente[j],salida[j]);
+                }
+
+            }
+
+
+
+
+        }
+
+
+
     }
 
 

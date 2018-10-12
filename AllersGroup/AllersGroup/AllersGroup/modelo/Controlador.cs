@@ -11,6 +11,8 @@ namespace AllersGroup
 {
     public class Controlador
     {
+        public String reporte = "";
+
         public const String rutaArticulos = "../../Data/Articulos.csv";
         public const String rutaClientes = "../../Data/Clientes.csv";
         public const String rutaVentas = "../../Data/Ventas.csv";
@@ -184,8 +186,12 @@ namespace AllersGroup
                 temp += x;
                 mensaje += (i + 1) + ". " +temp  + "\n";
                 temp = "";
+                if(i == tamanho - 1)
+                {
+                    mensaje += "\n";
+                }
             }
-            Console.WriteLine(mensaje);
+            reporte += mensaje;
 
         }
         //Método supremamente extenso.
@@ -194,7 +200,7 @@ namespace AllersGroup
             List<List<int>> resultado = new List<List<int>>();
             if (tamanhoGrupo <= 0 || code.Length < tamanhoGrupo)
             {
-                Console.WriteLine("No se puede realizar esta operación");
+               reporte+="No se puede realizar esta operación";
             }
             else
             {
@@ -472,7 +478,7 @@ namespace AllersGroup
         }
         public void imprimirPorCriterio(double suport, double confianza, List<List<List<int>>> asociaciones)
         {
-            Console.WriteLine("Las asociaciones que cumplen con ambos criterios serian :");
+            reporte+= "Las asociaciones que cumplen con ambos criterios serian : \n \n";
             int loop = 0;
             double maxS = -1;
             double maxC = -1;
@@ -484,17 +490,20 @@ namespace AllersGroup
             {
                 if (loop != 0)
                 {
-                    Console.WriteLine("Para combinaciones de " + (loop + 1) + " elementos");
+                    reporte+= "Para combinaciones de " + (loop + 1) + " elementos \n \n";
                     int loop1 = 0;
                     foreach (var e in a)
                     {
                         //ImprimirCombinaciones(e);
+                        
                         double resSuport = suportPorTamano.ElementAt(loop).ElementAt(loop1);
                         double resConfianza = confianzaPorTamano.ElementAt(loop).ElementAt(loop1);
+                        //Console.WriteLine(resConfianza);
+
                         if (resSuport >= suport && resConfianza >= confianza)
                         {
                             ImprimirCombinaciones(e);
-                            Console.WriteLine("\n Con un Support: " + (resSuport * 100) + "% \n Con una Confianza: " + (resConfianza * 100) + "% " + "\n");
+                            reporte+= "Con un Support: " + (resSuport * 100) + "% \nCon una Confianza: " + (resConfianza * 100) + "% \n \n";
                             if (maxS < resSuport && maxC < resConfianza)
                             {
                                 maxS = resSuport;
@@ -505,13 +514,13 @@ namespace AllersGroup
                         }
                         loop1++;
                     }
-                    Console.WriteLine("---------------------------------------------------------------------------------------------------------------------- \n");
-                    Console.WriteLine("El maximo para combinaciones de " + (loop + 1) + " elementos es: ");
+                    reporte+= "---------------------------------------------------------------------------------------------------------------------- \n";
+                    reporte+= "El maximo para combinaciones de " + (loop + 1) + " elementos es: \n";
                     if (maxId1 != -1 && maxId2 != -1)
                     {
                         ImprimirCombinaciones(combinacionesPorTamano.ElementAt(maxId1).ElementAt(maxId2));
-                        Console.WriteLine("\n Con un Support: " + (maxS * 100) + "% \n Con una Confianza: " + (maxC * 100) + "% " + "\n");
-                        Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
+                        reporte+= "Con un Support: " + (maxS * 100) + "% \nCon una Confianza: " + (maxC * 100) + "% \n \n";
+                        reporte+="---------------------------------------------------------------------------------------------------------------------  \n";
                         maxS = -1;
                         maxC = -1;
                         maxId1 = -1;
@@ -532,6 +541,8 @@ namespace AllersGroup
             {
 
                 //ImprimirCombinaciones(combinaciones);
+                //Console.WriteLine(respuestasPorTamano.ElementAt(indice).ElementAt(loop));
+                //Console.WriteLine(RepeticionEnVentasUnitario(combinaciones));
                 double respuesta = (double)(respuestasPorTamano.ElementAt(indice).ElementAt(loop)) / (getNumVentas());
                 resultados.Add(respuesta);
                 //Console.WriteLine(respuesta);
@@ -547,7 +558,7 @@ namespace AllersGroup
             int loop = 0;
             foreach (var combinaciones in todo)
             {
-                // ImprimirCombinaciones(combinaciones);
+                //ImprimirCombinaciones(combinaciones);
                 List<int> ayuda = new List<int>();
                 for (int i = 0; i < combinaciones.Count() - 1; i++)
                 {
@@ -609,31 +620,33 @@ namespace AllersGroup
             List<int> resultados = new List<int>();
             foreach (var combinaciones in todo)
             {
+                //ImprimirCombinaciones(combinaciones);
+                //int tamanho = combinaciones.Count();
+                //int count = 0;
+                //int count2 = 0;
+                //var x = ventas.GroupBy(n => n.CardCode);
+                //foreach (var m in x)
+                //{
+                //    if (m.Count() >= tamanho)
+                //    {
+                //        count2 = 0;
+                //        foreach (var s in m)
+                //        {
+                //            if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
+                //            {
+                //                count2++;
+                //            }
+                //        }
+                //        if (count2 == combinaciones.Count)
+                //        {
+                //            count++;
+                //        }
 
-                int tamanho = combinaciones.Count();
-                int count = 0;
-                int count2 = 0;
-                var x = ventas.GroupBy(n => n.CardCode);
-                foreach (var m in x)
-                {
-                    if (m.Count() >= tamanho)
-                    {
-                        count2 = 0;
-                        foreach (var s in m)
-                        {
-                            if (combinaciones.Contains(Convert.ToInt32(s.ItemCode)))
-                            {
-                                count2++;
-                            }
-                        }
-                        if (count2 == combinaciones.Count)
-                        {
-                            count++;
-                        }
-
-                    }
-                }
-                resultados.Add(count);
+                //    }
+                //}
+                //Console.WriteLine(count);
+                //Console.WriteLine(RepeticionEnVentasUnitario(combinaciones));
+                resultados.Add(RepeticionEnVentasUnitario(combinaciones));
             }
             return resultados;
         }
@@ -684,10 +697,10 @@ namespace AllersGroup
         // APLICACIÓN ESTRATEGIA A-PRIORI *****************
         public void Apriori(int tamanho, int numArti)
         {
-                Console.WriteLine("Tamaño =  " + tamanho);
+                reporte+= "Tamaño =  " + tamanho + "\n";
             int supCount = (int) (minSuport * getNumVentas());
-            Console.WriteLine("Num Ventas = " + getNumVentas());
-            Console.WriteLine("SupCount = " + supCount + "\n");
+            reporte+= "Num Ventas = " + getNumVentas() + "\n";
+            reporte+= "SupCount = " + supCount + "\n \n";
             int i = 1;
             List<List<int>> temp = new List<List<int>>();
 
@@ -717,10 +730,10 @@ namespace AllersGroup
 
                 }
             }
-            Console.WriteLine("Utilizando el método apriori \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n");
+            reporte+= "Utilizando el método apriori \n \nLas combinaciones de " + tamanho + " elementos que cumplen con el Support Count definido son: \n";
             temp.ForEach(n => ImprimirCombinaciones(n));
 
-            Console.WriteLine("Generación de reglas: \n");
+            reporte+="Generación de reglas: \n";
             List<List<List<int>>> reglas = new List<List<List<int>>>();
             foreach(var n in temp)
             {
@@ -831,7 +844,7 @@ namespace AllersGroup
               
                 if(i == tamanho - 1)
                 {
-                    mensaje += x + " \n ";
+                    mensaje += x + " \n \n";
                 }
                 else if(i == tamanho - 2)
                 {
@@ -843,7 +856,7 @@ namespace AllersGroup
 
                 }
             }
-            Console.WriteLine(mensaje);
+            reporte+= mensaje;
 
         }
 
@@ -936,6 +949,6 @@ namespace AllersGroup
 
         //------------------------------------------------------------------------------------------------------------------------------------------
 
-
+       
     }
 }
