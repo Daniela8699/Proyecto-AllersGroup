@@ -1,0 +1,100 @@
+Tiempos 0combinaciones
+4712,7558
+Tiempos 1combinaciones
+4474,0322
+Tiempos 2combinaciones
+4155,4822
+Tiempos 3combinaciones
+4425,7411
+Tiempos 4combinaciones
+4507,1229
+Tiempos 5combinaciones
+4080,912
+Tiempos 6combinaciones
+4060,376
+Tiempos 7combinaciones
+3806,4816
+Tiempos 8combinaciones
+3813,4304
+Tiempos 9combinaciones
+3997,613
+Tiempos 10combinaciones
+3516,4361
+Tiempos 11combinaciones
+3484,9706
+Tiempos 12combinaciones
+3426,6482
+Tiempos 13combinaciones
+3389,6013
+Tiempos 14combinaciones
+3315,6913
+Tiempos 15combinaciones
+3249,5608
+Tiempos 16combinaciones
+3234,283
+Tiempos 17combinaciones
+3278,8653
+Tiempos 18combinaciones
+3212,9367
+Tiempos 19combinaciones
+3189,2397
+Tiempos 20combinaciones
+3139,5798
+Tiempos 21combinaciones
+3220,8553
+Tiempos 22combinaciones
+3368,7077
+Tiempos 23combinaciones
+3086,388
+Tiempos 24combinaciones
+3091,0078
+Tiempos 25combinaciones
+2908,8301
+Tiempos 26combinaciones
+2965,1334
+Tiempos 27combinaciones
+3123,2487
+Tiempos 28combinaciones
+3102,5582
+Tiempos 29combinaciones
+2831,9599
+Tiempos 30combinaciones
+2937,0521
+Tiempos 31combinaciones
+2781,3064
+Tiempos 32combinaciones
+2843,5265
+Tiempos 33combinaciones
+2768,7328
+Tiempos 34combinaciones
+2923,1112
+Tiempos 35combinaciones
+2968,3876
+Tiempos 36combinaciones
+2713,2531
+Tiempos 37combinaciones
+3030,8135
+Tiempos 38combinaciones
+2811,5428
+Tiempos 39combinaciones
+2853,5374
+Tiempos 40combinaciones
+2568,9014
+Tiempos 41combinaciones
+2618,3413
+Tiempos 42combinaciones
+2609,3631
+Tiempos 43combinaciones
+2678,0678
+Tiempos 44combinaciones
+2581,7843
+Tiempos 45combinaciones
+2566,1186
+Tiempos 46combinaciones
+2520,2654
+Tiempos 47combinaciones
+2445,7324
+Tiempos 48combinaciones
+2360,3391
+Tiempos 49combinaciones
+2406,6229
