@@ -32,6 +32,7 @@
             this.inicio = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.Label();
             this.recom = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // inicio
@@ -61,6 +62,10 @@
             this.recom.TabIndex = 2;
             this.recom.Click += new System.EventHandler(this.recom_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Graficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,5 +91,6 @@
         private System.Windows.Forms.Label inicio;
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Label recom;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
