@@ -1,6 +1,6 @@
-﻿namespace AllersGroup
+﻿namespace AllersGroup.interfaz
 {
-    partial class InterfazPrincipal
+    partial class Recomendaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Recomendaciones));
             this.SuspendLayout();
             // 
-            // InterfazPrincipal
+            // Recomendaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::AllersGroup.Properties.Resources.Inicio1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImage = global::AllersGroup.Properties.Resources.Recomendaciones;
             this.ClientSize = new System.Drawing.Size(1245, 749);
-            this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "InterfazPrincipal";
+            this.Name = "Recomendaciones";
             this.Text = "AllersGroup";
-            this.Load += new System.EventHandler(this.InterfazPrincipal_Load);
             this.ResumeLayout(false);
 
         }
