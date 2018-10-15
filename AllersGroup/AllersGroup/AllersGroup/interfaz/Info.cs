@@ -16,5 +16,10 @@ namespace AllersGroup.interfaz
         {
             InitializeComponent();
         }
+
+        private void Info_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
