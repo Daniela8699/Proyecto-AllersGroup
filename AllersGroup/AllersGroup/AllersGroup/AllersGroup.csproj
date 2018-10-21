@@ -36,14 +36,36 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Transitions">
+      <HintPath>..\..\..\..\..\..\Downloads\Transitions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaz\Graficos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Graficos.Designer.cs">
+      <DependentUpon>Graficos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\Recomendaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Recomendaciones.Designer.cs">
+      <DependentUpon>Recomendaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelo\Articulo.cs" />
     <Compile Include="modelo\Cliente.cs" />
     <Compile Include="modelo\Controlador.cs" />
@@ -55,12 +77,12 @@
     </Compile>
     <Compile Include="interfaz\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="modelo\Venta.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="modelo\Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -99,13 +121,28 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="interfaz\Graficos.resx">
+      <DependentUpon>Graficos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\Recomendaciones.resx">
+      <DependentUpon>Recomendaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Gráfico.png" />
+    <Content Include="Resources\Info.png" />
+    <Content Include="Resources\Inicio.png" />
+    <Content Include="Resources\Recomendaciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,21 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AllersGroup.interfaz;
+using Transitions;
 
 namespace AllersGroup
 {
     public partial class InterfazPrincipal : Form
     {
-        int support;
-        int confianza;
+        private Form infor;
+        private Form recome;
+        private Form grafi;
+
         Controlador modelo;
        
-       public String reporte;
+     
         public InterfazPrincipal()
         {
            
             InitializeComponent();
-           
+            infor = new Info(this);
+            recome = new Recomendaciones(this);
+            grafi = new Graficos(this);
         }
 
         private void InterfazPrincipal_Load(object sender, EventArgs e)
@@ -30,41 +36,32 @@ namespace AllersGroup
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void info_Click(object sender, EventArgs e)
         {
-            double minSup = support / 100;
-            double minCon = confianza / 100;
-            int tam = Int16.Parse(textBox1.Text);
-            int frec = Int16.Parse(textBox2.Text);
-            if (tam >= 1 && tam <= 7 && frec > 0)
-            {
-                modelo = new Controlador(minCon, minSup);
-                modelo.CargarDatos();
-                modelo.generarAsociaciones(tam, frec);
-                modelo.Apriori(tam, frec);
-                reporte = modelo.reporte;
-                Console.WriteLine(reporte);
-                
-            }
+            Transition t = new Transition(new TransitionType_CriticalDamping(2000));
+            t.add(infor, "Left", -10);
+            Visible = false;
+            infor.Show();
+            t.run();
            
         }
-        
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
 
+        public void recom_Click(object sender, EventArgs e)
+        {
+            Transition t = new Transition(new TransitionType_Bounce(2000));
+            t.add(recome, "Left", 10);
+            Visible = false;
+            recome.Show();
+            t.run();
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        public void graf_Click(object sender, EventArgs e)
         {
-            support = trackBar1.Value;
-            label5.Text = "" + trackBar1.Value;
-
-        }
-
-        private void trackBar2_Scroll(object sender, EventArgs e)
-        {
-            confianza = trackBar2.Value;
-            label6.Text = "" + trackBar2.Value;
+            Transition t = new Transition(new TransitionType_Bounce(2000));
+            t.add(grafi, "Top", -10);
+            Visible = false;
+            grafi.Show();
+            t.run();
         }
     }
 }
