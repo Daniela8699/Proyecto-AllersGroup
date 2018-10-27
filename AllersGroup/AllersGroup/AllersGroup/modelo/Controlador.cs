@@ -23,9 +23,9 @@ public class Controlador
     public double minSuport = 0;
     public double minCon = 0;
 
-
-
     List<List<Articulo>> combinaciones;
+
+    private FP algoritmoFP;
 
     public List<Articulo> Articulos { get => articulos; set => articulos = value; }
     public List<Cliente> Clientes { get => clientes; set => clientes = value; }
@@ -43,7 +43,6 @@ public class Controlador
         ConfianzaPorTamano = new List<List<double>>();
         minCon = minConf;
         minSuport = minSup;
-
     }
 
     public void CargarDatos()
@@ -413,7 +412,6 @@ public class Controlador
     public List<List<double>> SuportPorTamano { get => suportPorTamano; set => suportPorTamano = value; }
     private List<List<double>> confianzaPorTamano;
     public List<List<double>> ConfianzaPorTamano { get => confianzaPorTamano; set => confianzaPorTamano = value; }
-
 
 
     public void generarAsociaciones(int tamanho, int numArti)
@@ -991,6 +989,61 @@ public class Controlador
         }
         return resultado.ToArray();
     }
+
+    // FIN APLIACION ESTRATEGIA F(k-1)XF1   *****************
+
+    // APLICACIÓN ESTRATEGIA FP   *****************
+    public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
+
+    public void estrategiaFP()
+    {
+        int supCount = (int)(minSuport * getNumVentas());
+        algoritmoFP = new FP(supCount);
+        List<List<Object>> listaRepeticiones= new List<List<Object>>();
+
+
+        List<List<Object>> poda = new List<List<Object>>();
+
+        listaRepeticiones = algoritmoFP.repeticionesUnitarias(ventas);
+        poda = algoritmoFP.objetosCumplen(listaRepeticiones);
+        algoritmoFP.ordenarMayorMenor(poda);
+
+        Arbol tree = new Arbol((supCount/2));
+
+        List<string> listaEncontrada = new List<string>();
+
+        var x = ventas.GroupBy(n => n.CardCode);
+        foreach (var m in x)
+        {
+            String[] trans = new String[m.Count()];
+            int contador = 0;
+            foreach (var s in m)
+            {
+                trans[contador] = s.ItemCode;
+                contador++;
+            }
+
+            for (int i = 0; i < poda.Count; i++)
+            {
+
+                if (trans.Contains(poda[i][0].ToString()))
+                {
+                    listaEncontrada.Add(poda[i][0].ToString());
+                }
+            }
+            tree.crearArbol(listaEncontrada);
+            listaEncontrada.Clear();
+        }
+        List<string> itemsFrecuentes = new List<string>();
+        itemsFrecuentes = tree.generarItemsSetsFrecuentes(tree.raiz, itemsFrecuentes);
+        Console.WriteLine("El mayor item set es \n");
+        foreach (string item in itemsFrecuentes)
+        {
+            Console.WriteLine(" " + item);
+        }
+        Console.ReadLine();
+    }
+
 
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
