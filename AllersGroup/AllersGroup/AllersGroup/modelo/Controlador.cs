@@ -869,6 +869,7 @@ public class Controlador
         reporte += "---------------------------------------------------------------------------------------------\n";
         reporte += "Método F(k-1) X F1\n";
         int[] F1 = masFrecuentesMetodo(numArticulos);
+
         int supCount = (int)(minSuport * getNumVentas());
         F1 = F1Check(F1, supCount);
         reporte += "supCount: " + supCount + "\n";
