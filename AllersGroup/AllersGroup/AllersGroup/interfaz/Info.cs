@@ -44,5 +44,18 @@ namespace AllersGroup.interfaz
             a.graf_Click(sender, e);
             Visible = false;
         }
+
+        private void butDistribuidorC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butLimpiarInfoPF_Click(object sender, EventArgs e)
+        {
+
+            richTextBox1.Clear();
+
+
+        }
     }
 }

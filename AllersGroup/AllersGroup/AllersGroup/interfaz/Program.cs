@@ -12,6 +12,7 @@ namespace AllersGroup
     {
         static void Main(string[] args)
         {
+            /*
             //listo
             Console.WriteLine("Introduzca el support mínimo");
             double minSup = Convert.ToDouble(Console.ReadLine());
@@ -24,13 +25,13 @@ namespace AllersGroup
             Controlador controlador = new Controlador(minConf, minSup);
             controlador.CargarDatos();
             controlador.estrategiaFP();
-
+            */
             //Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
-
+            
             //Console.Read();
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new InterfazPrincipal());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new InterfazPrincipal());
 
 
         }
