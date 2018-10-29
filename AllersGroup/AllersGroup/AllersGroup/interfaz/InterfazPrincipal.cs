@@ -21,7 +21,9 @@ namespace AllersGroup
 
 
         Controlador modelo;
-     
+
+        public Controlador Modelo { get => modelo; set => modelo = value; }
+
         public InterfazPrincipal()
         {
            

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using Transitions;
 
 namespace AllersGroup.interfaz
@@ -43,12 +44,20 @@ namespace AllersGroup.interfaz
 
         private void Graficos_Load(object sender, EventArgs e)
         {
+            String[] itulos = {"Hola","Hola 2","Hola 3","Hola 4" };
+            int[] ints = { 2, 1, 3, 4 };
 
+            for (int i = 0; i < itulos.Length; i++)
+            {
+                Series agregar = chart1.Series.Add(itulos[i]);
+                agregar.Points.Add(ints[i]);
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
+
     }
 }

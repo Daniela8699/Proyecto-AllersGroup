@@ -39,9 +39,6 @@ namespace AllersGroup
 
             // Console.ReadLine();
 
-
-
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InterfazPrincipal());
