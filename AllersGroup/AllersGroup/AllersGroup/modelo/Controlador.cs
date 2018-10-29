@@ -292,6 +292,7 @@ public class Controlador
             int contador = 0;
             foreach (var s in m)
             {
+                
                 trans[contador] = s.ItemCode;
                 contador++;
             }
@@ -312,12 +313,20 @@ public class Controlador
         Console.WriteLine("El mayor item set es \n");
         foreach (string item in itemsFrecuentes)
         {
-            Console.WriteLine(" " + item);
+            string nombre = busquedaNombreItem(item);
+            Console.WriteLine(nombre+ "\n");
         }
         Console.ReadLine();
     }
-
-
+    public String busquedaNombreItem(string item)
+    {
+        string nombre = "";
+        int item1 = Int16.Parse(item);
+        var x = articulos.First(n =>n.ItemCode == item1);
+        nombre = x.ItemName;
+        return nombre;
+    }
+   
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
     //Método para UnitTest
