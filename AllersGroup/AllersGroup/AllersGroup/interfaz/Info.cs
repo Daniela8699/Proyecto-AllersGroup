@@ -57,5 +57,10 @@ namespace AllersGroup.interfaz
 
 
         }
+
+        private void butDrogFarmaciaMiscC_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -326,7 +326,17 @@ public class Controlador
         nombre = x.ItemName;
         return nombre;
     }
-   
+   public List<Cliente> agruparClientesCat(string cat)
+    {
+        var lista = clientes.Where(n=> n.GroupName.Equals(cat)).ToList();
+        return lista;
+    }
+    public List<Venta> agruparLista(string cat)
+    {
+        List<Cliente> clientes2 = agruparClientesCat(cat);
+       //NO SE QUE HACEEEEEEEEER
+        return null;
+    }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
     //Método para UnitTest

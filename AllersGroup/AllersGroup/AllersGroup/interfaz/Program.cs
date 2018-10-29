@@ -28,7 +28,17 @@ namespace AllersGroup
             //controlador.BruteForceMethod(tamanho,numArticulos);
             //controlador.AprioriMethod(tamanho, numArticulos);
             //controlador.FkMinus1XF1Method(tamanho, numArticulos);
-            controlador.estrategiaFP();
+            List<Cliente> lis = controlador.agruparClientesCat("DISTRIBUIDORES");
+            for (int i = 0; i < lis.Count; i++)
+            {
+               
+                Console.WriteLine(lis[i].CardCode);
+            }
+            
+               
+
+            
+       
 
             Console.ReadLine();
 
