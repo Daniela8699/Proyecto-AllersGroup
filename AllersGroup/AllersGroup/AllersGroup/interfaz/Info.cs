@@ -47,7 +47,8 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidorC_Click(object sender, EventArgs e)
         {
-
+           string[] frec= a.frecuentesCategoria("DISTRIBUIDORES");
+           
         }
 
         private void butLimpiarInfoPF_Click(object sender, EventArgs e)
@@ -62,5 +63,13 @@ namespace AllersGroup.interfaz
         {
 
         }
+
+        private void butAplicarControladorPF_Click(object sender, EventArgs e)
+        {
+            double support = Double.Parse(txtSoporteFP.Text);
+            a.cargar(support);   
+        }
+
+      
     }
 }

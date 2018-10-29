@@ -116,6 +116,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(508, 222);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+           
             // 
             // groupBox2
             // 
@@ -289,6 +290,7 @@
             this.butAplicarControladorPF.TabIndex = 3;
             this.butAplicarControladorPF.Text = "Aplicar";
             this.butAplicarControladorPF.UseVisualStyleBackColor = true;
+            this.butAplicarControladorPF.Click += new System.EventHandler(this.butAplicarControladorPF_Click);
             // 
             // txtSoporteFP
             // 
