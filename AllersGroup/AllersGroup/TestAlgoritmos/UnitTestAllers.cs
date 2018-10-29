@@ -128,7 +128,7 @@ namespace TestAlgoritmos
             int articulos = 5;
 
             controlador.CargarDatosPrueba();
-            controlador.generarAsociaciones(tamahno, articulos);
+            controlador.BruteForce(tamahno, articulos);
 
             Assert.IsNotNull(controlador.CombinacionesPorTamano);
             Assert.IsNotNull(controlador.RespuestasPorTamano);
@@ -144,7 +144,7 @@ namespace TestAlgoritmos
             //controlador.CargarDatos();
             controlador.CargarDatosPrueba();
 
-            controlador.generarAsociaciones(3,5);
+            controlador.BruteForce(3,5);
             int[] arreglo = { 1, 2, 3 };
             List<List<int>> todo = controlador.CombinacionHasta7(2, arreglo);
             Assert.IsNotNull(todo);
@@ -160,7 +160,7 @@ namespace TestAlgoritmos
             Escenario();
 
             controlador.CargarDatosPrueba();
-            controlador.generarAsociaciones(3,5);
+            controlador.BruteForce(3,5);
 
             int[] arreglo = { 1, 2, 3, 4, 5 };
             List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);
@@ -175,7 +175,7 @@ namespace TestAlgoritmos
         {
             Escenario();
             controlador.CargarDatosPrueba();
-            controlador.generarAsociaciones(3, 5);
+            controlador.BruteForce(3, 5);
 
             int[] arreglo = { 1, 2, 3, 4, 5 };
             List<List<int>> todo = controlador.CombinacionHasta7(4, arreglo);

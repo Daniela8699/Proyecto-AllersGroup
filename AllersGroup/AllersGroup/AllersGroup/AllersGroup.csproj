@@ -66,8 +66,10 @@
     <Compile Include="interfaz\Recomendaciones.Designer.cs">
       <DependentUpon>Recomendaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelo\Apriori.cs" />
     <Compile Include="modelo\Arbol.cs" />
     <Compile Include="modelo\Articulo.cs" />
+    <Compile Include="modelo\BruteForce.cs" />
     <Compile Include="modelo\Cliente.cs" />
     <Compile Include="modelo\Controlador.cs" />
     <Compile Include="interfaz\InterfazPrincipal.cs">
@@ -77,6 +79,7 @@
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaz\Program.cs" />
+    <Compile Include="modelo\FkMinus.cs" />
     <Compile Include="modelo\FP.cs" />
     <Compile Include="modelo\Nodo.cs" />
     <Compile Include="modelo\Reporte.cs" />
