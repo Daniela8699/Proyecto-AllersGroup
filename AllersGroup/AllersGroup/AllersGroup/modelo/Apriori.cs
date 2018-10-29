@@ -12,6 +12,9 @@ namespace AllersGroup.modelo
         private double minCon;
         private double minSup;
         private String asociaciones;
+        private List<List<int>> implicantes;
+        private List<List<int>> implicados;
+        private List<List<int>> completas;
         public string Reporte { get => reporte; set => reporte = value; }
         public double MinCon { get => minCon; set => minCon = value; }
         public double MinSup { get => minSup; set => minSup = value; }
@@ -21,6 +24,9 @@ namespace AllersGroup.modelo
         {
             this.minCon = minCon;
             this.minSup = minSup;
+            implicantes = new List<List<int>>();
+            implicados = new List<List<int>>();
+            completas = new List<List<int>>();
         }
 
         public void Generar(int tamanho, List<Venta> ventas, int[] darItemCode)
@@ -163,6 +169,7 @@ namespace AllersGroup.modelo
             if (asociaciones.Count == temp.Count)
             {
                 mensaje += "Completa \n " + AsociacionCompleta(temp) + "\n";
+                completas.Add(temp);
             }
             else
             {
@@ -189,6 +196,8 @@ namespace AllersGroup.modelo
                     mensaje += n + " ";
                 }
             }
+            implicantes.Add(izquierdo);
+            implicados.Add(derecho);
             reporte += mensaje + "\n";
             Asociaciones = mensaje + "\n";
         }
