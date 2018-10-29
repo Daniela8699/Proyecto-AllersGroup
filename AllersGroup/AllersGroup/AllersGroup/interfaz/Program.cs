@@ -33,14 +33,7 @@ namespace AllersGroup
 
 
 
-
-
-
-
             // Console.ReadLine();
-
-
-
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

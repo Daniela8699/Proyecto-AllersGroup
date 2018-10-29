@@ -21,7 +21,8 @@ namespace AllersGroup
 
 
         Controlador modelo;
-     
+
+        private string mensaje;
         public InterfazPrincipal()
         {
            
@@ -34,6 +35,10 @@ namespace AllersGroup
         {          
             modelo = new Controlador(confianza,support);
             modelo.CargarDatos();
+            modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
+            MessageBox.Show("Los datos han sido analizados");
+            mensaje = modelo.Promociones();
+
         }
         
         private void InterfazPrincipal_Load(object sender, EventArgs e)
@@ -44,6 +49,15 @@ namespace AllersGroup
         {
             return modelo.masFrecuentesMetodo2(4, cat);
         }
+
+
+        public String mensajeRecomenaciones()
+        {
+            return mensaje;
+        }
+
+
+
         public void info_Click(object sender, EventArgs e)
         {
             Transition t = new Transition(new TransitionType_CriticalDamping(2000));

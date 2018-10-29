@@ -48,6 +48,7 @@ public class Controlador
         fkmin = new FkMinus(minSup, minConf);
         minCon = minConf;
         minSuport = minSup;
+        
     }
 
     public void CargarDatos()

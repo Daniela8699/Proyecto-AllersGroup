@@ -48,8 +48,9 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
-            
-        
+            //Treer información
+            String mensaje = conexion.mensajeRecomenaciones();
+            richTextBox1.Text = mensaje; 
 
         }
 
@@ -61,6 +62,11 @@ namespace AllersGroup.interfaz
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

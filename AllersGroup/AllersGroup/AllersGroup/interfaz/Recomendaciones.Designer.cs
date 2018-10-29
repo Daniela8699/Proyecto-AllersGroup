@@ -44,20 +44,9 @@
             this.butDrogFarmacia = new System.Windows.Forms.Button();
             this.butMedLabOpAmbul = new System.Windows.Forms.Button();
             this.butDistribuidor = new System.Windows.Forms.Button();
-            this.butCPrivada = new System.Windows.Forms.Button();
-            this.butCPublicas = new System.Windows.Forms.Button();
-            this.butNoDedicadoSalud = new System.Windows.Forms.Button();
-            this.butAlmacenCadena = new System.Windows.Forms.Button();
-            this.butBellezayEstetica = new System.Windows.Forms.Button();
-            this.butVeterinario = new System.Windows.Forms.Button();
-            this.butOdontoCentroOdonto = new System.Windows.Forms.Button();
-            this.butDrogFarmaciaMisc = new System.Windows.Forms.Button();
-            this.butMedAmbul = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,137 +181,14 @@
             // butDistribuidor
             // 
             this.butDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDistribuidor.Location = new System.Drawing.Point(63, 53);
+            this.butDistribuidor.Location = new System.Drawing.Point(55, 358);
             this.butDistribuidor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDistribuidor.Name = "butDistribuidor";
             this.butDistribuidor.Size = new System.Drawing.Size(232, 32);
             this.butDistribuidor.TabIndex = 7;
-            this.butDistribuidor.Text = "Distribuidores";
+            this.butDistribuidor.Text = "Generar Asociaciones";
             this.butDistribuidor.UseVisualStyleBackColor = true;
             this.butDistribuidor.Click += new System.EventHandler(this.butDistribuidor_Click);
-            // 
-            // butCPrivada
-            // 
-            this.butCPrivada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCPrivada.Location = new System.Drawing.Point(63, 91);
-            this.butCPrivada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butCPrivada.Name = "butCPrivada";
-            this.butCPrivada.Size = new System.Drawing.Size(232, 32);
-            this.butCPrivada.TabIndex = 8;
-            this.butCPrivada.Text = "Clinicas Privadas";
-            this.butCPrivada.UseVisualStyleBackColor = true;
-            this.butCPrivada.Click += new System.EventHandler(this.butCPrivada_Click);
-            // 
-            // butCPublicas
-            // 
-            this.butCPublicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butCPublicas.Location = new System.Drawing.Point(63, 129);
-            this.butCPublicas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butCPublicas.Name = "butCPublicas";
-            this.butCPublicas.Size = new System.Drawing.Size(232, 32);
-            this.butCPublicas.TabIndex = 9;
-            this.butCPublicas.Text = "Clinicas Públicas";
-            this.butCPublicas.UseVisualStyleBackColor = true;
-            // 
-            // butNoDedicadoSalud
-            // 
-            this.butNoDedicadoSalud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butNoDedicadoSalud.Location = new System.Drawing.Point(63, 167);
-            this.butNoDedicadoSalud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butNoDedicadoSalud.Name = "butNoDedicadoSalud";
-            this.butNoDedicadoSalud.Size = new System.Drawing.Size(232, 32);
-            this.butNoDedicadoSalud.TabIndex = 10;
-            this.butNoDedicadoSalud.Text = "No dedicado a salud";
-            this.butNoDedicadoSalud.UseVisualStyleBackColor = true;
-            // 
-            // butAlmacenCadena
-            // 
-            this.butAlmacenCadena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butAlmacenCadena.Location = new System.Drawing.Point(63, 206);
-            this.butAlmacenCadena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butAlmacenCadena.Name = "butAlmacenCadena";
-            this.butAlmacenCadena.Size = new System.Drawing.Size(232, 32);
-            this.butAlmacenCadena.TabIndex = 11;
-            this.butAlmacenCadena.Text = "Almacenes de cadena";
-            this.butAlmacenCadena.UseVisualStyleBackColor = true;
-            // 
-            // butBellezayEstetica
-            // 
-            this.butBellezayEstetica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butBellezayEstetica.Location = new System.Drawing.Point(63, 244);
-            this.butBellezayEstetica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butBellezayEstetica.Name = "butBellezayEstetica";
-            this.butBellezayEstetica.Size = new System.Drawing.Size(232, 32);
-            this.butBellezayEstetica.TabIndex = 12;
-            this.butBellezayEstetica.Text = "Belleza y estética";
-            this.butBellezayEstetica.UseVisualStyleBackColor = true;
-            // 
-            // butVeterinario
-            // 
-            this.butVeterinario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butVeterinario.Location = new System.Drawing.Point(63, 282);
-            this.butVeterinario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butVeterinario.Name = "butVeterinario";
-            this.butVeterinario.Size = new System.Drawing.Size(232, 32);
-            this.butVeterinario.TabIndex = 13;
-            this.butVeterinario.Text = "Veterinarios";
-            this.butVeterinario.UseVisualStyleBackColor = true;
-            // 
-            // butOdontoCentroOdonto
-            // 
-            this.butOdontoCentroOdonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butOdontoCentroOdonto.Location = new System.Drawing.Point(63, 320);
-            this.butOdontoCentroOdonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butOdontoCentroOdonto.Name = "butOdontoCentroOdonto";
-            this.butOdontoCentroOdonto.Size = new System.Drawing.Size(232, 32);
-            this.butOdontoCentroOdonto.TabIndex = 14;
-            this.butOdontoCentroOdonto.Text = "Odonto centro odonto";
-            this.butOdontoCentroOdonto.UseVisualStyleBackColor = true;
-            // 
-            // butDrogFarmaciaMisc
-            // 
-            this.butDrogFarmaciaMisc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDrogFarmaciaMisc.Location = new System.Drawing.Point(63, 358);
-            this.butDrogFarmaciaMisc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butDrogFarmaciaMisc.Name = "butDrogFarmaciaMisc";
-            this.butDrogFarmaciaMisc.Size = new System.Drawing.Size(232, 32);
-            this.butDrogFarmaciaMisc.TabIndex = 15;
-            this.butDrogFarmaciaMisc.Text = "DROG FARMACIA Y MISC";
-            this.butDrogFarmaciaMisc.UseVisualStyleBackColor = true;
-            // 
-            // butMedAmbul
-            // 
-            this.butMedAmbul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butMedAmbul.Location = new System.Drawing.Point(63, 396);
-            this.butMedAmbul.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.butMedAmbul.Name = "butMedAmbul";
-            this.butMedAmbul.Size = new System.Drawing.Size(232, 32);
-            this.butMedAmbul.TabIndex = 16;
-            this.butMedAmbul.Text = "MED LAB OP AMBUL";
-            this.butMedAmbul.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.butDistribuidor);
-            this.groupBox1.Controls.Add(this.butMedAmbul);
-            this.groupBox1.Controls.Add(this.butCPrivada);
-            this.groupBox1.Controls.Add(this.butDrogFarmaciaMisc);
-            this.groupBox1.Controls.Add(this.butCPublicas);
-            this.groupBox1.Controls.Add(this.butNoDedicadoSalud);
-            this.groupBox1.Controls.Add(this.butOdontoCentroOdonto);
-            this.groupBox1.Controls.Add(this.butAlmacenCadena);
-            this.groupBox1.Controls.Add(this.butBellezayEstetica);
-            this.groupBox1.Controls.Add(this.butVeterinario);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(69, 190);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(352, 457);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Clasificación de Clientes";
             // 
             // groupBox2
             // 
@@ -330,7 +196,7 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(638, 190);
+            this.groupBox2.Location = new System.Drawing.Point(345, 171);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -346,7 +212,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 34);
             this.button1.TabIndex = 1;
-            this.button1.Text = " ";
+            this.button1.Text = " Limpiar Información";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -358,27 +224,27 @@
             this.richTextBox1.Size = new System.Drawing.Size(587, 296);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Recomendaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1603, 843);
+            this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.butDistribuidor);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.info);
             this.Controls.Add(this.inicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Recomendaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AllersGroup";
             this.Load += new System.EventHandler(this.Recomendaciones_Load);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -401,16 +267,6 @@
         private System.Windows.Forms.Button butOdontoCentro;
         private System.Windows.Forms.Button butVeterinarios;
         private System.Windows.Forms.Button butDistribuidor;
-        private System.Windows.Forms.Button butMedAmbul;
-        private System.Windows.Forms.Button butDrogFarmaciaMisc;
-        private System.Windows.Forms.Button butOdontoCentroOdonto;
-        private System.Windows.Forms.Button butVeterinario;
-        private System.Windows.Forms.Button butBellezayEstetica;
-        private System.Windows.Forms.Button butAlmacenCadena;
-        private System.Windows.Forms.Button butNoDedicadoSalud;
-        private System.Windows.Forms.Button butCPublicas;
-        private System.Windows.Forms.Button butCPrivada;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
