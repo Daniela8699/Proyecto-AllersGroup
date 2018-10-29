@@ -60,6 +60,12 @@
     <Compile Include="interfaz\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\Parametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Parametros.Designer.cs">
+      <DependentUpon>Parametros.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\Recomendaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\Parametros.resx">
+      <DependentUpon>Parametros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Recomendaciones.resx">
       <DependentUpon>Recomendaciones.cs</DependentUpon>

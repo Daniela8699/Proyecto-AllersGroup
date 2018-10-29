@@ -30,9 +30,9 @@ namespace AllersGroup
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
         }
-        public void cargar(double support)
-        {
-            modelo = new Controlador(0.5, support);
+        public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
+        {          
+            modelo = new Controlador(confianza,support);
             modelo.CargarDatos();
         }
         
@@ -70,6 +70,16 @@ namespace AllersGroup
             Visible = false;
             grafi.Show();
             t.run();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Abrir ventana de parametros
+            Parametros vent = new Parametros(this);
+            vent.StartPosition = FormStartPosition.CenterParent;
+            vent.ShowDialog();
+            
+
         }
     }
 }
