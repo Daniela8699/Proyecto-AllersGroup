@@ -78,7 +78,7 @@ namespace AllersGroup.interfaz
 
         private void butAplicarControladorPF_Click(object sender, EventArgs e)
         {
-        
+            
             //a.cargar(support);
             //MessageBox.Show("Datos Cargados");
             

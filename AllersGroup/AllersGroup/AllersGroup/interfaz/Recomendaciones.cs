@@ -13,31 +13,31 @@ namespace AllersGroup.interfaz
 {
     public partial class Recomendaciones : Form
     {
-        private InterfazPrincipal a;
-        public Recomendaciones(InterfazPrincipal b)
+        private InterfazPrincipal conexion;
+        public Recomendaciones(InterfazPrincipal conexion)
         {
-            a = b;
+            this.conexion = conexion;
             InitializeComponent();
         }
 
         private void inicio_Click(object sender, EventArgs e)
         {
             Transition t = new Transition(new TransitionType_CriticalDamping(2000));
-            t.add(a, "Left", -10);
+            t.add(conexion, "Left", -10);
             Visible = false;
-            a.Show();
+            conexion.Show();
             t.run();
         }
 
         private void info_Click(object sender, EventArgs e)
         {
-            a.info_Click(sender, e);
+            conexion.info_Click(sender, e);
             Visible = false;
         }
 
         private void graf_Click(object sender, EventArgs e)
         {
-            a.graf_Click(sender, e);
+            conexion.graf_Click(sender, e);
             Visible = false;
         }
 
@@ -49,15 +49,7 @@ namespace AllersGroup.interfaz
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
             
-            if(txtSoporte == null)
-            {
-                MessageBox.Show("Por favor aplique un soporte a la aplicación");
-            }
-            else
-            {
-                richTextBox1.Text = "Prueba 1";
-            }
-
+        
 
         }
 
