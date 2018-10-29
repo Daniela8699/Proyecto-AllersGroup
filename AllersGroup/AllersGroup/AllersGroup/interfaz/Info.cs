@@ -61,7 +61,7 @@ namespace AllersGroup.interfaz
         {
 
             richTextBox1.Clear();
-            txtSoporteFP.Text = "";
+           
 
         }
 
@@ -78,7 +78,7 @@ namespace AllersGroup.interfaz
 
         private void butAplicarControladorPF_Click(object sender, EventArgs e)
         {
-            double support = Double.Parse(txtSoporteFP.Text);
+            
             //a.cargar(support);
             //MessageBox.Show("Datos Cargados");
             
