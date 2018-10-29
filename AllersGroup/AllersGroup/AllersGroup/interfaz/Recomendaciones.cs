@@ -48,6 +48,16 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
+            
+            if(txtSoporte == null)
+            {
+                MessageBox.Show("Por favor aplique un soporte a la aplicación");
+            }
+            else
+            {
+                richTextBox1.Text = "Prueba 1";
+            }
+
 
         }
 
@@ -58,7 +68,7 @@ namespace AllersGroup.interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.Clear();
         }
     }
 }
