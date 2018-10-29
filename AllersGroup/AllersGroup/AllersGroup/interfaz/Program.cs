@@ -32,7 +32,7 @@ namespace AllersGroup
 
 
 
-            Console.Read();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InterfazPrincipal());
