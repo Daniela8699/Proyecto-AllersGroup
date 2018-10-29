@@ -10,32 +10,45 @@ namespace AllersGroup
 {
     class Program
     {
+      
         static void Main(string[] args)
         {
 
             //listo
-            Console.WriteLine("Introduzca el support mínimo");
-            double minSup = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Introduzca la confianza mínima");
-            double minConf = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Introduzca el tamaño de agrupaciones de productos [1;7]");
-            int tamanho = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Introduzca el numero de articulos frecuentes que desea");
-            int numArticulos = Convert.ToInt32(Console.ReadLine());
-            Controlador controlador = new Controlador(minConf, minSup);
-            controlador.CargarDatos();
-            Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
-            //controlador.BruteForceMethod(tamanho, numArticulos);
-            controlador.AprioriMethod(tamanho, numArticulos);
+            //Console.WriteLine("Introduzca el support mínimo");
+            //double minSup = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Introduzca la confianza mínima");
+            //double minConf = Convert.ToDouble(Console.ReadLine());
+            //Console.WriteLine("Introduzca el tamaño de agrupaciones de productos [1;7]");
+            //int tamanho = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Introduzca el numero de articulos frecuentes que desea");
+            //int numArticulos = Convert.ToInt32(Console.ReadLine());
+            //Controlador controlador = new Controlador(0.5, 0.015);
+            //controlador.CargarDatos();
+            //Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
+            //controlador.BruteForceMethod(tamanho,numArticulos);
+            //controlador.AprioriMethod(tamanho, numArticulos);
             //controlador.FkMinus1XF1Method(tamanho, numArticulos);
-            Console.WriteLine(controlador.reporte);
+           //string[] lis = controlador.masFrecuentesMetodo2(4, "DISTRIBUIDORES");
+           // for (int i = 0; i < lis.Length; i++)
+           // {
+               
+           //     Console.WriteLine(lis[i]);
+           // }
+            
+               
+
+            
+       
+
+           // Console.ReadLine();
 
 
 
 
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new InterfazPrincipal());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new InterfazPrincipal());
 
 
         }

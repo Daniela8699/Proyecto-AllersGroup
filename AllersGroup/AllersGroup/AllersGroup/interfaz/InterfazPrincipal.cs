@@ -19,8 +19,8 @@ namespace AllersGroup
         private Form recome;
         private Form grafi;
 
+
         Controlador modelo;
-       
      
         public InterfazPrincipal()
         {
@@ -30,12 +30,20 @@ namespace AllersGroup
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
         }
-
+        public void cargar(double support)
+        {
+            modelo = new Controlador(0.5, support);
+            modelo.CargarDatos();
+        }
+        
         private void InterfazPrincipal_Load(object sender, EventArgs e)
         {
             
         }
-
+        public string[] frecuentesCategoria(string cat)
+        {
+            return modelo.masFrecuentesMetodo2(4, cat);
+        }
         public void info_Click(object sender, EventArgs e)
         {
             Transition t = new Transition(new TransitionType_CriticalDamping(2000));

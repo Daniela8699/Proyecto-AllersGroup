@@ -62,18 +62,18 @@ public class Arbol
 
             }
         }
-        public List<string> generarItemsSetsFrecuentes(Nodo raiz, List<string> podaFrecuente)
+    public List<string> generarItemsSetsFrecuentes(Nodo raiz, List<string> podaFrecuente)
+    {
+        foreach (KeyValuePair<string, Nodo> item in raiz.item)
         {
-            foreach (KeyValuePair<string, Nodo> item in raiz.item)
+            if (!item.Value.Visited && item.Value.Count > minSupportCount)
             {
-                if (!item.Value.Visited && item.Value.Count > minSupportCount)
-                {
-                    item.Value.Visited = true;
-                    podaFrecuente.Add(item.Key);
-                    generarItemsSetsFrecuentes(item.Value, podaFrecuente);
-                }
+                item.Value.Visited = true;
+                if (!podaFrecuente.Contains(item.Key)) podaFrecuente.Add(item.Key);
+                generarItemsSetsFrecuentes(item.Value, podaFrecuente);
             }
-            return podaFrecuente;
         }
+        return podaFrecuente;
     }
+}
 

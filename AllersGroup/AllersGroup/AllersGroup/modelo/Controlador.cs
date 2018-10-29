@@ -192,7 +192,39 @@ public class Controlador
         }
         return respuesta;
     }
+    public string[] masFrecuentesMetodo2(int num,String cat)
+    {
+        int[] respuesta = new int[num];
+        Dictionary<string, int> apariciones = new Dictionary<string, int>();
+        List<Venta> ventass = agruparLista(cat);
+        foreach (var a in ventass)
+        {
+            if (!apariciones.ContainsKey(a.ItemCode))
+            {
+                apariciones.Add(a.ItemCode, 0);
+            }
+            else
+            {
+                apariciones[a.ItemCode] = apariciones[a.ItemCode] + 1;
+            }
 
+        }
+        int[] respuestas = apariciones.Values.ToArray();
+        Organizar(respuestas);
+        for (int i = 0; i < num; i++)
+        {
+            String Key = apariciones.FirstOrDefault(x => x.Value == respuestas[i]).Key;
+            respuesta[i] = Convert.ToInt32(Key);
+            apariciones[Key] = -1;
+        }
+        string[] respuesta2 = new string[num];
+        for (int i = 0; i < respuesta.Count(); i++)
+        {
+            
+            respuesta2[i] = busquedaNombreItem(respuesta[i]+"");
+        }
+        return respuesta2;
+    }
     public void Organizar(int[] A)
     {
         QuickSort(A, 0, A.Length - 1);
@@ -292,6 +324,7 @@ public class Controlador
             int contador = 0;
             foreach (var s in m)
             {
+                
                 trans[contador] = s.ItemCode;
                 contador++;
             }
@@ -312,12 +345,31 @@ public class Controlador
         Console.WriteLine("El mayor item set es \n");
         foreach (string item in itemsFrecuentes)
         {
-            Console.WriteLine(" " + item);
+            string nombre = busquedaNombreItem(item);
+            Console.WriteLine(nombre+ "\n");
         }
         Console.ReadLine();
     }
-
-
+    public String busquedaNombreItem(string item)
+    {
+        string nombre = "";
+        int item1 = Int16.Parse(item);
+        var x = articulos.First(n =>n.ItemCode == item1);
+        nombre = x.ItemName;
+        return nombre;
+    }
+    public Cliente busquedaCliente(String cardcode)
+    {
+        var cliente = clientes.FirstOrDefault(n => n.CardCode.Equals(cardcode));
+        return cliente;
+    }
+  
+    public List<Venta> agruparLista(string cat)
+    {
+       
+        List<Venta> ventas2 = ventas.Where(t => busquedaCliente(t.CardCode) != null&&busquedaCliente(t.CardCode).GroupName.Equals(cat)).ToList();
+        return ventas2;
+    }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
     //Método para UnitTest
