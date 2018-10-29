@@ -326,6 +326,11 @@ public class Controlador
         nombre = x.ItemName;
         return nombre;
     }
+    public Cliente busquedaCliente(String cardcode)
+    {
+        var cliente = clientes.First(n => n.CardCode.Equals(cardcode));
+        return cliente;
+    }
    public List<Cliente> agruparClientesCat(string cat)
     {
         var lista = clientes.Where(n=> n.GroupName.Equals(cat)).ToList();
