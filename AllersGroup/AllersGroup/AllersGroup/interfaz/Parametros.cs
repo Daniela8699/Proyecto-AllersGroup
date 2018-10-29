@@ -38,7 +38,6 @@ namespace AllersGroup.interfaz
 
               
                 conexion.cargar(support,confianza,NumArticulos,TamAgrupaciones);
-                MessageBox.Show("Se cargo el programa correctamente");
                 Visible = false;
 
             }

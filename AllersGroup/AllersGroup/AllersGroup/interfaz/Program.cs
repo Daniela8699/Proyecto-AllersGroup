@@ -33,10 +33,6 @@ namespace AllersGroup
 
 
 
-
-
-
-
             // Console.ReadLine();
 
             Application.EnableVisualStyles();
