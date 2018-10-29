@@ -92,14 +92,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(464, 335);
+            this.groupBox1.Size = new System.Drawing.Size(592, 342);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos más frecuentados";
             // 
             // butLimpiarInfoPF
             // 
-            this.butLimpiarInfoPF.Location = new System.Drawing.Point(162, 289);
+            this.butLimpiarInfoPF.Location = new System.Drawing.Point(234, 295);
             this.butLimpiarInfoPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.butLimpiarInfoPF.Name = "butLimpiarInfoPF";
             this.butLimpiarInfoPF.Size = new System.Drawing.Size(158, 30);
@@ -113,7 +113,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(44, 53);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(392, 223);
+            this.richTextBox1.Size = new System.Drawing.Size(508, 222);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
