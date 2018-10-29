@@ -11,9 +11,11 @@ namespace AllersGroup.modelo
         private String reporte;
         private double minCon;
         private double minSup;
+        private String asociaciones;
         public string Reporte { get => reporte; set => reporte = value; }
         public double MinCon { get => minCon; set => minCon = value; }
         public double MinSup { get => minSup; set => minSup = value; }
+        public string Asociaciones { get => asociaciones; set => asociaciones = value; }
 
         public Apriori(double minCon, double minSup)
         {
@@ -188,7 +190,7 @@ namespace AllersGroup.modelo
                 }
             }
             reporte += mensaje + "\n";
-
+            Asociaciones = mensaje + "\n";
         }
         public String AsociacionCompleta(List<int> todas)
         {
