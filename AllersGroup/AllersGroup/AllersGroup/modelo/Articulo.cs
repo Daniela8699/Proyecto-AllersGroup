@@ -23,5 +23,10 @@ namespace AllersGroup
         public string ItemName { get => itemName; set => itemName = value; }
         public String ItemClasification { get => itemClasification; set => itemClasification = value; }
 
+        public bool esItemCode(int pItemCode)
+        {
+            return ItemCode == pItemCode;
+        }
+
     }
 }

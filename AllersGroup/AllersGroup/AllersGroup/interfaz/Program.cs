@@ -23,25 +23,21 @@ namespace AllersGroup
             //int tamanho = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Introduzca el numero de articulos frecuentes que desea");
             //int numArticulos = Convert.ToInt32(Console.ReadLine());
-            //Controlador controlador = new Controlador(0.5, 0.015);
+            //Controlador controlador = new Controlador(minConf, minSup);
             //controlador.CargarDatos();
             //Console.WriteLine("---------------------------------------------------------------------------------------------------------------------  \n");
-            //controlador.BruteForceMethod(tamanho,numArticulos);
+            //controlador.BruteForceMethod(tamanho, numArticulos);
             //controlador.AprioriMethod(tamanho, numArticulos);
+            //Console.WriteLine(controlador.Promociones());
             //controlador.FkMinus1XF1Method(tamanho, numArticulos);
-           //string[] lis = controlador.masFrecuentesMetodo2(4, "DISTRIBUIDORES");
-           // for (int i = 0; i < lis.Length; i++)
-           // {
-               
-           //     Console.WriteLine(lis[i]);
-           // }
-            
-               
 
-            
-       
 
-           // Console.ReadLine();
+
+
+
+
+
+            // Console.ReadLine();
 
 
 

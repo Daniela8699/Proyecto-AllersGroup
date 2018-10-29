@@ -19,6 +19,9 @@ namespace AllersGroup.modelo
         public double MinCon { get => minCon; set => minCon = value; }
         public double MinSup { get => minSup; set => minSup = value; }
         public string Asociaciones { get => asociaciones; set => asociaciones = value; }
+        public List<List<int>> Implicantes { get => implicantes; set => implicantes = value; }
+        public List<List<int>> Implicados { get => implicados; set => implicados = value; }
+        public List<List<int>> Completas { get => completas; set => completas = value; }
 
         public Apriori(double minCon, double minSup)
         {

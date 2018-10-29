@@ -21,6 +21,7 @@ public class Controlador
     private List<Articulo> articulos;
     private List<Cliente> clientes;
     private List<Venta> ventas;
+    private List<String> asociaciones;
     public double minSuport = 0;
     public double minCon = 0;
 
@@ -41,6 +42,7 @@ public class Controlador
         clientes = new List<Cliente>();
         ventas = new List<Venta>();
         combinaciones = new List<List<Articulo>>();
+        asociaciones = new List<String>();
         brute = new BruteForce();
         apriori = new Apriori(minConf,minSup);
         fkmin = new FkMinus(minSup, minConf);
@@ -261,6 +263,15 @@ public class Controlador
         A[i] = x;
         return i;
     }
+    public String Promociones()
+    {
+        String mensaje = "------------------------------------------------------------------------\nPROMOCIONES\nCon una mínima confianza de: " + minCon*100 + "%\n Le aseguramos que según el patrón de los datos de sus ventas\n";
+        foreach(var n in asociaciones)
+        {
+            mensaje += n;
+        }
+        return mensaje;
+    }
    
     //APLICACIÓN DE ESTRATEGIA DE FUERZA BRUTA***************
 
@@ -280,6 +291,19 @@ public class Controlador
     {
         int[] darItemCode = masFrecuentesMetodo(numArti);
         apriori.Generar(tamanho, ventas, darItemCode);
+        List<List<int>> izq = apriori.Implicantes;
+        List<List<int>> der = apriori.Implicados;
+        List<List<int>> completas = apriori.Completas;
+        int reglas = izq.Count;
+        for(int i = 0; i < reglas; i++)
+        {
+            ConvertirAsociaciones(izq.ElementAt(i), der.ElementAt(i));
+        }
+        foreach (var n in completas)
+        {
+            ConvertirAsociacionesCompletas(n);
+        }
+
         reporte += apriori.Reporte;
     }
 
@@ -350,14 +374,6 @@ public class Controlador
         }
         Console.ReadLine();
     }
-    public String busquedaNombreItem(string item)
-    {
-        string nombre = "";
-        int item1 = Int16.Parse(item);
-        var x = articulos.First(n =>n.ItemCode == item1);
-        nombre = x.ItemName;
-        return nombre;
-    }
     public Cliente busquedaCliente(String cardcode)
     {
         var cliente = clientes.FirstOrDefault(n => n.CardCode.Equals(cardcode));
@@ -369,6 +385,58 @@ public class Controlador
        
         List<Venta> ventas2 = ventas.Where(t => busquedaCliente(t.CardCode) != null&&busquedaCliente(t.CardCode).GroupName.Equals(cat)).ToList();
         return ventas2;
+    }
+
+    // FIN APLIACION ESTRATEGIA FP----------------------------------------------------------------------------------------------------------------
+
+    public void ConvertirAsociaciones(List<int> izq, List<int> der)
+    {
+        if (izq.Count() != 0)
+        {
+            String asociacion = " \nAl comprar los siguientes Items\n";
+            foreach (var n in izq)
+            {
+                asociacion += "- " + this.BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+            }
+            asociacion += "\n Implica que su cliente puede comprar:\n";
+            foreach (var x in der)
+            {
+                asociacion += "- " + this.BuscarNombreItemCode(x) + " ItemCode: " + x + "\n";
+            }
+            asociacion += "-------------------------------------------------------------------------------------------------\n";
+            asociaciones.Add(asociacion);
+        }
+    }
+    public void ConvertirAsociacionesCompletas(List<int> com)
+    {
+        String asociacion = "\nAl comprar cualquiera de los siguientes Items\n";
+        foreach(var n in com)
+        {
+            asociacion +="- " + BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+        }
+        asociacion += "Implica que puede comprar cualquiera de los demás\n------------------------------------------------------------------------------------------------ -\n";;
+        asociaciones.Add(asociacion);
+    }
+    public String busquedaNombreItem(string item)
+    {
+        string nombre = "";
+        int item1 = Int16.Parse(item);
+        var x = articulos.First(n => n.ItemCode == item1);
+        nombre = x.ItemName;
+        return nombre;
+    }
+    public String BuscarNombreItemCode(int itemCode)
+    {
+        String mensaje = "";
+        foreach (var n in articulos)
+        {
+            if (n.esItemCode(itemCode))
+            {
+                mensaje += n.ItemName;
+                break;
+            }
+        }
+        return mensaje;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
