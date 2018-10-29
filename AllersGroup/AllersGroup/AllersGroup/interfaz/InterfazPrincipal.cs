@@ -42,7 +42,7 @@ namespace AllersGroup
         }
         public string[] frecuentesCategoria(string cat)
         {
-           return modelo.masFrecuentesMetodo2(4,cat)
+            return modelo.masFrecuentesMetodo2(4, cat);
         }
         public void info_Click(object sender, EventArgs e)
         {

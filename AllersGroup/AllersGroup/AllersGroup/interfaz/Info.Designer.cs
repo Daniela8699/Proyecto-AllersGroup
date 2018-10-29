@@ -116,7 +116,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(508, 222);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-           
             // 
             // groupBox2
             // 
@@ -136,7 +135,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(231, 401);
+            this.groupBox2.Size = new System.Drawing.Size(231, 381);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Clasificación de Clientes";
@@ -151,6 +150,7 @@
             this.butMedAmbulC.TabIndex = 37;
             this.butMedAmbulC.Text = "MED LAB OP AMBUL";
             this.butMedAmbulC.UseVisualStyleBackColor = true;
+            this.butMedAmbulC.Click += new System.EventHandler(this.butMedAmbulC_Click);
             // 
             // butDrogFarmaciaMiscC
             // 
@@ -174,6 +174,7 @@
             this.butOdontoCentroOdontoC.TabIndex = 35;
             this.butOdontoCentroOdontoC.Text = "Odonto centro odonto";
             this.butOdontoCentroOdontoC.UseVisualStyleBackColor = true;
+            this.butOdontoCentroOdontoC.Click += new System.EventHandler(this.butOdontoCentroOdontoC_Click);
             // 
             // butVeterinarioC
             // 
@@ -185,6 +186,7 @@
             this.butVeterinarioC.TabIndex = 34;
             this.butVeterinarioC.Text = "Veterinarios";
             this.butVeterinarioC.UseVisualStyleBackColor = true;
+            this.butVeterinarioC.Click += new System.EventHandler(this.butVeterinarioC_Click);
             // 
             // butBellezayEsteticaC
             // 
@@ -196,6 +198,7 @@
             this.butBellezayEsteticaC.TabIndex = 33;
             this.butBellezayEsteticaC.Text = "Belleza y estética";
             this.butBellezayEsteticaC.UseVisualStyleBackColor = true;
+            this.butBellezayEsteticaC.Click += new System.EventHandler(this.butBellezayEsteticaC_Click);
             // 
             // butAlmacenCadenaC
             // 
@@ -207,6 +210,7 @@
             this.butAlmacenCadenaC.TabIndex = 32;
             this.butAlmacenCadenaC.Text = "Almacenes de cadena";
             this.butAlmacenCadenaC.UseVisualStyleBackColor = true;
+            this.butAlmacenCadenaC.Click += new System.EventHandler(this.butAlmacenCadenaC_Click);
             // 
             // butNoDedicadoSaludC
             // 
@@ -218,6 +222,7 @@
             this.butNoDedicadoSaludC.TabIndex = 31;
             this.butNoDedicadoSaludC.Text = "No dedicado a salud";
             this.butNoDedicadoSaludC.UseVisualStyleBackColor = true;
+            this.butNoDedicadoSaludC.Click += new System.EventHandler(this.butNoDedicadoSaludC_Click);
             // 
             // butCPublicasC
             // 
@@ -229,6 +234,7 @@
             this.butCPublicasC.TabIndex = 30;
             this.butCPublicasC.Text = "Clinicas Públicas";
             this.butCPublicasC.UseVisualStyleBackColor = true;
+            this.butCPublicasC.Click += new System.EventHandler(this.butCPublicasC_Click);
             // 
             // butCPrivadaC
             // 
@@ -240,6 +246,7 @@
             this.butCPrivadaC.TabIndex = 29;
             this.butCPrivadaC.Text = "Clinicas Privadas";
             this.butCPrivadaC.UseVisualStyleBackColor = true;
+            this.butCPrivadaC.Click += new System.EventHandler(this.butCPrivadaC_Click);
             // 
             // butDistribuidorC
             // 

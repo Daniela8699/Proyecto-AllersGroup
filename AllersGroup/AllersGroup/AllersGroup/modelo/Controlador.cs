@@ -221,7 +221,7 @@ public class Controlador
         for (int i = 0; i < respuesta.Count(); i++)
         {
             
-            respuesta2[i] = busquedaNombreItem(respuesta[i]);
+            respuesta2[i] = busquedaNombreItem(respuesta[i]+"");
         }
         return respuesta2;
     }
