@@ -179,7 +179,7 @@
             // 
             this.butDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidor.Location = new System.Drawing.Point(41, 291);
-            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2);
             this.butDistribuidor.Name = "butDistribuidor";
             this.butDistribuidor.Size = new System.Drawing.Size(174, 26);
             this.butDistribuidor.TabIndex = 7;
@@ -194,9 +194,9 @@
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(259, 139);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(556, 338);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
@@ -205,7 +205,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(216, 305);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 28);
             this.button1.TabIndex = 1;
@@ -216,7 +216,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(57, 44);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(441, 241);
             this.richTextBox1.TabIndex = 0;

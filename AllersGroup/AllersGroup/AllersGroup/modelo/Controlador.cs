@@ -22,6 +22,9 @@ public class Controlador
     private List<Cliente> clientes;
     private List<Venta> ventas;
     private List<String> asociaciones;
+    private int numArticulos;
+    private int tamanhoAgrupaciones;
+    private int[,] matrizDeSimilitud;
     public double minSuport = 0;
     public double minCon = 0;
 
@@ -35,6 +38,8 @@ public class Controlador
     public List<Articulo> Articulos { get => articulos; set => articulos = value; }
     public List<Cliente> Clientes { get => clientes; set => clientes = value; }
     public List<Venta> Ventas { get => ventas; set => ventas = value; }
+    public int NumArticulos { get => numArticulos; set => numArticulos = value; }
+    public int TamanhoAgrupaciones { get => tamanhoAgrupaciones; set => tamanhoAgrupaciones = value; }
 
     public Controlador(double minConf, double minSup)
     {
@@ -56,6 +61,9 @@ public class Controlador
         CargarArticulos();
         CargarClientes();
         CargarVentas(rutaVentas);
+        CargarItemsClientes();
+        CargarMatrizDeSimilitud(0.8);
+        AsignarSimilares();
     }
 
     public void CargarDatosPrueba()
@@ -72,7 +80,17 @@ public class Controlador
     {
         return articulos.Count();
     }
+    public String ImprimirMatrizSimilitud(int i)
+    {
+        String mensaje = "";
+            for (int j = 0; j < matrizDeSimilitud.GetLength(1); j++)
+            {
+                if (j == matrizDeSimilitud.Length - 1) mensaje += matrizDeSimilitud[i, j] + "\n";
+                else mensaje +="Numero: " + j + " " + matrizDeSimilitud[i, j] + " ";
+            }
 
+        return mensaje;
+    }
     public void CargarArticulos()
     {
         String line;
@@ -104,6 +122,7 @@ public class Controlador
         String line;
         try
         {
+            int index = 0;
             StreamReader sr = new StreamReader(rutaClientes);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
@@ -116,9 +135,11 @@ public class Controlador
                     String city = todo[2];
                     String department = todo[3];
                     String paymentGroup = todo[4];
-                    clientes.Add(new Cliente(cardCode, groupName, city, department, paymentGroup));
+                    clientes.Add(new Cliente(cardCode, groupName, city, department, paymentGroup, index));
+                    index++;
                 }
             }
+            matrizDeSimilitud = new int[clientes.Count(), clientes.Count()];
             sr.Close();
         }
         catch
@@ -168,7 +189,76 @@ public class Controlador
             throw new Exception("Error al cargar las Ventas");
         }
     }
+    public Cliente buscarClienteEnLista(String cardCode)
+    {
+        Cliente buscado = null;
+        foreach (var x in clientes)
+        {
+            if (x.esCliente(cardCode))
+            {
+                buscado = x;
+                break;
+            }
+        }
+        return buscado;
+    }
+    public void CargarItemsClientes()
+    {
+        foreach(var x in ventas)
+        {
+            Cliente buscado = buscarClienteEnLista(x.CardCode);
+            int itemCode = Convert.ToInt32(x.ItemCode);
+            if (!buscado.ArticuloRepetido(itemCode))
+                {
+                    buscado.Comprados.Add(itemCode);
+                }     
+        }
+    }
 
+    public void CargarMatrizDeSimilitud(double porcentaje)
+    {
+        Cliente[] temp = clientes.ToArray();
+        for(int i = 0; i < temp.Length; i++)
+        {
+            Cliente actual = temp[i];
+            for (int j = 0; j < temp.Length; j++)
+            {
+                if(i == j)
+                {
+                    matrizDeSimilitud[i, j] = 0;
+                }
+                else
+                {
+                    Cliente actual2 = temp[j];
+                    matrizDeSimilitud[i, j] = actual.RelacionConCliente(porcentaje, actual2);
+                }
+            }
+        }
+    }
+    public void AsignarSimilares()
+    {
+        foreach(var x in clientes)
+        {
+            AsignarSimilaresDiv(x);
+        }
+    }
+    public void AsignarSimilaresDiv(Cliente x)
+    {
+        int index = x.Pos;
+        for (int i = 0; i < matrizDeSimilitud.GetLength(1); i++)
+        {
+            if(matrizDeSimilitud[index,i]== 1)
+            {
+                x.Similares.Add(clientes.ElementAt(i));
+            }
+        }
+    }
+    
+    public String ReporteSimiliares(String cardCodeBuscado)
+    {
+        Cliente buscado = buscarClienteEnLista(cardCodeBuscado);
+        return buscado.ImprimirClientesSimilares();
+    }
     public int[] masFrecuentesMetodo(int num)
     {
         int[] respuesta = new int[num];
@@ -290,6 +380,8 @@ public class Controlador
     // APLICACIÓN ESTRATEGIA A-PRIORI *****************
     public void AprioriMethod(int tamanho, int numArti)
     {
+        TamanhoAgrupaciones = tamanho;
+        NumArticulos = numArticulos;
         int[] darItemCode = masFrecuentesMetodo(numArti);
         apriori.Generar(tamanho, ventas, darItemCode);
         List<List<int>> izq = apriori.Implicantes;
@@ -324,6 +416,7 @@ public class Controlador
 
     // APLICACIÓN ESTRATEGIA FP   *****************
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
+
 
     public void estrategiaFP()
     {
