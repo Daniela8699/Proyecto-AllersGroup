@@ -421,7 +421,7 @@ public class Controlador
     public string estrategiaFP(List<Venta> ventas)
     {
         String mensaje = "";
-        int supCount = (int)(minSuport * getNumVentas());
+        int supCount = (int)(minSuport * ventas.GroupBy(a => a.DocNum).Count());
         algoritmoFP = new FP(supCount);
         List<List<Object>> listaRepeticiones= new List<List<Object>>();
 
@@ -464,8 +464,9 @@ public class Controlador
         mensaje += "El mayor item set es \n";
         foreach (string item in itemsFrecuentes)
         {
-            string nombre = busquedaNombreItem(item);
-            mensaje+=nombre+ "\n";
+            // string nombre = busquedaNombreItem(item);
+            string nombre = item;
+            mensaje +=nombre+ "\n";
         }
         return mensaje;
     }
@@ -543,7 +544,7 @@ public class Controlador
         {
             DateTime mayorFechaCliente = cliente.Max(e => e.DocDate);
             TimeSpan diferencia = mayorFecha - mayorFechaCliente;
-            if(diferencia.Days>60)
+            if(diferencia.Days>15)
             {
                 retorno.Add(cliente.FirstOrDefault().CardCode);
             }
@@ -559,6 +560,11 @@ public class Controlador
         Cliente buscado = buscarClienteEnLista(cliente);
         List<Cliente> similares = buscado.Similares;
         List<Venta> ventasSimilares = new List<Venta>();
+        String mensaje = "";
+        mensaje += buscado.CardCode;
+        if (similares.Count == 0) mensaje = "No hay similares";
+        else
+        {
 
         foreach (var a in similares)
         {
@@ -567,9 +573,15 @@ public class Controlador
                 if (e.CardCode.Equals(a.CardCode)) ventasSimilares.Add(e);
             }
         }
-        String mensaje = "Los items para recuperar dicho cliente con mayor probabilidad a partir de los similares son: "+ "\n";
+        if (ventasSimilares.Count > 20)
+        {
+            mensaje = "Los items para recuperar dicho cliente con mayor probabilidad a partir de los similares son: " + "\n";
+            mensaje += estrategiaFP(ventasSimilares);
 
-        mensaje+=estrategiaFP(ventasSimilares);
+        }
+        else mensaje += "No hay suficientes ventas para predecir un cliente";
+        }
+
 
         return mensaje;
     }

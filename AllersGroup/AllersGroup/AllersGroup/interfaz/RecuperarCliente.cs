@@ -10,11 +10,40 @@ using System.Windows.Forms;
 
 namespace AllersGroup.interfaz
 {
-    public partial class RecuperarCliente : Form
+    public partial class PanelRecuperar : Form
     {
-        public RecuperarCliente()
+        private InterfazPrincipal conexion;
+        public PanelRecuperar(InterfazPrincipal conexion)
         {
+            this.conexion = conexion;
             InitializeComponent();
+        }
+
+        private void PanelRecuperar_Load(object sender, EventArgs e)
+        {
+            List<String> clientes= conexion.modelo.darClientesRecuperar();
+
+            foreach (var a in clientes)
+            {
+                listBox1.Items.Add(a);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String seleccionado = (String)listBox1.SelectedItem;
+            richTextBox1.Text=conexion.modelo.ItemsRecuperar(seleccionado);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String seleccionado = (String)listBox1.SelectedItem;
+            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
         }
     }
 }

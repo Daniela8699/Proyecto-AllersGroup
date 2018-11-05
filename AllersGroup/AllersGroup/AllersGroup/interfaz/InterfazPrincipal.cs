@@ -21,7 +21,7 @@ namespace AllersGroup
         private Form recup;
 
 
-        Controlador modelo;
+        public Controlador modelo;
 
         private string mensaje;
         public InterfazPrincipal()
@@ -31,7 +31,7 @@ namespace AllersGroup
             infor = new Info(this);
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
-            recup = new RecuperarCliente();
+            recup = new PanelRecuperar(this);
         }
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {          
