@@ -38,7 +38,7 @@ namespace AllersGroup
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");
             mensaje = modelo.Promociones();
-
+            
         }
         
         private void InterfazPrincipal_Load(object sender, EventArgs e)
