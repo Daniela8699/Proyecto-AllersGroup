@@ -75,6 +75,12 @@
     <Compile Include="interfaz\Recomendaciones.Designer.cs">
       <DependentUpon>Recomendaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\ReporteCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\ReporteCliente.Designer.cs">
+      <DependentUpon>ReporteCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelo\Apriori.cs" />
     <Compile Include="modelo\Arbol.cs" />
     <Compile Include="modelo\Articulo.cs" />
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Recomendaciones.resx">
       <DependentUpon>Recomendaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\ReporteCliente.resx">
+      <DependentUpon>ReporteCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -33,6 +33,7 @@
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.butReporteCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // info
@@ -73,6 +74,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // butReporteCliente
+            // 
+            this.butReporteCliente.Location = new System.Drawing.Point(1068, 93);
+            this.butReporteCliente.Name = "butReporteCliente";
+            this.butReporteCliente.Size = new System.Drawing.Size(102, 34);
+            this.butReporteCliente.TabIndex = 4;
+            this.butReporteCliente.Text = "Reporte Cliente";
+            this.butReporteCliente.UseVisualStyleBackColor = true;
+            this.butReporteCliente.Click += new System.EventHandler(this.butReporteCliente_Click);
+            // 
             // InterfazPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -81,6 +92,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.butReporteCliente);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Label recom;
         private System.Windows.Forms.Label graf;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butReporteCliente;
     }
 }

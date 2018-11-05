@@ -95,5 +95,13 @@ namespace AllersGroup
             
 
         }
+
+        private void butReporteCliente_Click(object sender, EventArgs e)
+        {
+            ReporteCliente vent = new ReporteCliente();
+            vent.StartPosition = FormStartPosition.CenterParent;
+            Visible = false;
+            vent.Show();
+        }
     }
 }
