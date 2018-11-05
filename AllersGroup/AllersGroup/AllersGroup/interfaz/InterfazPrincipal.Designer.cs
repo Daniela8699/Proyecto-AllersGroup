@@ -33,6 +33,7 @@
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.butRecuperarCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // info
@@ -73,6 +74,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // butRecuperarCliente
+            // 
+            this.butRecuperarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butRecuperarCliente.Location = new System.Drawing.Point(1031, 90);
+            this.butRecuperarCliente.Name = "butRecuperarCliente";
+            this.butRecuperarCliente.Size = new System.Drawing.Size(125, 50);
+            this.butRecuperarCliente.TabIndex = 4;
+            this.butRecuperarCliente.Text = "Recuperar Cliente";
+            this.butRecuperarCliente.UseVisualStyleBackColor = true;
+            this.butRecuperarCliente.Click += new System.EventHandler(this.butRecuperarCliente_Click);
+            // 
             // InterfazPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -81,6 +93,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.butRecuperarCliente);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Label recom;
         private System.Windows.Forms.Label graf;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butRecuperarCliente;
     }
 }

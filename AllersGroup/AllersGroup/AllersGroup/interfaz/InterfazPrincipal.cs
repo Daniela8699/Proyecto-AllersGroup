@@ -18,6 +18,7 @@ namespace AllersGroup
         private Form infor;
         private Form recome;
         private Form grafi;
+        private Form recup;
 
 
         Controlador modelo;
@@ -30,6 +31,7 @@ namespace AllersGroup
             infor = new Info(this);
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
+            recup = new RecuperarCliente();
         }
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {          
@@ -102,6 +104,12 @@ namespace AllersGroup
             //vent.StartPosition = FormStartPosition.CenterParent;
             //Visible = false;
             //vent.Show();
+        }
+
+        private void butRecuperarCliente_Click(object sender, EventArgs e)
+        {
+            Visible = false;
+            recup.Show();
         }
     }
 }

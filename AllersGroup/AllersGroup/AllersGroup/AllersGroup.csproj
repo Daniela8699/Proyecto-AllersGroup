@@ -75,6 +75,12 @@
     <Compile Include="interfaz\Recomendaciones.Designer.cs">
       <DependentUpon>Recomendaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\RecuperarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\RecuperarCliente.Designer.cs">
+      <DependentUpon>RecuperarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelo\Apriori.cs" />
     <Compile Include="modelo\Arbol.cs" />
     <Compile Include="modelo\Articulo.cs" />
