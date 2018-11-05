@@ -418,8 +418,9 @@ public class Controlador
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
 
 
-    public void estrategiaFP()
+    public string estrategiaFP(List<Venta> ventas)
     {
+        String mensaje = "";
         int supCount = (int)(minSuport * getNumVentas());
         algoritmoFP = new FP(supCount);
         List<List<Object>> listaRepeticiones= new List<List<Object>>();
@@ -460,13 +461,13 @@ public class Controlador
         }
         List<string> itemsFrecuentes = new List<string>();
         itemsFrecuentes = tree.generarItemsSetsFrecuentes(tree.raiz, itemsFrecuentes);
-        Console.WriteLine("El mayor item set es \n");
+        mensaje += "El mayor item set es \n";
         foreach (string item in itemsFrecuentes)
         {
             string nombre = busquedaNombreItem(item);
-            Console.WriteLine(nombre+ "\n");
+            mensaje+=nombre+ "\n";
         }
-        Console.ReadLine();
+        return mensaje;
     }
     public Cliente busquedaCliente(String cardcode)
     {
@@ -553,19 +554,24 @@ public class Controlador
     {
         return ventas.Max(a=>a.DocDate);
     }
-    public List<int> ItemsRecuperar(String cliente)
+    public String ItemsRecuperar(String cliente)
     {
-        var a = ventas.GroupBy(e => e.CardCode).Where(c=>c.FirstOrDefault().CardCode.Equals(cliente));
-        List<int> ventaCliente = new List<int>();
-        foreach (var trans in a)
+        Cliente buscado = buscarClienteEnLista(cliente);
+        List<Cliente> similares = buscado.Similares;
+        List<Venta> ventasSimilares = new List<Venta>();
+
+        foreach (var a in similares)
         {
-            DateTime max = trans.Max(e=>e.DocDate);
-            foreach (var venta in trans)
+            foreach (var e in ventas)
             {
-                if (venta.DocDate == max) ventaCliente.Add(Convert.ToInt32(venta.ItemCode));
+                if (e.CardCode.Equals(a.CardCode)) ventasSimilares.Add(e);
             }
         }
-        return ventaCliente;
+        String mensaje = "Los items para recuperar dicho cliente con mayor probabilidad a partir de los similares son: "+ "\n";
+
+        mensaje+=estrategiaFP(ventasSimilares);
+
+        return mensaje;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
