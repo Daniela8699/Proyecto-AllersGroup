@@ -342,7 +342,7 @@ public class Controlador
 
         List<string> listaEncontrada = new List<string>();
 
-        var x = ventas.GroupBy(n => n.CardCode);
+        var x = ventas.GroupBy(n => n.DocNum);
         foreach (var m in x)
         {
             String[] trans = new String[m.Count()];
@@ -438,6 +438,41 @@ public class Controlador
             }
         }
         return mensaje;
+    }
+    
+    public List<String> darClientesRecuperar()
+    {
+        List<String> retorno= new List<String>();
+        var a = ventas.GroupBy(e => e.CardCode);
+        DateTime mayorFecha = this.mayorFecha();
+        foreach (var cliente in a)
+        {
+            DateTime mayorFechaCliente = cliente.Max(e => e.DocDate);
+            TimeSpan diferencia = mayorFecha - mayorFechaCliente;
+            if(diferencia.Days>60)
+            {
+                retorno.Add(cliente.FirstOrDefault().CardCode);
+            }
+        }
+        return retorno;
+    }
+    public DateTime mayorFecha()
+    {
+        return ventas.Max(a=>a.DocDate);
+    }
+    public List<int> ItemsRecuperar(String cliente)
+    {
+        var a = ventas.GroupBy(e => e.CardCode).Where(c=>c.FirstOrDefault().CardCode.Equals(cliente));
+        List<int> ventaCliente = new List<int>();
+        foreach (var trans in a)
+        {
+            DateTime max = trans.Max(e=>e.DocDate);
+            foreach (var venta in trans)
+            {
+                if (venta.DocDate == max) ventaCliente.Add(Convert.ToInt32(venta.ItemCode));
+            }
+        }
+        return ventaCliente;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------
