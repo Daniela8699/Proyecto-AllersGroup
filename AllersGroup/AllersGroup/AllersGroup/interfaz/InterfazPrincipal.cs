@@ -90,33 +90,24 @@ namespace AllersGroup
             t.run();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    
+   
+
+        public void label1_Click(object sender, EventArgs e)
+        {
+            Transition t = new Transition(new TransitionType_CriticalDamping(2000));
+            t.add(infor, "Left", -10);
+            Visible = false;
+            recup.Show();
+            t.run();
+        }
+
+        private void parametros_Click(object sender, EventArgs e)
         {
             //Abrir ventana de parametros
             Parametros vent = new Parametros(this);
             vent.StartPosition = FormStartPosition.CenterParent;
             vent.ShowDialog();
-            
-
-        }
-
-        private void butReporteCliente_Click(object sender, EventArgs e)
-        {
-            //ReporteCliente vent = new ReporteCliente();
-            //vent.StartPosition = FormStartPosition.CenterParent;
-            //Visible = false;
-            //vent.Show();
-        }
-
-        private void butRecuperarCliente_Click(object sender, EventArgs e)
-        {
-            Visible = false;
-            recup.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

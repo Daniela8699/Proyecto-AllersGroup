@@ -56,5 +56,10 @@ namespace AllersGroup.interfaz
 
         }
 
+        private void recup_Click(object sender, EventArgs e)
+        {
+            a.label1_Click(sender, e);
+            Visible = false;
+        }
     }
 }

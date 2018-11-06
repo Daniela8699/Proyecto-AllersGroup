@@ -46,6 +46,7 @@
             this.butCPublicasC = new System.Windows.Forms.Button();
             this.butCPrivadaC = new System.Windows.Forms.Button();
             this.butDistribuidorC = new System.Windows.Forms.Button();
+            this.recup = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             // inicio
             // 
             this.inicio.BackColor = System.Drawing.Color.Transparent;
-            this.inicio.Location = new System.Drawing.Point(824, 53);
+            this.inicio.Location = new System.Drawing.Point(752, 53);
             this.inicio.Name = "inicio";
             this.inicio.Size = new System.Drawing.Size(53, 17);
             this.inicio.TabIndex = 1;
@@ -62,7 +63,7 @@
             // recom
             // 
             this.recom.BackColor = System.Drawing.Color.Transparent;
-            this.recom.Location = new System.Drawing.Point(993, 53);
+            this.recom.Location = new System.Drawing.Point(903, 53);
             this.recom.Name = "recom";
             this.recom.Size = new System.Drawing.Size(107, 17);
             this.recom.TabIndex = 2;
@@ -255,12 +256,22 @@
             this.butDistribuidorC.UseVisualStyleBackColor = true;
             this.butDistribuidorC.Click += new System.EventHandler(this.butDistribuidorC_Click);
             // 
+            // recup
+            // 
+            this.recup.BackColor = System.Drawing.Color.Transparent;
+            this.recup.Location = new System.Drawing.Point(1028, 53);
+            this.recup.Name = "recup";
+            this.recup.Size = new System.Drawing.Size(72, 26);
+            this.recup.TabIndex = 29;
+            this.recup.Click += new System.EventHandler(this.recup_Click);
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1219, 557);
+            this.Controls.Add(this.recup);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.graf);
@@ -297,5 +308,6 @@
         private System.Windows.Forms.Button butDistribuidorC;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button butLimpiarInfoPF;
+        private System.Windows.Forms.Label recup;
     }
 }

@@ -32,24 +32,23 @@
             this.info = new System.Windows.Forms.Label();
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.butRecuperarCliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.parametros = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // info
             // 
             this.info.BackColor = System.Drawing.Color.Transparent;
-            this.info.Location = new System.Drawing.Point(894, 49);
+            this.info.Location = new System.Drawing.Point(809, 49);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(88, 33);
+            this.info.Size = new System.Drawing.Size(83, 33);
             this.info.TabIndex = 0;
             this.info.Click += new System.EventHandler(this.info_Click);
             // 
             // recom
             // 
             this.recom.BackColor = System.Drawing.Color.Transparent;
-            this.recom.Location = new System.Drawing.Point(988, 49);
+            this.recom.Location = new System.Drawing.Point(907, 49);
             this.recom.Name = "recom";
             this.recom.Size = new System.Drawing.Size(110, 22);
             this.recom.TabIndex = 1;
@@ -58,42 +57,29 @@
             // graf
             // 
             this.graf.BackColor = System.Drawing.Color.Transparent;
-            this.graf.Location = new System.Drawing.Point(1113, 49);
+            this.graf.Location = new System.Drawing.Point(1112, 49);
             this.graf.Name = "graf";
             this.graf.Size = new System.Drawing.Size(58, 22);
             this.graf.TabIndex = 2;
             this.graf.Click += new System.EventHandler(this.graf_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1045, 620);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Parámetros";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // butRecuperarCliente
-            // 
-            this.butRecuperarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butRecuperarCliente.Location = new System.Drawing.Point(1031, 90);
-            this.butRecuperarCliente.Name = "butRecuperarCliente";
-            this.butRecuperarCliente.Size = new System.Drawing.Size(125, 50);
-            this.butRecuperarCliente.TabIndex = 4;
-            this.butRecuperarCliente.Text = "Recuperar Cliente";
-            this.butRecuperarCliente.UseVisualStyleBackColor = true;
-            this.butRecuperarCliente.Click += new System.EventHandler(this.butRecuperarCliente_Click);
-            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(1028, 49);
+            this.label1.Location = new System.Drawing.Point(1023, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 33);
             this.label1.TabIndex = 5;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // parametros
+            // 
+            this.parametros.BackColor = System.Drawing.Color.Transparent;
+            this.parametros.Location = new System.Drawing.Point(1012, 588);
+            this.parametros.Name = "parametros";
+            this.parametros.Size = new System.Drawing.Size(169, 46);
+            this.parametros.TabIndex = 6;
+            this.parametros.Click += new System.EventHandler(this.parametros_Click);
             // 
             // InterfazPrincipal
             // 
@@ -103,9 +89,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.parametros);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.butRecuperarCliente);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
             this.Controls.Add(this.info);
@@ -127,8 +112,7 @@
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Label recom;
         private System.Windows.Forms.Label graf;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button butRecuperarCliente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label parametros;
     }
 }

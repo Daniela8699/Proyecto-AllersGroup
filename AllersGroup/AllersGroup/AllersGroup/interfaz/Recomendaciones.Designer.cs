@@ -47,13 +47,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.recup = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // inicio
             // 
             this.inicio.BackColor = System.Drawing.Color.Transparent;
-            this.inicio.Location = new System.Drawing.Point(826, 50);
+            this.inicio.Location = new System.Drawing.Point(749, 50);
             this.inicio.Name = "inicio";
             this.inicio.Size = new System.Drawing.Size(52, 23);
             this.inicio.TabIndex = 0;
@@ -62,7 +63,7 @@
             // info
             // 
             this.info.BackColor = System.Drawing.Color.Transparent;
-            this.info.Location = new System.Drawing.Point(897, 50);
+            this.info.Location = new System.Drawing.Point(798, 50);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(86, 33);
             this.info.TabIndex = 1;
@@ -71,7 +72,7 @@
             // graf
             // 
             this.graf.BackColor = System.Drawing.Color.Transparent;
-            this.graf.Location = new System.Drawing.Point(1111, 50);
+            this.graf.Location = new System.Drawing.Point(1113, 50);
             this.graf.Name = "graf";
             this.graf.Size = new System.Drawing.Size(60, 23);
             this.graf.TabIndex = 2;
@@ -179,7 +180,7 @@
             // 
             this.butDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidor.Location = new System.Drawing.Point(41, 291);
-            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2);
             this.butDistribuidor.Name = "butDistribuidor";
             this.butDistribuidor.Size = new System.Drawing.Size(174, 26);
             this.butDistribuidor.TabIndex = 7;
@@ -194,9 +195,9 @@
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(259, 139);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(556, 338);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
@@ -205,7 +206,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(216, 305);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(146, 28);
             this.button1.TabIndex = 1;
@@ -216,12 +217,21 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(57, 44);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(441, 241);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // recup
+            // 
+            this.recup.BackColor = System.Drawing.Color.Transparent;
+            this.recup.Location = new System.Drawing.Point(1032, 50);
+            this.recup.Name = "recup";
+            this.recup.Size = new System.Drawing.Size(60, 33);
+            this.recup.TabIndex = 19;
+            this.recup.Click += new System.EventHandler(this.recup_Click);
             // 
             // Recomendaciones
             // 
@@ -229,6 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.recup);
             this.Controls.Add(this.butDistribuidor);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.graf);
@@ -266,5 +277,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label recup;
     }
 }
