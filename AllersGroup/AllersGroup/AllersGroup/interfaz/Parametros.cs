@@ -5,11 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AllersGroup.interfaz
 {
+
+
+
     public partial class Parametros : Form
     {
 
@@ -20,12 +24,28 @@ namespace AllersGroup.interfaz
 
             this.conexion = conexion;
             InitializeComponent();
+            pictureBox1.Visible = false;
+        }
+
+        public void mostrarGif()
+        {
+            pictureBox1.Visible = true;
         }
 
         private void butIniciarProgram_Click(object sender, EventArgs e)
         {
 
-            if (txtSoporte==null || txtConfianza == null || txtNumArticulos ==null || txtTamAgrupaciones ==null)
+
+            ThreadStart delegado = new ThreadStart(cargarHilo);
+            Thread hilo = new Thread(delegado);
+            hilo.Start();
+
+            mostrarGif();   
+        }
+
+        public void cargarHilo()
+        {
+            if (txtSoporte == null || txtConfianza == null || txtNumArticulos == null || txtTamAgrupaciones == null)
             {
                 MessageBox.Show("Por favor complete todos los campos");
             }
@@ -36,13 +56,17 @@ namespace AllersGroup.interfaz
                 int NumArticulos = Convert.ToInt32(txtNumArticulos.Text);
                 int TamAgrupaciones = Convert.ToInt32(txtTamAgrupaciones.Text);
 
-              
                 conexion.cargar(support,confianza,NumArticulos,TamAgrupaciones);
-                Visible = false;
+
 
             }
 
+           
 
+        }
+            private void Parametros_Load(object sender, EventArgs e)
+        {
+           // pictureBox1.Visible = false;    
         }
     }
 }

@@ -19,6 +19,7 @@ namespace AllersGroup
         private Form recome;
         private Form grafi;
         private Form recup;
+        private Form parametro;
 
 
         public Controlador modelo;
@@ -32,6 +33,7 @@ namespace AllersGroup
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
+            parametro = new Parametros(this);
         }
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
@@ -42,6 +44,7 @@ namespace AllersGroup
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");
             mensaje = modelo.Promociones();
+            parametro.Visible = false;
             
         }
         
