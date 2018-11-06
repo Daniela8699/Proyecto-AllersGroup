@@ -19,11 +19,13 @@ namespace AllersGroup
         private Form recome;
         private Form grafi;
         private Form recup;
+        private Form parametro;
 
 
         public Controlador modelo;
 
         private string mensaje;
+        private double conf;
         public InterfazPrincipal()
         {
            
@@ -32,6 +34,7 @@ namespace AllersGroup
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
+            parametro = new Parametros(this);
         }
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
@@ -42,8 +45,12 @@ namespace AllersGroup
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");
             mensaje = modelo.Promociones();
-            
+            conf = confianza;
+        
         }
+
+        
+
         
         private void InterfazPrincipal_Load(object sender, EventArgs e)
         {
@@ -61,7 +68,14 @@ namespace AllersGroup
             return mensaje;
         }
 
+        public String darConfianza()
+        {
 
+            double porcentaje = conf * 100;
+            String confianza = ""+porcentaje;
+            return confianza;
+        }
+       
 
         public void info_Click(object sender, EventArgs e)
         {

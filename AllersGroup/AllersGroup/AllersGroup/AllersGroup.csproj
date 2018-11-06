@@ -182,6 +182,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="loading gif\loading-icon.gif" />
     <Content Include="Resources\Gráfico.png" />
     <Content Include="Resources\Info.png" />
     <Content Include="Resources\Inicio.png" />

@@ -103,6 +103,16 @@ namespace AllersGroup.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loading_icon {
+            get {
+                object obj = ResourceManager.GetObject("loading-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Recomendaciones {
             get {
                 object obj = ResourceManager.GetObject("Recomendaciones", resourceCulture);
