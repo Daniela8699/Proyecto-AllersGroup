@@ -48,6 +48,7 @@ namespace AllersGroup
         private void InterfazPrincipal_Load(object sender, EventArgs e)
         {
             
+
         }
         public string[] frecuentesCategoria(string cat)
         {
