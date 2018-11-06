@@ -81,11 +81,8 @@
     <Compile Include="interfaz\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\RecuperarCliente.cs">
+    <Compile Include="interfaz\PanelRecuperar.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\PanelRecuperar.Designer.cs">
-      <DependentUpon>RecuperarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaz\Parametros.cs">
       <SubType>Form</SubType>
@@ -172,16 +169,13 @@
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\PanelRecuperar.resx">
-      <DependentUpon>RecuperarCliente.cs</DependentUpon>
+      <DependentUpon>PanelRecuperar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Parametros.resx">
       <DependentUpon>Parametros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Recomendaciones.resx">
       <DependentUpon>Recomendaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\RecuperarCliente.resx">
-      <DependentUpon>RecuperarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\ReporteRecomendaciones.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">

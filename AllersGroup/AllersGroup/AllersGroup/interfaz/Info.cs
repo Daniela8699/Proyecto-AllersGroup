@@ -180,5 +180,10 @@ namespace AllersGroup.interfaz
             a.label1_Click(sender, e);
             Visible = false;
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
