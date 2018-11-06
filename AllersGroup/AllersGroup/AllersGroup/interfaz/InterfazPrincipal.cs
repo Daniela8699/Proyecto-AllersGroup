@@ -111,5 +111,10 @@ namespace AllersGroup
             Visible = false;
             recup.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

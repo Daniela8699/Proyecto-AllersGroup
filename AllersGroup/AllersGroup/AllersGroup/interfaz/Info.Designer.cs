@@ -84,9 +84,9 @@
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(315, 134);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(562, 342);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
@@ -95,7 +95,7 @@
             // butLimpiarInfoPF
             // 
             this.butLimpiarInfoPF.Location = new System.Drawing.Point(234, 295);
-            this.butLimpiarInfoPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butLimpiarInfoPF.Margin = new System.Windows.Forms.Padding(2);
             this.butLimpiarInfoPF.Name = "butLimpiarInfoPF";
             this.butLimpiarInfoPF.Size = new System.Drawing.Size(158, 30);
             this.butLimpiarInfoPF.TabIndex = 1;
@@ -106,7 +106,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(44, 53);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(508, 222);
             this.richTextBox1.TabIndex = 0;
@@ -127,9 +127,9 @@
             this.groupBox2.Controls.Add(this.butDistribuidorC);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(58, 134);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(231, 381);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
@@ -139,7 +139,7 @@
             // 
             this.butMedAmbulC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butMedAmbulC.Location = new System.Drawing.Point(28, 334);
-            this.butMedAmbulC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butMedAmbulC.Margin = new System.Windows.Forms.Padding(2);
             this.butMedAmbulC.Name = "butMedAmbulC";
             this.butMedAmbulC.Size = new System.Drawing.Size(174, 26);
             this.butMedAmbulC.TabIndex = 37;
@@ -151,7 +151,7 @@
             // 
             this.butDrogFarmaciaMiscC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDrogFarmaciaMiscC.Location = new System.Drawing.Point(28, 302);
-            this.butDrogFarmaciaMiscC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDrogFarmaciaMiscC.Margin = new System.Windows.Forms.Padding(2);
             this.butDrogFarmaciaMiscC.Name = "butDrogFarmaciaMiscC";
             this.butDrogFarmaciaMiscC.Size = new System.Drawing.Size(174, 26);
             this.butDrogFarmaciaMiscC.TabIndex = 36;
@@ -163,7 +163,7 @@
             // 
             this.butOdontoCentroOdontoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butOdontoCentroOdontoC.Location = new System.Drawing.Point(28, 272);
-            this.butOdontoCentroOdontoC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butOdontoCentroOdontoC.Margin = new System.Windows.Forms.Padding(2);
             this.butOdontoCentroOdontoC.Name = "butOdontoCentroOdontoC";
             this.butOdontoCentroOdontoC.Size = new System.Drawing.Size(174, 26);
             this.butOdontoCentroOdontoC.TabIndex = 35;
@@ -175,7 +175,7 @@
             // 
             this.butVeterinarioC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butVeterinarioC.Location = new System.Drawing.Point(28, 241);
-            this.butVeterinarioC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butVeterinarioC.Margin = new System.Windows.Forms.Padding(2);
             this.butVeterinarioC.Name = "butVeterinarioC";
             this.butVeterinarioC.Size = new System.Drawing.Size(174, 26);
             this.butVeterinarioC.TabIndex = 34;
@@ -187,7 +187,7 @@
             // 
             this.butBellezayEsteticaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butBellezayEsteticaC.Location = new System.Drawing.Point(28, 210);
-            this.butBellezayEsteticaC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butBellezayEsteticaC.Margin = new System.Windows.Forms.Padding(2);
             this.butBellezayEsteticaC.Name = "butBellezayEsteticaC";
             this.butBellezayEsteticaC.Size = new System.Drawing.Size(174, 26);
             this.butBellezayEsteticaC.TabIndex = 33;
@@ -199,7 +199,7 @@
             // 
             this.butAlmacenCadenaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAlmacenCadenaC.Location = new System.Drawing.Point(28, 180);
-            this.butAlmacenCadenaC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butAlmacenCadenaC.Margin = new System.Windows.Forms.Padding(2);
             this.butAlmacenCadenaC.Name = "butAlmacenCadenaC";
             this.butAlmacenCadenaC.Size = new System.Drawing.Size(174, 26);
             this.butAlmacenCadenaC.TabIndex = 32;
@@ -211,7 +211,7 @@
             // 
             this.butNoDedicadoSaludC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butNoDedicadoSaludC.Location = new System.Drawing.Point(28, 148);
-            this.butNoDedicadoSaludC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butNoDedicadoSaludC.Margin = new System.Windows.Forms.Padding(2);
             this.butNoDedicadoSaludC.Name = "butNoDedicadoSaludC";
             this.butNoDedicadoSaludC.Size = new System.Drawing.Size(174, 26);
             this.butNoDedicadoSaludC.TabIndex = 31;
@@ -223,7 +223,7 @@
             // 
             this.butCPublicasC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCPublicasC.Location = new System.Drawing.Point(28, 117);
-            this.butCPublicasC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butCPublicasC.Margin = new System.Windows.Forms.Padding(2);
             this.butCPublicasC.Name = "butCPublicasC";
             this.butCPublicasC.Size = new System.Drawing.Size(174, 26);
             this.butCPublicasC.TabIndex = 30;
@@ -235,7 +235,7 @@
             // 
             this.butCPrivadaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCPrivadaC.Location = new System.Drawing.Point(28, 86);
-            this.butCPrivadaC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butCPrivadaC.Margin = new System.Windows.Forms.Padding(2);
             this.butCPrivadaC.Name = "butCPrivadaC";
             this.butCPrivadaC.Size = new System.Drawing.Size(174, 26);
             this.butCPrivadaC.TabIndex = 29;
@@ -247,7 +247,7 @@
             // 
             this.butDistribuidorC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidorC.Location = new System.Drawing.Point(28, 55);
-            this.butDistribuidorC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDistribuidorC.Margin = new System.Windows.Forms.Padding(2);
             this.butDistribuidorC.Name = "butDistribuidorC";
             this.butDistribuidorC.Size = new System.Drawing.Size(174, 26);
             this.butDistribuidorC.TabIndex = 28;
