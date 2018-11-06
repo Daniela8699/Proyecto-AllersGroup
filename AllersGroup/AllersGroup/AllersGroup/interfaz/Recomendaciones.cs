@@ -50,6 +50,9 @@ namespace AllersGroup.interfaz
         {
             //Treer información
             String mensaje = conexion.mensajeRecomenaciones();
+            String confianza = conexion.darConfianza();
+
+            txtConfianza.Text = confianza + "%";
             richTextBox1.Text = mensaje; 
 
         }
@@ -61,10 +64,7 @@ namespace AllersGroup.interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            //Generar reporte
-
-
+            richTextBox1.Clear();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

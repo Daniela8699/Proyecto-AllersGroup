@@ -25,6 +25,7 @@ namespace AllersGroup
         public Controlador modelo;
 
         private string mensaje;
+        private double conf;
         public InterfazPrincipal()
         {
            
@@ -44,9 +45,12 @@ namespace AllersGroup
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");
             mensaje = modelo.Promociones();
-            parametro.Visible = false;
-            
+            conf = confianza;
+        
         }
+
+        
+
         
         private void InterfazPrincipal_Load(object sender, EventArgs e)
         {
@@ -64,7 +68,14 @@ namespace AllersGroup
             return mensaje;
         }
 
+        public String darConfianza()
+        {
 
+            double porcentaje = conf * 100;
+            String confianza = ""+porcentaje;
+            return confianza;
+        }
+       
 
         public void info_Click(object sender, EventArgs e)
         {

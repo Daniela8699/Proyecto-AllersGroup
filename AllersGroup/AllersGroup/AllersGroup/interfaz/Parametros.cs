@@ -18,12 +18,13 @@ namespace AllersGroup.interfaz
     {
 
         private InterfazPrincipal conexion;
-
+        
         public Parametros(InterfazPrincipal conexion)
         {
 
             this.conexion = conexion;
             InitializeComponent();
+            
             pictureBox1.Visible = false;
         }
 
@@ -31,6 +32,9 @@ namespace AllersGroup.interfaz
         {
             pictureBox1.Visible = true;
         }
+
+
+     
 
         private void butIniciarProgram_Click(object sender, EventArgs e)
         {
@@ -40,7 +44,9 @@ namespace AllersGroup.interfaz
             Thread hilo = new Thread(delegado);
             hilo.Start();
 
-            mostrarGif();   
+            mostrarGif();
+            
+
         }
 
         public void cargarHilo()
