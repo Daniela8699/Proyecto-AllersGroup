@@ -61,7 +61,10 @@ namespace AllersGroup.interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
+            
+            //Generar reporte
+
+
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
