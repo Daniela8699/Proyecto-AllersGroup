@@ -365,7 +365,7 @@ public class Controlador
     }
     public String Promociones()
     {
-        String mensaje = "------------------------------------------------------------------------\nPROMOCIONES\nCon una mínima confianza de: " + minCon*100 + "%\n Le aseguramos que según el patrón de los datos de sus ventas\n";
+        String mensaje = " Le aseguramos que según el patrón de los datos de sus ventas\n";
         foreach(var n in asociaciones)
         {
             mensaje += n;

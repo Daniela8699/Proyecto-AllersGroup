@@ -45,11 +45,11 @@
             this.butMedLabOpAmbul = new System.Windows.Forms.Button();
             this.butDistribuidor = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtConfianza = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.recup = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtConfianza = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -210,6 +210,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Promociones recomendadas";
             // 
+            // txtConfianza
+            // 
+            this.txtConfianza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfianza.Location = new System.Drawing.Point(257, 48);
+            this.txtConfianza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfianza.Name = "txtConfianza";
+            this.txtConfianza.Size = new System.Drawing.Size(117, 27);
+            this.txtConfianza.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Con una confianza de: ";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(362, 438);
@@ -223,6 +243,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(34, 95);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
@@ -240,26 +261,6 @@
             this.recup.Size = new System.Drawing.Size(80, 41);
             this.recup.TabIndex = 19;
             this.recup.Click += new System.EventHandler(this.recup_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Con una confianza de: ";
-            // 
-            // txtConfianza
-            // 
-            this.txtConfianza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfianza.Location = new System.Drawing.Point(257, 48);
-            this.txtConfianza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConfianza.Name = "txtConfianza";
-            this.txtConfianza.Size = new System.Drawing.Size(117, 27);
-            this.txtConfianza.TabIndex = 21;
             // 
             // Recomendaciones
             // 
