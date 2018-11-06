@@ -71,10 +71,12 @@ namespace AllersGroup.interfaz
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Location = new System.Drawing.Point(180, 126);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(231, 433);
+            this.listBox1.Size = new System.Drawing.Size(231, 429);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // richTextBox1
             // 
@@ -94,6 +96,7 @@ namespace AllersGroup.interfaz
             this.button1.TabIndex = 2;
             this.button1.Text = "Selección";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -104,6 +107,7 @@ namespace AllersGroup.interfaz
             this.button2.TabIndex = 3;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // inicio
             // 
@@ -164,7 +168,12 @@ namespace AllersGroup.interfaz
 
         private void PanelRecuperar_Load_1(object sender, EventArgs e)
         {
+            List<String> clientes = conexion.modelo.darClientesRecuperar();
 
+            foreach (var a in clientes)
+            {
+                listBox1.Items.Add(a);
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -197,6 +206,23 @@ namespace AllersGroup.interfaz
         {
             conexion.graf_Click(sender, e);
             Visible = false;
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            String seleccionado = (String)listBox1.SelectedItem;
+            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            String seleccionado = (String)listBox1.SelectedItem;
+            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
         }
     }
 }
