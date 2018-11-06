@@ -41,16 +41,13 @@ namespace AllersGroup.interfaz
             a.recom_Click(sender, e);
             Visible = false;
         }
-
         private void Graficos_Load(object sender, EventArgs e)
         {
-            String[] itulos = {"Hola","Hola 2","Hola 3","Hola 4" };
-            int[] ints = { 2, 1, 3, 4 };
+            int[] masfrecuentes= a.modelo.masFrecuentesMetodo(a.num);
 
-            for (int i = 0; i < itulos.Length; i++)
+            for (int i = 0; i < masfrecuentes.Length; i++)
             {
-                Series agregar = chart1.Series.Add(itulos[i]);
-                agregar.Points.Add(ints[i]);
+            chart1.Series["Series1"].Points.AddXY(a.modelo.BuscarNombreItemCode(masfrecuentes[i]),a.modelo.apariciones(masfrecuentes[i]));
             }
         }
 

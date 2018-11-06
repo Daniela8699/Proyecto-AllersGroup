@@ -33,9 +33,11 @@ namespace AllersGroup
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
         }
+        public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {          
             modelo = new Controlador(confianza,support);
+            num = numArticulos;
             modelo.CargarDatos();
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");

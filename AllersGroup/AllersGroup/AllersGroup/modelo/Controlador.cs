@@ -285,6 +285,15 @@ public class Controlador
         }
         return respuesta;
     }
+    public int apariciones(int codigo)
+    {
+        int contador = 0;
+        foreach (var a in ventas)
+        {
+            if (a.ItemCode.Equals(codigo + "")) contador++;
+        }
+        return contador;
+    }
     public string[] masFrecuentesMetodo2(int num,String cat)
     {
         int[] respuesta = new int[num];

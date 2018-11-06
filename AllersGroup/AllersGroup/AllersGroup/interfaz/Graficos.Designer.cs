@@ -43,27 +43,30 @@
             // inicio
             // 
             this.inicio.BackColor = System.Drawing.Color.Transparent;
-            this.inicio.Location = new System.Drawing.Point(826, 52);
+            this.inicio.Location = new System.Drawing.Point(1652, 100);
+            this.inicio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.inicio.Name = "inicio";
-            this.inicio.Size = new System.Drawing.Size(53, 18);
+            this.inicio.Size = new System.Drawing.Size(106, 35);
             this.inicio.TabIndex = 0;
             this.inicio.Click += new System.EventHandler(this.inicio_Click);
             // 
             // info
             // 
             this.info.BackColor = System.Drawing.Color.Transparent;
-            this.info.Location = new System.Drawing.Point(895, 52);
+            this.info.Location = new System.Drawing.Point(1790, 100);
+            this.info.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(86, 29);
+            this.info.Size = new System.Drawing.Size(172, 56);
             this.info.TabIndex = 1;
             this.info.Click += new System.EventHandler(this.info_Click);
             // 
             // recom
             // 
             this.recom.BackColor = System.Drawing.Color.Transparent;
-            this.recom.Location = new System.Drawing.Point(998, 52);
+            this.recom.Location = new System.Drawing.Point(1996, 100);
+            this.recom.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.recom.Name = "recom";
-            this.recom.Size = new System.Drawing.Size(101, 18);
+            this.recom.Size = new System.Drawing.Size(202, 35);
             this.recom.TabIndex = 2;
             this.recom.Click += new System.EventHandler(this.recom_Click);
             // 
@@ -79,8 +82,8 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(369, 74);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2);
+            this.chart1.Location = new System.Drawing.Point(738, 142);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             series1.ChartArea = "ChartArea1";
@@ -88,22 +91,23 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(331, 376);
+            this.chart1.Size = new System.Drawing.Size(662, 723);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             // 
             // Graficos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.ClientSize = new System.Drawing.Size(2390, 1171);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.recom);
             this.Controls.Add(this.info);
             this.Controls.Add(this.inicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "Graficos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
