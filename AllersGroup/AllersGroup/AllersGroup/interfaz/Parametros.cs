@@ -70,9 +70,9 @@ namespace AllersGroup.interfaz
            
 
         }
-            private void Parametros_Load(object sender, EventArgs e)
+        private void Parametros_Load(object sender, EventArgs e)
         {
-           // pictureBox1.Visible = false;    
+              
         }
     }
 }
