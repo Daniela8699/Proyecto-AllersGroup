@@ -45,12 +45,13 @@ namespace AllersGroup.interfaz
             hilo.Start();
 
             mostrarGif();
-            
+
 
         }
 
         public void cargarHilo()
         {
+            
             if (txtSoporte == null || txtConfianza == null || txtNumArticulos == null || txtTamAgrupaciones == null)
             {
                 MessageBox.Show("Por favor complete todos los campos");
@@ -64,6 +65,7 @@ namespace AllersGroup.interfaz
 
                 conexion.cargar(support,confianza,NumArticulos,TamAgrupaciones);
 
+              
 
             }
 
