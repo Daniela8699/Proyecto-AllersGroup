@@ -77,5 +77,10 @@ namespace AllersGroup.interfaz
             conexion.label1_Click(sender, e);
             Visible = false;
         }
+
+        private void butInfoRecomendaciones_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se aconseja ofrecer una serie de promociones según el marketing que maneje la empresa siguiendo las recomendaciones presentandas de los productos implicados por categoria de clientes");
+        }
     }
 }

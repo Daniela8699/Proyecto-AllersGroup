@@ -47,6 +47,7 @@
             this.butCPrivadaC = new System.Windows.Forms.Button();
             this.butDistribuidorC = new System.Windows.Forms.Button();
             this.recup = new System.Windows.Forms.Label();
+            this.butInfoFrecuentes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.butInfoFrecuentes);
             this.groupBox1.Controls.Add(this.butLimpiarInfoPF);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -271,6 +273,17 @@
             this.recup.TabIndex = 29;
             this.recup.Click += new System.EventHandler(this.recup_Click);
             // 
+            // butInfoFrecuentes
+            // 
+            this.butInfoFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butInfoFrecuentes.Location = new System.Drawing.Point(661, 361);
+            this.butInfoFrecuentes.Name = "butInfoFrecuentes";
+            this.butInfoFrecuentes.Size = new System.Drawing.Size(74, 37);
+            this.butInfoFrecuentes.TabIndex = 12;
+            this.butInfoFrecuentes.Text = "Info";
+            this.butInfoFrecuentes.UseVisualStyleBackColor = true;
+            this.butInfoFrecuentes.Click += new System.EventHandler(this.butInfoFrecuentes_Click);
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,7 +298,7 @@
             this.Controls.Add(this.inicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -316,5 +329,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button butLimpiarInfoPF;
         private System.Windows.Forms.Label recup;
+        private System.Windows.Forms.Button butInfoFrecuentes;
     }
 }

@@ -47,9 +47,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtConfianza = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.recup = new System.Windows.Forms.Label();
+            this.butInfoRecomendaciones = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,9 +196,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.butInfoRecomendaciones);
             this.groupBox2.Controls.Add(this.txtConfianza);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(345, 171);
@@ -230,17 +230,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Con una confianza de: ";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(362, 438);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = " Limpiar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,6 +250,17 @@
             this.recup.Size = new System.Drawing.Size(80, 41);
             this.recup.TabIndex = 19;
             this.recup.Click += new System.EventHandler(this.recup_Click);
+            // 
+            // butInfoRecomendaciones
+            // 
+            this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butInfoRecomendaciones.Location = new System.Drawing.Point(771, 438);
+            this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
+            this.butInfoRecomendaciones.Size = new System.Drawing.Size(74, 37);
+            this.butInfoRecomendaciones.TabIndex = 22;
+            this.butInfoRecomendaciones.Text = "Info";
+            this.butInfoRecomendaciones.UseVisualStyleBackColor = true;
+            this.butInfoRecomendaciones.Click += new System.EventHandler(this.butInfoRecomendaciones_Click);
             // 
             // Recomendaciones
             // 
@@ -307,9 +307,9 @@
         private System.Windows.Forms.Button butDistribuidor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label recup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtConfianza;
+        private System.Windows.Forms.Button butInfoRecomendaciones;
     }
 }
