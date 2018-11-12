@@ -45,11 +45,11 @@
             this.butMedLabOpAmbul = new System.Windows.Forms.Button();
             this.butDistribuidor = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.butInfoRecomendaciones = new System.Windows.Forms.Button();
             this.txtConfianza = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.recup = new System.Windows.Forms.Label();
-            this.butInfoRecomendaciones = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,14 +183,20 @@
             // 
             // butDistribuidor
             // 
-            this.butDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butDistribuidor.Location = new System.Drawing.Point(65, 361);
+            this.butDistribuidor.BackColor = System.Drawing.Color.Transparent;
+            this.butDistribuidor.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butDistribuidor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butDistribuidor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butDistribuidor.FlatAppearance.BorderSize = 0;
+            this.butDistribuidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDistribuidor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDistribuidor.Location = new System.Drawing.Point(53, 391);
             this.butDistribuidor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDistribuidor.Name = "butDistribuidor";
-            this.butDistribuidor.Size = new System.Drawing.Size(232, 32);
+            this.butDistribuidor.Size = new System.Drawing.Size(239, 38);
             this.butDistribuidor.TabIndex = 7;
             this.butDistribuidor.Text = "Generar Asociaciones";
-            this.butDistribuidor.UseVisualStyleBackColor = true;
+            this.butDistribuidor.UseVisualStyleBackColor = false;
             this.butDistribuidor.Click += new System.EventHandler(this.butDistribuidor_Click);
             // 
             // groupBox2
@@ -209,6 +215,20 @@
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Promociones recomendadas";
+            // 
+            // butInfoRecomendaciones
+            // 
+            this.butInfoRecomendaciones.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
+            this.butInfoRecomendaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butInfoRecomendaciones.FlatAppearance.BorderSize = 0;
+            this.butInfoRecomendaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butInfoRecomendaciones.Location = new System.Drawing.Point(786, 438);
+            this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
+            this.butInfoRecomendaciones.Size = new System.Drawing.Size(59, 37);
+            this.butInfoRecomendaciones.TabIndex = 22;
+            this.butInfoRecomendaciones.UseVisualStyleBackColor = true;
+            this.butInfoRecomendaciones.Click += new System.EventHandler(this.butInfoRecomendaciones_Click);
             // 
             // txtConfianza
             // 
@@ -250,17 +270,6 @@
             this.recup.Size = new System.Drawing.Size(80, 41);
             this.recup.TabIndex = 19;
             this.recup.Click += new System.EventHandler(this.recup_Click);
-            // 
-            // butInfoRecomendaciones
-            // 
-            this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoRecomendaciones.Location = new System.Drawing.Point(771, 438);
-            this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
-            this.butInfoRecomendaciones.Size = new System.Drawing.Size(74, 37);
-            this.butInfoRecomendaciones.TabIndex = 22;
-            this.butInfoRecomendaciones.Text = "Info";
-            this.butInfoRecomendaciones.UseVisualStyleBackColor = true;
-            this.butInfoRecomendaciones.Click += new System.EventHandler(this.butInfoRecomendaciones_Click);
             // 
             // Recomendaciones
             // 

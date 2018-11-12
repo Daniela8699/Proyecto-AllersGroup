@@ -124,5 +124,14 @@ namespace AllersGroup
             vent.StartPosition = FormStartPosition.CenterParent;
             vent.ShowDialog();
         }
+
+        private void butParametrosCargar_Click(object sender, EventArgs e)
+        {
+
+            Parametros vent = new Parametros(this);
+            vent.StartPosition = FormStartPosition.CenterParent;
+            vent.ShowDialog();
+
+        }
     }
 }

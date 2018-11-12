@@ -33,6 +33,7 @@
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.butInfoFrecuentes = new System.Windows.Forms.Button();
             this.butLimpiarInfoPF = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,7 +48,6 @@
             this.butCPrivadaC = new System.Windows.Forms.Button();
             this.butDistribuidorC = new System.Windows.Forms.Button();
             this.recup = new System.Windows.Forms.Label();
-            this.butInfoFrecuentes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -98,12 +98,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos más frecuentados";
             // 
+            // butInfoFrecuentes
+            // 
+            this.butInfoFrecuentes.BackColor = System.Drawing.Color.Transparent;
+            this.butInfoFrecuentes.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
+            this.butInfoFrecuentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butInfoFrecuentes.FlatAppearance.BorderSize = 0;
+            this.butInfoFrecuentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butInfoFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butInfoFrecuentes.Location = new System.Drawing.Point(683, 361);
+            this.butInfoFrecuentes.Name = "butInfoFrecuentes";
+            this.butInfoFrecuentes.Size = new System.Drawing.Size(52, 37);
+            this.butInfoFrecuentes.TabIndex = 12;
+            this.butInfoFrecuentes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butInfoFrecuentes.UseVisualStyleBackColor = false;
+            this.butInfoFrecuentes.Click += new System.EventHandler(this.butInfoFrecuentes_Click);
+            this.butInfoFrecuentes.MouseMove += new System.Windows.Forms.MouseEventHandler(this.butInfoFrecuentes_MouseMove);
+            // 
             // butLimpiarInfoPF
             // 
-            this.butLimpiarInfoPF.Location = new System.Drawing.Point(312, 363);
+            this.butLimpiarInfoPF.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butLimpiarInfoPF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butLimpiarInfoPF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butLimpiarInfoPF.FlatAppearance.BorderSize = 0;
+            this.butLimpiarInfoPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butLimpiarInfoPF.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butLimpiarInfoPF.Location = new System.Drawing.Point(553, 363);
             this.butLimpiarInfoPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butLimpiarInfoPF.Name = "butLimpiarInfoPF";
-            this.butLimpiarInfoPF.Size = new System.Drawing.Size(211, 37);
+            this.butLimpiarInfoPF.Size = new System.Drawing.Size(101, 37);
             this.butLimpiarInfoPF.TabIndex = 1;
             this.butLimpiarInfoPF.Text = "Limpiar";
             this.butLimpiarInfoPF.UseVisualStyleBackColor = true;
@@ -145,7 +168,12 @@
             // 
             // butMedAmbulC
             // 
-            this.butMedAmbulC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butMedAmbulC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butMedAmbulC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butMedAmbulC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butMedAmbulC.FlatAppearance.BorderSize = 0;
+            this.butMedAmbulC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butMedAmbulC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butMedAmbulC.Location = new System.Drawing.Point(37, 411);
             this.butMedAmbulC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butMedAmbulC.Name = "butMedAmbulC";
@@ -157,7 +185,12 @@
             // 
             // butDrogFarmaciaMiscC
             // 
-            this.butDrogFarmaciaMiscC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDrogFarmaciaMiscC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butDrogFarmaciaMiscC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butDrogFarmaciaMiscC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butDrogFarmaciaMiscC.FlatAppearance.BorderSize = 0;
+            this.butDrogFarmaciaMiscC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDrogFarmaciaMiscC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDrogFarmaciaMiscC.Location = new System.Drawing.Point(37, 372);
             this.butDrogFarmaciaMiscC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDrogFarmaciaMiscC.Name = "butDrogFarmaciaMiscC";
@@ -169,7 +202,12 @@
             // 
             // butOdontoCentroOdontoC
             // 
-            this.butOdontoCentroOdontoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butOdontoCentroOdontoC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butOdontoCentroOdontoC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butOdontoCentroOdontoC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butOdontoCentroOdontoC.FlatAppearance.BorderSize = 0;
+            this.butOdontoCentroOdontoC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butOdontoCentroOdontoC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butOdontoCentroOdontoC.Location = new System.Drawing.Point(37, 335);
             this.butOdontoCentroOdontoC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butOdontoCentroOdontoC.Name = "butOdontoCentroOdontoC";
@@ -181,7 +219,12 @@
             // 
             // butVeterinarioC
             // 
-            this.butVeterinarioC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butVeterinarioC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butVeterinarioC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butVeterinarioC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butVeterinarioC.FlatAppearance.BorderSize = 0;
+            this.butVeterinarioC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butVeterinarioC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butVeterinarioC.Location = new System.Drawing.Point(37, 297);
             this.butVeterinarioC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butVeterinarioC.Name = "butVeterinarioC";
@@ -193,7 +236,12 @@
             // 
             // butBellezayEsteticaC
             // 
-            this.butBellezayEsteticaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butBellezayEsteticaC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butBellezayEsteticaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butBellezayEsteticaC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butBellezayEsteticaC.FlatAppearance.BorderSize = 0;
+            this.butBellezayEsteticaC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butBellezayEsteticaC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butBellezayEsteticaC.Location = new System.Drawing.Point(37, 258);
             this.butBellezayEsteticaC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butBellezayEsteticaC.Name = "butBellezayEsteticaC";
@@ -205,7 +253,12 @@
             // 
             // butAlmacenCadenaC
             // 
-            this.butAlmacenCadenaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butAlmacenCadenaC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butAlmacenCadenaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butAlmacenCadenaC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butAlmacenCadenaC.FlatAppearance.BorderSize = 0;
+            this.butAlmacenCadenaC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butAlmacenCadenaC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAlmacenCadenaC.Location = new System.Drawing.Point(37, 222);
             this.butAlmacenCadenaC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butAlmacenCadenaC.Name = "butAlmacenCadenaC";
@@ -217,7 +270,12 @@
             // 
             // butNoDedicadoSaludC
             // 
-            this.butNoDedicadoSaludC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butNoDedicadoSaludC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butNoDedicadoSaludC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butNoDedicadoSaludC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butNoDedicadoSaludC.FlatAppearance.BorderSize = 0;
+            this.butNoDedicadoSaludC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butNoDedicadoSaludC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butNoDedicadoSaludC.Location = new System.Drawing.Point(37, 182);
             this.butNoDedicadoSaludC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butNoDedicadoSaludC.Name = "butNoDedicadoSaludC";
@@ -229,7 +287,12 @@
             // 
             // butCPublicasC
             // 
-            this.butCPublicasC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCPublicasC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butCPublicasC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butCPublicasC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butCPublicasC.FlatAppearance.BorderSize = 0;
+            this.butCPublicasC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butCPublicasC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCPublicasC.Location = new System.Drawing.Point(37, 144);
             this.butCPublicasC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butCPublicasC.Name = "butCPublicasC";
@@ -241,7 +304,12 @@
             // 
             // butCPrivadaC
             // 
-            this.butCPrivadaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butCPrivadaC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butCPrivadaC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butCPrivadaC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butCPrivadaC.FlatAppearance.BorderSize = 0;
+            this.butCPrivadaC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butCPrivadaC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butCPrivadaC.Location = new System.Drawing.Point(37, 106);
             this.butCPrivadaC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butCPrivadaC.Name = "butCPrivadaC";
@@ -253,7 +321,12 @@
             // 
             // butDistribuidorC
             // 
-            this.butDistribuidorC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butDistribuidorC.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butDistribuidorC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butDistribuidorC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butDistribuidorC.FlatAppearance.BorderSize = 0;
+            this.butDistribuidorC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDistribuidorC.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidorC.Location = new System.Drawing.Point(37, 68);
             this.butDistribuidorC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDistribuidorC.Name = "butDistribuidorC";
@@ -272,17 +345,6 @@
             this.recup.Size = new System.Drawing.Size(96, 32);
             this.recup.TabIndex = 29;
             this.recup.Click += new System.EventHandler(this.recup_Click);
-            // 
-            // butInfoFrecuentes
-            // 
-            this.butInfoFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoFrecuentes.Location = new System.Drawing.Point(661, 361);
-            this.butInfoFrecuentes.Name = "butInfoFrecuentes";
-            this.butInfoFrecuentes.Size = new System.Drawing.Size(74, 37);
-            this.butInfoFrecuentes.TabIndex = 12;
-            this.butInfoFrecuentes.Text = "Info";
-            this.butInfoFrecuentes.UseVisualStyleBackColor = true;
-            this.butInfoFrecuentes.Click += new System.EventHandler(this.butInfoFrecuentes_Click);
             // 
             // Info
             // 

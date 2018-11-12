@@ -18,11 +18,7 @@ namespace AllersGroup.interfaz
         {
             a = b;
             InitializeComponent();
-
-
-            Bitmap imagenBotonInfoOscuro = new Bitmap(Application.StartupPath+@"\Resources\BotonInfoOscuro.jpeg");
-            butInfoFrecuentes.Image = imagenBotonInfoOscuro;
-
+            
 
         }
         private void Info_Load(object sender, EventArgs e)
@@ -194,7 +190,13 @@ namespace AllersGroup.interfaz
 
         private void butInfoFrecuentes_Click(object sender, EventArgs e)
         {
+            
             MessageBox.Show("Se presentan los articulos que son mas frecuentes \n por cada tipo de cliente de la empresa");
+        }
+
+        private void butInfoFrecuentes_MouseMove(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

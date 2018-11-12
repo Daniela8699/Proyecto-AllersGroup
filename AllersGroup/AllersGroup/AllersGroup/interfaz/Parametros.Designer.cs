@@ -126,32 +126,38 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(272, 55);
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(272, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(228, 20);
+            this.label5.Size = new System.Drawing.Size(214, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "PARAMETROS DE INICIO";
             // 
             // butIniciarProgram
             // 
-            this.butIniciarProgram.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butIniciarProgram.Location = new System.Drawing.Point(216, 376);
+            this.butIniciarProgram.BackColor = System.Drawing.Color.Transparent;
+            this.butIniciarProgram.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butIniciarProgram.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butIniciarProgram.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butIniciarProgram.FlatAppearance.BorderSize = 0;
+            this.butIniciarProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butIniciarProgram.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butIniciarProgram.Location = new System.Drawing.Point(205, 376);
             this.butIniciarProgram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butIniciarProgram.Name = "butIniciarProgram";
             this.butIniciarProgram.Size = new System.Drawing.Size(124, 34);
             this.butIniciarProgram.TabIndex = 9;
-            this.butIniciarProgram.Text = "Inicio";
-            this.butIniciarProgram.UseVisualStyleBackColor = true;
+            this.butIniciarProgram.Text = "Cargar";
+            this.butIniciarProgram.UseVisualStyleBackColor = false;
             this.butIniciarProgram.Click += new System.EventHandler(this.butIniciarProgram_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::AllersGroup.Properties.Resources.loading_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(397, 327);
+            this.pictureBox1.Location = new System.Drawing.Point(392, 341);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 110);
+            this.pictureBox1.Size = new System.Drawing.Size(108, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;

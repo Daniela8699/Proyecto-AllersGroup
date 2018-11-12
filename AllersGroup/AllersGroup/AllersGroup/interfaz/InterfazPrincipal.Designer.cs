@@ -33,7 +33,7 @@
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.parametros = new System.Windows.Forms.Label();
+            this.butParametrosCargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // info
@@ -72,24 +72,32 @@
             this.label1.TabIndex = 5;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // parametros
+            // butParametrosCargar
             // 
-            this.parametros.BackColor = System.Drawing.Color.Transparent;
-            this.parametros.Location = new System.Drawing.Point(1012, 588);
-            this.parametros.Name = "parametros";
-            this.parametros.Size = new System.Drawing.Size(169, 46);
-            this.parametros.TabIndex = 6;
-            this.parametros.Click += new System.EventHandler(this.parametros_Click);
+            this.butParametrosCargar.BackColor = System.Drawing.Color.Transparent;
+            this.butParametrosCargar.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butParametrosCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butParametrosCargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butParametrosCargar.FlatAppearance.BorderSize = 0;
+            this.butParametrosCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butParametrosCargar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butParametrosCargar.Location = new System.Drawing.Point(965, 610);
+            this.butParametrosCargar.Name = "butParametrosCargar";
+            this.butParametrosCargar.Size = new System.Drawing.Size(162, 35);
+            this.butParametrosCargar.TabIndex = 6;
+            this.butParametrosCargar.Text = "Parámetros";
+            this.butParametrosCargar.UseVisualStyleBackColor = false;
+            this.butParametrosCargar.Click += new System.EventHandler(this.butParametrosCargar_Click);
             // 
             // InterfazPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1202, 685);
-            this.Controls.Add(this.parametros);
+            this.Controls.Add(this.butParametrosCargar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
@@ -113,6 +121,6 @@
         private System.Windows.Forms.Label recom;
         private System.Windows.Forms.Label graf;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label parametros;
+        private System.Windows.Forms.Button butParametrosCargar;
     }
 }
