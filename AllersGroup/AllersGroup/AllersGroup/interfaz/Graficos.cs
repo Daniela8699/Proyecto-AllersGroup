@@ -49,6 +49,9 @@ namespace AllersGroup.interfaz
             {
             chart1.Series["Series1"].Points.AddXY(a.modelo.BuscarNombreItemCode(masfrecuentes[i]),a.modelo.apariciones(masfrecuentes[i]));
             }
+            //chart1.Series["Series1"].LabelForeColor = Color.White;
+            chart1.Series["Series1"].IsValueShownAsLabel = false;
+            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
