@@ -18,6 +18,12 @@ namespace AllersGroup.interfaz
         {
             a = b;
             InitializeComponent();
+
+
+            Bitmap imagenBotonInfoOscuro = new Bitmap(Application.StartupPath+@"\Resources\BotonInfoOscuro.jpeg");
+            butInfoFrecuentes.Image = imagenBotonInfoOscuro;
+
+
         }
         private void Info_Load(object sender, EventArgs e)
         {
