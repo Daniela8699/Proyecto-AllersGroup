@@ -46,6 +46,7 @@ namespace AllersGroup.interfaz
 
             mostrarGif();
 
+            Visible = false;
 
         }
 
@@ -65,7 +66,7 @@ namespace AllersGroup.interfaz
 
                 conexion.cargar(support,confianza,NumArticulos,TamAgrupaciones);
 
-              
+                
 
             }
 

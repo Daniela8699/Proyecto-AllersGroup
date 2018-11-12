@@ -75,10 +75,12 @@
             // butParametrosCargar
             // 
             this.butParametrosCargar.BackColor = System.Drawing.Color.Transparent;
-            this.butParametrosCargar.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butParametrosCargar.BackgroundImage = global::AllersGroup.Properties.Resources.BotonClaro;
             this.butParametrosCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.butParametrosCargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butParametrosCargar.FlatAppearance.BorderSize = 0;
+            this.butParametrosCargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.butParametrosCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.butParametrosCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butParametrosCargar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butParametrosCargar.Location = new System.Drawing.Point(965, 610);
@@ -86,12 +88,11 @@
             this.butParametrosCargar.Size = new System.Drawing.Size(162, 35);
             this.butParametrosCargar.TabIndex = 6;
             this.butParametrosCargar.Text = "Parámetros";
-            this.butParametrosCargar.UseVisualStyleBackColor = false;
             this.butParametrosCargar.Click += new System.EventHandler(this.butParametrosCargar_Click);
             // 
             // InterfazPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
