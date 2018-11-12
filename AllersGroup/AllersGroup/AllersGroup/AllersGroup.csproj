@@ -184,6 +184,8 @@
   <ItemGroup>
     <None Include="loading gif\loading-icon.gif" />
     <None Include="loading gif\iconoInfo.png" />
+    <Content Include="Resources\BotonInfoClaro.jpeg" />
+    <Content Include="Resources\BotonInfoOscuro.jpeg" />
     <Content Include="Resources\Gráfico.png" />
     <Content Include="Resources\Info.png" />
     <Content Include="Resources\Inicio.png" />
