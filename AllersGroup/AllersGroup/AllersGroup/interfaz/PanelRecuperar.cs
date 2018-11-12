@@ -228,8 +228,10 @@ namespace AllersGroup.interfaz
 
         private void PanelRecuperar_Load_1(object sender, EventArgs e)
         {
-            List<String> clientes = conexion.modelo.darClientesRecuperar();
-
+            //List<String> clientes = conexion.modelo.darClientesRecuperar();
+            List<String> clientes = new List<string>();
+            clientes.Add("CN9657");
+            clientes.Add("CN4173");
             foreach (var a in clientes)
             {
                 listBox1.Items.Add(a);
