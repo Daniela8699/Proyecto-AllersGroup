@@ -46,7 +46,7 @@ namespace AllersGroup.interfaz
 
             mostrarGif();
 
-            Visible = false;
+            //Visible = false;
 
         }
 
@@ -59,12 +59,13 @@ namespace AllersGroup.interfaz
             }
             else
             {
-                double support = Double.Parse(txtSoporte.Text);
+
+                double soporte = Double.Parse(txtSoporte.Text);
                 double confianza = Double.Parse(txtConfianza.Text);
                 int NumArticulos = Convert.ToInt32(txtNumArticulos.Text);
                 int TamAgrupaciones = Convert.ToInt32(txtTamAgrupaciones.Text);
 
-                conexion.cargar(support,confianza,NumArticulos,TamAgrupaciones);
+                conexion.cargar(soporte,confianza,NumArticulos,TamAgrupaciones);
 
                 
 
