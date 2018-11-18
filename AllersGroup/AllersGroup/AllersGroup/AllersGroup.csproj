@@ -65,7 +65,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Transitions">
-      <HintPath>..\..\..\..\..\..\Dropbox\Universidad Icesi\Quinto semestre\Integrador\Transitions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\TransitionsLibrary_1_2\Transitions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +184,7 @@
   <ItemGroup>
     <None Include="loading gif\loading-icon.gif" />
     <None Include="loading gif\iconoInfo.png" />
+    <Content Include="Resources\BotonClaro.png" />
     <Content Include="Resources\BotonInfoClaro.jpeg" />
     <Content Include="Resources\BotonInfoOscuro.jpeg" />
     <Content Include="Resources\BotonOscuro.png" />

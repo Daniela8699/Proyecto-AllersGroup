@@ -80,7 +80,7 @@ namespace AllersGroup.interfaz
             // 
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 17;
             this.listBox1.Location = new System.Drawing.Point(263, 239);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(231, 344);
@@ -104,13 +104,16 @@ namespace AllersGroup.interfaz
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(315, 601);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 37);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Selecconar";
+            this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -121,8 +124,11 @@ namespace AllersGroup.interfaz
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Location = new System.Drawing.Point(796, 601);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 37);
@@ -174,7 +180,7 @@ namespace AllersGroup.interfaz
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(258, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Clientes";
             // 
@@ -185,7 +191,7 @@ namespace AllersGroup.interfaz
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(618, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 25);
+            this.label2.Size = new System.Drawing.Size(167, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Similitud entre clientes";
             // 
@@ -196,7 +202,7 @@ namespace AllersGroup.interfaz
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(78, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 36);
+            this.label3.Size = new System.Drawing.Size(215, 29);
             this.label3.TabIndex = 10;
             this.label3.Text = "Recuperar clientes";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -208,6 +214,8 @@ namespace AllersGroup.interfaz
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(960, 601);

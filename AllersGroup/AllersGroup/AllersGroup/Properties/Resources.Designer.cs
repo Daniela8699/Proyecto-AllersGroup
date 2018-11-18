@@ -63,6 +63,16 @@ namespace AllersGroup.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BotonClaro {
+            get {
+                object obj = ResourceManager.GetObject("BotonClaro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonInfoOscuro {
             get {
                 object obj = ResourceManager.GetObject("BotonInfoOscuro", resourceCulture);
