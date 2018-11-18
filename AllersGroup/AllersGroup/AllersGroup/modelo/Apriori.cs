@@ -46,7 +46,7 @@ namespace AllersGroup.modelo
             while (i <= tamanho)
             {
                 List<List<int>> combinacion = CombinacionHasta7(i, poda);
-                List<int> repeticiones = RepeticionEnVentas(combinacion,ventas);
+                List<int> repeticiones = RepeticionEnVentas(combinacion, ventas);
                 int temp2 = repeticiones.Count();
                 for (int x = 0; x < temp2; x++)
                 {
@@ -74,7 +74,7 @@ namespace AllersGroup.modelo
             List<List<List<int>>> reglas = new List<List<List<int>>>();
             foreach (var n in temp)
             {
-                List<List<int>> combinacion = AprioriGenRules(n,ventas,numVentas);
+                List<List<int>> combinacion = AprioriGenRules(n, ventas, numVentas);
                 if (combinacion == null)
                 {
                     reporte += "No se pueden generar reglas no triviales con grupos de 1 elemento \n";
@@ -132,7 +132,7 @@ namespace AllersGroup.modelo
                             temp.Add(indices[j]);
                         }
                     }
-                    temp = RecursionAprioriGenRules(temp, indices[i],ventas, numVentas);
+                    temp = RecursionAprioriGenRules(temp, indices[i], ventas, numVentas);
                     if (temp != null)
                     {
 
@@ -147,9 +147,9 @@ namespace AllersGroup.modelo
         }
         public List<int> RecursionAprioriGenRules(List<int> temporal, int generar, List<Venta> ventas, int numVentas)
         {
-            double countPequeña = (double)RepeticionEnVentasUnitario(temporal,ventas) / numVentas;
+            double countPequeña = (double)RepeticionEnVentasUnitario(temporal, ventas) / numVentas;
             temporal.Add(generar);
-            double countGrande = (double)RepeticionEnVentasUnitario(temporal,ventas) / numVentas;
+            double countGrande = (double)RepeticionEnVentasUnitario(temporal, ventas) / numVentas;
 
             double conf = countGrande / countPequeña;
             if (conf >= minCon)
@@ -201,6 +201,7 @@ namespace AllersGroup.modelo
             }
             implicantes.Add(izquierdo);
             implicados.Add(derecho);
+
             reporte += mensaje + "\n";
             Asociaciones = mensaje + "\n";
         }
@@ -226,7 +227,7 @@ namespace AllersGroup.modelo
             }
 
             return retorno;
-        }
+        } 
 
         public List<int> RepeticionEnVentas(List<List<int>> todo, List<Venta> ventas)
         {
