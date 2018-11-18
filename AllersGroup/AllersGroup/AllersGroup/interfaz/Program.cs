@@ -40,6 +40,8 @@ namespace AllersGroup
             Application.Run(new InterfazPrincipal());
 
 
+
+
         }
     }
 }
