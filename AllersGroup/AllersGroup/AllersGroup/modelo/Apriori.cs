@@ -199,8 +199,16 @@ namespace AllersGroup.modelo
                     mensaje += n + " ";
                 }
             }
+            int resultado = ImplicanteExistente(izquierdo);
+            if(resultado != -1)
+            {
+                OrganizarImplicados(resultado, derecho);
+            }
+            else
+            {
             implicantes.Add(izquierdo);
             implicados.Add(derecho);
+            }
 
             reporte += mensaje + "\n";
             Asociaciones = mensaje + "\n";
@@ -264,6 +272,53 @@ namespace AllersGroup.modelo
                 }
             }
             return count;
+        }
+
+        public int ImplicanteExistente(List<int> izq)
+        {
+            int count = 0;
+            int indexAux = 0;
+            int index = -1;
+            int tamanho = izq.Count();
+            
+            foreach(var m in implicantes)
+            {
+                if(m.Count == tamanho)
+                {
+                    foreach (var x in izq)
+                    {
+                        if (m.Contains(x))
+                        {
+                            count++;
+                        }
+                    }
+                    if(count == tamanho)
+                    {
+                        index = indexAux;
+                        break;
+                    }
+                    else
+                    { 
+                        count = 0;
+                    }
+                }
+                indexAux++;
+            }
+
+            return index;
+           
+
+        }
+
+        public void OrganizarImplicados (int index, List<int> der)
+        {
+            foreach( var n in der)
+            {
+                if (!implicados.ElementAt(index).Contains(n))
+                {
+                    implicados.ElementAt(index).Add(n);
+                }
+            }
         }
 
         //Método supremamente extenso.
