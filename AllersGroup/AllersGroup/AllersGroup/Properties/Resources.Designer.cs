@@ -153,9 +153,29 @@ namespace AllersGroup.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PanelCliente_Articulo {
+            get {
+                object obj = ResourceManager.GetObject("PanelCliente-Articulo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Recomendaciones {
             get {
                 object obj = ResourceManager.GetObject("Recomendaciones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RecuperarCliente {
+            get {
+                object obj = ResourceManager.GetObject("RecuperarCliente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

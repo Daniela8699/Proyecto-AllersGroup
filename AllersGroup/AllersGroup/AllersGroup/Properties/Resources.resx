@@ -133,6 +133,9 @@
   <data name="Recomendaciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recomendaciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BotonClaro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonClaro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconoInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\loading gif\iconoInfo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,10 +145,13 @@
   <data name="Inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RecuperarCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RecuperarCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\loading gif\loading-icon.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonClaro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonClaro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PanelCliente-Articulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PanelCliente-Articulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
