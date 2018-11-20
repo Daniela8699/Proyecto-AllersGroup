@@ -34,7 +34,7 @@ namespace AllersGroup.interfaz
 
         private void PanelRecuperar_Load(object sender, EventArgs e)
         {
-            List<String> clientes= conexion.modelo.darClientesRecuperar();
+            List<String> clientes= conexion.modelo.darClientesRecuperar(30);
 
             foreach (var a in clientes)
             {
@@ -45,7 +45,7 @@ namespace AllersGroup.interfaz
         private void button1_Click(object sender, EventArgs e)
         {
             String seleccionado = (String)listBox1.SelectedItem;
-            richTextBox1.Text=conexion.modelo.ItemsRecuperar(seleccionado);
+            //richTextBox1.Text=conexion.modelo.ItemsRecuperar(seleccionado);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace AllersGroup.interfaz
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String seleccionado = (String)listBox1.SelectedItem;
-            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
+           // richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
         }
 
         private void InitializeComponent()
@@ -298,13 +298,13 @@ namespace AllersGroup.interfaz
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             String seleccionado = (String)listBox1.SelectedItem;
-            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
+           // richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             String seleccionado = (String)listBox1.SelectedItem;
-            richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
+           // richTextBox1.Text = conexion.modelo.ItemsRecuperar(seleccionado);
         }
 
         private void button2_Click_1(object sender, EventArgs e)

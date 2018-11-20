@@ -202,6 +202,19 @@ public class Controlador
         }
         return buscado;
     }
+    public Articulo buscarArticuloEnLista(int itemCode)
+    {
+        Articulo buscado = null;
+        foreach (var x in articulos)
+        {
+            if (x.esItemCode(itemCode))
+            {
+                buscado = x;
+                break;
+            }
+        }
+        return buscado;
+    }
     public void CargarItemsClientes()
     {
         foreach(var x in ventas)
@@ -427,8 +440,9 @@ public class Controlador
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
 
 
-    public string estrategiaFP(List<Venta> ventas)
+    public List<string> estrategiaFP(List<Venta> ventas)
     {
+        List<string> retorno = new List<string>();
         String mensaje = "";
         int supCount = (int)(minSuport * ventas.GroupBy(a => a.DocNum).Count());
         algoritmoFP = new FP(supCount);
@@ -474,10 +488,11 @@ public class Controlador
         foreach (string item in itemsFrecuentes)
         {
             // string nombre = busquedaNombreItem(item);
+            retorno.Add(item);
             string nombre = item;
             mensaje +=nombre+ "\n";
         }
-        return mensaje;
+        return retorno;
     }
     public Cliente busquedaCliente(String cardcode)
     {
@@ -544,7 +559,7 @@ public class Controlador
         return mensaje;
     }
     
-    public List<String> darClientesRecuperar()
+    public List<String> darClientesRecuperar(int dias)
     {
         List<String> retorno= new List<String>();
         var a = ventas.GroupBy(e => e.CardCode);
@@ -553,7 +568,7 @@ public class Controlador
         {
             DateTime mayorFechaCliente = cliente.Max(e => e.DocDate);
             TimeSpan diferencia = mayorFecha - mayorFechaCliente;
-            if(diferencia.Days>15)
+            if(diferencia.Days>dias)
             {
                 retorno.Add(cliente.FirstOrDefault().CardCode);
             }
@@ -564,8 +579,9 @@ public class Controlador
     {
         return ventas.Max(a=>a.DocDate);
     }
-    public String ItemsRecuperar(String cliente)
+    public List<String> ItemsRecuperar(String cliente)
     {
+        List<String> retorno = new List<string>();
         Cliente buscado = buscarClienteEnLista(cliente);
         List<Cliente> similares = buscado.Similares;
         List<Venta> ventasSimilares = new List<Venta>();
@@ -585,14 +601,15 @@ public class Controlador
         if (ventasSimilares.Count > 20)
         {
             mensaje = "Los items para recuperar dicho cliente con mayor probabilidad a partir de los similares son: " + "\n";
-            mensaje += estrategiaFP(ventasSimilares);
+            //mensaje += estrategiaFP(ventasSimilares);
+            retorno = estrategiaFP(ventasSimilares);
 
         }
         else mensaje += "No hay suficientes ventas para predecir un cliente";
         }
 
 
-        return mensaje;
+        return retorno;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------

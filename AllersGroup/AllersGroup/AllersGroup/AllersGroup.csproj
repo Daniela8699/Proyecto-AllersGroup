@@ -69,6 +69,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaz\ControlArticulo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaz\ControlArticulo.Designer.cs">
+      <DependentUpon>ControlArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\ControlCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaz\ControlCliente.Designer.cs">
+      <DependentUpon>ControlCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\Graficos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +93,18 @@
     <Compile Include="interfaz\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\PanelArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\PanelArticulo.Designer.cs">
+      <DependentUpon>PanelArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\PanelCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\PanelCliente.Designer.cs">
+      <DependentUpon>PanelCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\PanelRecuperar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +113,12 @@
     </Compile>
     <Compile Include="interfaz\Parametros.Designer.cs">
       <DependentUpon>Parametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Prueba.Designer.cs">
+      <DependentUpon>Prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaz\Recomendaciones.cs">
       <SubType>Form</SubType>
@@ -158,6 +188,12 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="interfaz\ControlArticulo.resx">
+      <DependentUpon>ControlArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\ControlCliente.resx">
+      <DependentUpon>ControlCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Graficos.resx">
       <DependentUpon>Graficos.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,11 +203,20 @@
     <EmbeddedResource Include="interfaz\InterfazPrincipal.resx">
       <DependentUpon>InterfazPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\PanelArticulo.resx">
+      <DependentUpon>PanelArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\PanelCliente.resx">
+      <DependentUpon>PanelCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\PanelRecuperar.resx">
       <DependentUpon>PanelRecuperar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Parametros.resx">
       <DependentUpon>Parametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\Prueba.resx">
+      <DependentUpon>Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Recomendaciones.resx">
       <DependentUpon>Recomendaciones.cs</DependentUpon>

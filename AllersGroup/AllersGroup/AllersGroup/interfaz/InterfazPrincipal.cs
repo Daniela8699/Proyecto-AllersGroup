@@ -20,6 +20,7 @@ namespace AllersGroup
         private Form grafi;
         private Form recup;
         private Form parametro;
+        public Prueba prueba;
 
 
         public Controlador modelo;
@@ -28,14 +29,37 @@ namespace AllersGroup
         private double conf;
         public InterfazPrincipal()
         {
-           
+            prueba = new Prueba(this);
             InitializeComponent();
             infor = new Info(this);
             recome = new Recomendaciones(this);
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
             parametro = new Parametros(this);
+
         }
+
+        internal void MostrarArticulo(string codigoCliente)
+        {
+            Articulo encontrado = modelo.buscarArticuloEnLista(Convert.ToInt32(codigoCliente));
+            PanelArticulo vent = new PanelArticulo(encontrado.ItemCode+"", encontrado.ItemName, encontrado.ItemClasification);
+            vent.StartPosition = FormStartPosition.CenterParent;
+            vent.ShowDialog();
+        }
+
+        internal void MostrarCliente(string codigoCliente)
+        {
+            Cliente encontrado= modelo.buscarClienteEnLista(codigoCliente);
+            PanelCliente vent = new PanelCliente(encontrado.CardCode, encontrado.GroupName, encontrado.City, encontrado.Department, encontrado.PaymentGroup);
+            vent.StartPosition = FormStartPosition.CenterParent;
+            vent.ShowDialog();
+        }
+
+        internal void RecuperarCliente(string codigoCliente)
+        {
+            prueba.mostrarArticulos(modelo.ItemsRecuperar(codigoCliente));
+        }
+        
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {          
@@ -91,6 +115,8 @@ namespace AllersGroup
         {
             Transition t = new Transition(new TransitionType_Bounce(2000));
             t.add(recome, "Left", 10);
+
+
             Visible = false;
             recome.Show();
             t.run();
@@ -114,6 +140,7 @@ namespace AllersGroup
             t.add(infor, "Left", -10);
             Visible = false;
             recup.Show();
+            prueba.Show();
             t.run();
         }
 
