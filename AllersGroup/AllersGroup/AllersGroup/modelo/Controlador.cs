@@ -433,7 +433,6 @@ public class Controlador
         int[] F1 = masFrecuentesMetodo(numArticulos);
         fkmin.FkMinus1XF1(tamanho, F1, Ventas);
         reporte += fkmin.Reporte;
-
     }
 
     // FIN APLIACION ESTRATEGIA F(k-1)XF1   *****************
