@@ -513,16 +513,24 @@ public class Controlador
     {
         if (izq.Count() != 0)
         {
+            double [] precios = BuscarPrecioEnLista(izq, der);
+            double inicial = precios[0];
+            double adicion = precios[1];
+            double aumento = precios[2];
             String asociacion = " \nAl comprar los siguientes Items\n";
+            Articulo temporal = null;
             foreach (var n in izq)
             {
-                asociacion += "- " + this.BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+                temporal = this.BuscarItem(n);
+                asociacion += "- " + temporal.ItemName + " ItemCode: " + n + "\n";
             }
-            asociacion += "\n Implica que su cliente puede comprar:\n";
+            asociacion += "\n Implica que su cliente puede comprar estos productos adicionales:\n";
             foreach (var x in der)
             {
-                asociacion += "- " + this.BuscarNombreItemCode(x) + " ItemCode: " + x + "\n";
+                temporal = this.BuscarItem(x);
+                asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
             }
+            asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";
             asociaciones.Add(asociacion);
         }
@@ -532,11 +540,12 @@ public class Controlador
         String asociacion = "\nAl comprar cualquiera de los siguientes Items\n";
         foreach(var n in com)
         {
-            asociacion +="- " + BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+            asociacion +="- " + BuscarItem(n).ItemName + " ItemCode: " + n + "\n";
         }
         asociacion += "Implica que puede comprar cualquiera de los demás\n------------------------------------------------------------------------------------------------ -\n";;
         asociaciones.Add(asociacion);
     }
+    
     public String busquedaNombreItem(string item)
     {
         string nombre = "";
@@ -545,20 +554,65 @@ public class Controlador
         nombre = x.ItemName;
         return nombre;
     }
-    public String BuscarNombreItemCode(int itemCode)
+    public Articulo BuscarItem(int itemCode)
     {
-        String mensaje = "";
+        Articulo buscado = null;
         foreach (var n in articulos)
         {
             if (n.esItemCode(itemCode))
             {
-                mensaje += n.ItemName;
+                buscado = n;
                 break;
             }
         }
-        return mensaje;
+        return buscado;
     }
-    
+    public double[] BuscarPrecioEnLista(List<int> inicial, List<int> adicionales)
+    {
+        // Uno: Precio total inicial de la venta
+        // Dos: Precio total de los articulos que se desean adicionar.
+        // Aumento: Decimal que representa el porcentaje de lo que aumenta al comprar estos articulos adicionales.
+        List<double> resultados = new List<double>();
+        
+        if(inicial.Count != 0)
+        {
+            double uno = 0;
+            double dos = 0;
+            foreach (var n in inicial)
+            {
+                uno += this.BuscarPrecio(n);
+            }
+            foreach (var x in adicionales)
+            {
+
+                dos += this.BuscarPrecio(x);
+            }
+            double aumento = 0;
+            if (dos != 0)
+            {
+                aumento = ((uno + dos) / uno)-1;
+                aumento = Math.Round(aumento, 2);
+            }
+            resultados.Add(uno);
+            resultados.Add(dos);
+            resultados.Add(aumento);
+        }
+            return resultados.ToArray();
+    }
+    public int BuscarPrecio(int itemCode)
+    {
+        int precio = 0;
+        foreach (var n in ventas)
+        {
+            if (n.ItemCode.Equals(""+itemCode))
+            {
+                precio = n.Precio;
+                break;
+            }
+        }
+        return precio;
+    }
+
     public List<String> darClientesRecuperar(int dias)
     {
         List<String> retorno= new List<String>();

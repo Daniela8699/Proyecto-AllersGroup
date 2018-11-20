@@ -47,7 +47,7 @@ namespace AllersGroup.interfaz
 
             for (int i = 0; i < masfrecuentes.Length; i++)
             {
-            chart1.Series["Series1"].Points.AddXY(a.modelo.BuscarNombreItemCode(masfrecuentes[i]),a.modelo.apariciones(masfrecuentes[i]));
+            chart1.Series["Series1"].Points.AddXY(a.modelo.BuscarItem(masfrecuentes[i]).ItemName,a.modelo.apariciones(masfrecuentes[i]));
             }
             //chart1.Series["Series1"].LabelForeColor = Color.White;
             chart1.Series["Series1"].IsValueShownAsLabel = false;
