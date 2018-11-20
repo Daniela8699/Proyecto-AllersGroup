@@ -22,6 +22,7 @@ public class Controlador
     private List<Cliente> clientes;
     private List<Venta> ventas;
     private List<String> asociaciones;
+    private List<Articulo> productosGenerados;
     private int numArticulos;
     private int tamanhoAgrupaciones;
     private int[,] matrizDeSimilitud;
@@ -53,6 +54,7 @@ public class Controlador
         fkmin = new FkMinus(minSup, minConf);
         minCon = minConf;
         minSuport = minSup;
+        productosGenerados = new List<Articulo>();
         
     }
 
@@ -525,9 +527,12 @@ public class Controlador
                 asociacion += "- " + temporal.ItemName + " ItemCode: " + n + "\n";
             }
             asociacion += "\n Implica que su cliente puede comprar estos productos adicionales:\n";
+
+            Articulo productosGenerados = null;
             foreach (var x in der)
             {
                 temporal = this.BuscarItem(x);
+                productosGenerados = this.BuscarItem(x);
                 asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";

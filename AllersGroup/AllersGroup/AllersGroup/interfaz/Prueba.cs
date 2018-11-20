@@ -39,7 +39,7 @@ namespace AllersGroup.interfaz
 
             int dias = Convert.ToInt32(txtDias.Text);
 
-            //List<String> clientes = conexion.modelo.darClientesRecuperar(dias);
+           // List<String> clientes = conexion.modelo.darClientesRecuperar(dias);
             List<String> clientes = new List<string>();
             clientes.Add("CN9657");
             clientes.Add("CN4173");

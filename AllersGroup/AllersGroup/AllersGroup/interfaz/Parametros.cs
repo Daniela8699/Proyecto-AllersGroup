@@ -68,6 +68,7 @@ namespace AllersGroup.interfaz
                 conexion.cargar(soporte,confianza,NumArticulos,TamAgrupaciones);
 
 
+
                 
             }
 
