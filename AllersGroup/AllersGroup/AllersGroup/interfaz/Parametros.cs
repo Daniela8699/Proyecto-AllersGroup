@@ -60,15 +60,15 @@ namespace AllersGroup.interfaz
             else
             {
 
-                double soporte = Double.Parse(txtSoporte.Text);
-                double confianza = Double.Parse(txtConfianza.Text);
+                double soporte = Double.Parse(txtSoporte.Text)/100;
+                double confianza = Double.Parse(txtConfianza.Text)/100;
                 int NumArticulos = Convert.ToInt32(txtNumArticulos.Text);
                 int TamAgrupaciones = Convert.ToInt32(txtTamAgrupaciones.Text);
 
                 conexion.cargar(soporte,confianza,NumArticulos,TamAgrupaciones);
 
-                
 
+                
             }
 
            

@@ -202,6 +202,19 @@ public class Controlador
         }
         return buscado;
     }
+    public Articulo buscarArticuloEnLista(int itemCode)
+    {
+        Articulo buscado = null;
+        foreach (var x in articulos)
+        {
+            if (x.esItemCode(itemCode))
+            {
+                buscado = x;
+                break;
+            }
+        }
+        return buscado;
+    }
     public void CargarItemsClientes()
     {
         foreach(var x in ventas)
@@ -427,8 +440,9 @@ public class Controlador
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
 
 
-    public string estrategiaFP(List<Venta> ventas)
+    public List<string> estrategiaFP(List<Venta> ventas)
     {
+        List<string> retorno = new List<string>();
         String mensaje = "";
         int supCount = (int)(minSuport * ventas.GroupBy(a => a.DocNum).Count());
         algoritmoFP = new FP(supCount);
@@ -474,10 +488,11 @@ public class Controlador
         foreach (string item in itemsFrecuentes)
         {
             // string nombre = busquedaNombreItem(item);
+            retorno.Add(item);
             string nombre = item;
             mensaje +=nombre+ "\n";
         }
-        return mensaje;
+        return retorno;
     }
     public Cliente busquedaCliente(String cardcode)
     {
@@ -498,16 +513,24 @@ public class Controlador
     {
         if (izq.Count() != 0)
         {
+            double [] precios = BuscarPrecioEnLista(izq, der);
+            double inicial = precios[0];
+            double adicion = precios[1];
+            double aumento = precios[2];
             String asociacion = " \nAl comprar los siguientes Items\n";
+            Articulo temporal = null;
             foreach (var n in izq)
             {
-                asociacion += "- " + this.BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+                temporal = this.BuscarItem(n);
+                asociacion += "- " + temporal.ItemName + " ItemCode: " + n + "\n";
             }
-            asociacion += "\n Implica que su cliente puede comprar:\n";
+            asociacion += "\n Implica que su cliente puede comprar estos productos adicionales:\n";
             foreach (var x in der)
             {
-                asociacion += "- " + this.BuscarNombreItemCode(x) + " ItemCode: " + x + "\n";
+                temporal = this.BuscarItem(x);
+                asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
             }
+            asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";
             asociaciones.Add(asociacion);
         }
@@ -517,11 +540,12 @@ public class Controlador
         String asociacion = "\nAl comprar cualquiera de los siguientes Items\n";
         foreach(var n in com)
         {
-            asociacion +="- " + BuscarNombreItemCode(n) + " ItemCode: " + n + "\n";
+            asociacion +="- " + BuscarItem(n).ItemName + " ItemCode: " + n + "\n";
         }
         asociacion += "Implica que puede comprar cualquiera de los demás\n------------------------------------------------------------------------------------------------ -\n";;
         asociaciones.Add(asociacion);
     }
+    
     public String busquedaNombreItem(string item)
     {
         string nombre = "";
@@ -530,21 +554,66 @@ public class Controlador
         nombre = x.ItemName;
         return nombre;
     }
-    public String BuscarNombreItemCode(int itemCode)
+    public Articulo BuscarItem(int itemCode)
     {
-        String mensaje = "";
+        Articulo buscado = null;
         foreach (var n in articulos)
         {
             if (n.esItemCode(itemCode))
             {
-                mensaje += n.ItemName;
+                buscado = n;
                 break;
             }
         }
-        return mensaje;
+        return buscado;
     }
-    
-    public List<String> darClientesRecuperar()
+    public double[] BuscarPrecioEnLista(List<int> inicial, List<int> adicionales)
+    {
+        // Uno: Precio total inicial de la venta
+        // Dos: Precio total de los articulos que se desean adicionar.
+        // Aumento: Decimal que representa el porcentaje de lo que aumenta al comprar estos articulos adicionales.
+        List<double> resultados = new List<double>();
+        
+        if(inicial.Count != 0)
+        {
+            double uno = 0;
+            double dos = 0;
+            foreach (var n in inicial)
+            {
+                uno += this.BuscarPrecio(n);
+            }
+            foreach (var x in adicionales)
+            {
+
+                dos += this.BuscarPrecio(x);
+            }
+            double aumento = 0;
+            if (dos != 0)
+            {
+                aumento = ((uno + dos) / uno)-1;
+                aumento = Math.Round(aumento, 2);
+            }
+            resultados.Add(uno);
+            resultados.Add(dos);
+            resultados.Add(aumento);
+        }
+            return resultados.ToArray();
+    }
+    public int BuscarPrecio(int itemCode)
+    {
+        int precio = 0;
+        foreach (var n in ventas)
+        {
+            if (n.ItemCode.Equals(""+itemCode))
+            {
+                precio = n.Precio;
+                break;
+            }
+        }
+        return precio;
+    }
+
+    public List<String> darClientesRecuperar(int dias)
     {
         List<String> retorno= new List<String>();
         var a = ventas.GroupBy(e => e.CardCode);
@@ -553,7 +622,7 @@ public class Controlador
         {
             DateTime mayorFechaCliente = cliente.Max(e => e.DocDate);
             TimeSpan diferencia = mayorFecha - mayorFechaCliente;
-            if(diferencia.Days>15)
+            if(diferencia.Days>dias)
             {
                 retorno.Add(cliente.FirstOrDefault().CardCode);
             }
@@ -564,8 +633,9 @@ public class Controlador
     {
         return ventas.Max(a=>a.DocDate);
     }
-    public String ItemsRecuperar(String cliente)
+    public List<String> ItemsRecuperar(String cliente)
     {
+        List<String> retorno = new List<string>();
         Cliente buscado = buscarClienteEnLista(cliente);
         List<Cliente> similares = buscado.Similares;
         List<Venta> ventasSimilares = new List<Venta>();
@@ -585,14 +655,15 @@ public class Controlador
         if (ventasSimilares.Count > 20)
         {
             mensaje = "Los items para recuperar dicho cliente con mayor probabilidad a partir de los similares son: " + "\n";
-            mensaje += estrategiaFP(ventasSimilares);
+            //mensaje += estrategiaFP(ventasSimilares);
+            retorno = estrategiaFP(ventasSimilares);
 
         }
         else mensaje += "No hay suficientes ventas para predecir un cliente";
         }
 
 
-        return mensaje;
+        return retorno;
     }
 
     //---------------------------------------------------------------------------------------------------------------------------------------------

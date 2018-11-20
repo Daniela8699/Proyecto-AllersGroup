@@ -88,11 +88,12 @@
             this.butParametrosCargar.Size = new System.Drawing.Size(162, 35);
             this.butParametrosCargar.TabIndex = 6;
             this.butParametrosCargar.Text = "Parámetros";
+            this.butParametrosCargar.UseVisualStyleBackColor = false;
             this.butParametrosCargar.Click += new System.EventHandler(this.butParametrosCargar_Click);
             // 
             // InterfazPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
