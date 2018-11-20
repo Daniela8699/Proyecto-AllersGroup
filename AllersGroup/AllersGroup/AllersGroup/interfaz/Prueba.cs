@@ -59,5 +59,21 @@ namespace AllersGroup.interfaz
                 flowArticulos.Controls.Add(nuevo);
             }
         }
+
+        private void txtDias_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butInfoCantidadDias_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("En la siguiente sección se encontrará los diferentes clientes que puedes recuperar, primero tienes que poner un numero de dias que consideres que ya has perdido un cliente, para darte los clientes que puedes recuperar.");
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("De este lado se encuentran los productos apartir de las ventas de los clientes similares al que seleccionasete, los cuales son las posibles compras a ofrecer a tu cliente perdido.En caso de que selecciones un cliente y no apararezca ningun articulo, significa que no tiene clientes similares a el, o no hay suficientes ventas para estimar una compra.");
+        }
     }
 }

@@ -212,6 +212,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\RecuperarCliente.png" />
     <None Include="loading gif\loading-icon.gif" />
     <None Include="loading gif\iconoInfo.png" />
     <Content Include="Resources\BotonClaro.png" />
@@ -221,6 +222,7 @@
     <Content Include="Resources\Gráfico.png" />
     <Content Include="Resources\Info.png" />
     <Content Include="Resources\Inicio.png" />
+    <None Include="Resources\PanelCliente-Articulo.png" />
     <Content Include="Resources\Recomendaciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

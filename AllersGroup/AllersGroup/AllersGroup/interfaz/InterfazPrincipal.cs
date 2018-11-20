@@ -139,7 +139,6 @@ namespace AllersGroup
             Transition t = new Transition(new TransitionType_CriticalDamping(2000));
             t.add(infor, "Left", -10);
             Visible = false;
-            recup.Show();
             prueba.Show();
             t.run();
         }
