@@ -34,5 +34,12 @@ namespace AllersGroup.interfaz
             conexion.mostrarProducto(codigoProducto);
 
         }
+        
+        private void butSelect_Click(object sender, EventArgs e)
+        {
+            
+         
+            
+        }
     }
 }

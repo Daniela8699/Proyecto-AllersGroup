@@ -389,7 +389,7 @@ public class Controlador
     }
     public String Promociones()
     {
-        String mensaje = " Le aseguramos que según el patrón de los datos de sus ventas\n";
+        String mensaje = "\n";
         foreach(var n in asociaciones)
         {
             mensaje += n;
@@ -553,15 +553,15 @@ public class Controlador
 
     public void ConvertirAsociacionesCompletas(List<int> com)
     {
-        String asociacion = "\nAl comprar cualquiera de los siguientes Items\n";
+        String asociacion = "";
 
         foreach(var n in com)
         {
-            asociacion +="- " + BuscarItem(n).ItemName + " ItemCode: " + n + "\n";
+            asociacion +="- " + BuscarItem(n).ItemName + "\n";
             productosGenerados.Add(n+"");
 
         }
-        asociacion += "Implica que puede comprar cualquiera de los demás\n------------------------------------------------------------------------------------------------ -\n";;
+        asociacion += "\n________________________________\n";;
         asociaciones.Add(asociacion);
     }
     

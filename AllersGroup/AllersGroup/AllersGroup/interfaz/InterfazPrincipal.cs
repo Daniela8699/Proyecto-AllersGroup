@@ -21,7 +21,7 @@ namespace AllersGroup
         private Form recup;
         private Form parametro;
         public Prueba prueba;
-
+        public Recomendaciones recomendacion;
 
         public Controlador modelo;
 
@@ -37,9 +37,15 @@ namespace AllersGroup
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
             parametro = new Parametros(this);
-
+            recomendacion = new Recomendaciones(this);
 
         }
+
+        public void productoMasFrecuente(List<string> productos)
+        {
+               
+        }
+
 
         internal void MostrarArticulo(string codigoCliente)
         {
@@ -79,6 +85,9 @@ namespace AllersGroup
             prueba.mostrarArticulos(modelo.ItemsRecuperar(codigoCliente));
         }
         
+     
+
+
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {          

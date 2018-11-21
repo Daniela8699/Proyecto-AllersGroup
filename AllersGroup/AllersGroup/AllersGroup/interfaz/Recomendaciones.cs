@@ -55,7 +55,7 @@ namespace AllersGroup.interfaz
 
             for (int i = 0; i < productosImplicados.Count(); i++)
             {
-                listBox1.Items.Insert(i, productosImplicados[i]);
+                
                 ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
                 flowArticulo.Controls.Add(nuevo);
             }
@@ -112,13 +112,28 @@ namespace AllersGroup.interfaz
 
             }
 
-
-
-
         }
+
+        
 
         private void flowArticulo_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
+        {
+
+            List<String> productosGenerados = new List<string>();
+            productosGenerados = conexion.productosGenerados();
+
+            conexion.productoMasFrecuente(productosGenerados);
+
 
         }
     }
