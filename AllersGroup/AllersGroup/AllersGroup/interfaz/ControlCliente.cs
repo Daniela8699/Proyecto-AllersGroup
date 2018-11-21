@@ -37,5 +37,10 @@ namespace AllersGroup.interfaz
         {
 
         }
+
+        private void labelCodigo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

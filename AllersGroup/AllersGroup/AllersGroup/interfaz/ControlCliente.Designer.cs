@@ -47,7 +47,7 @@
             this.btnInfo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfo.ForeColor = System.Drawing.SystemColors.Control;
             this.btnInfo.Location = new System.Drawing.Point(2, 216);
-            this.btnInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(122, 45);
             this.btnInfo.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSeleccionar.Location = new System.Drawing.Point(137, 216);
-            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSeleccionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(124, 45);
             this.btnSeleccionar.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(263, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,6 +95,7 @@
             this.labelCodigo.Size = new System.Drawing.Size(117, 36);
             this.labelCodigo.TabIndex = 4;
             this.labelCodigo.Text = "Codigo";
+            this.labelCodigo.Click += new System.EventHandler(this.labelCodigo_Click);
             // 
             // ControlCliente
             // 
@@ -105,7 +106,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ControlCliente";
             this.Size = new System.Drawing.Size(263, 263);
             this.Load += new System.EventHandler(this.ControlCliente_Load);

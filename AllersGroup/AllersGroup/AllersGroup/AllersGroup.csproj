@@ -66,6 +66,12 @@
     <Compile Include="interfaz\ControlCliente.Designer.cs">
       <DependentUpon>ControlCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\ControlProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="interfaz\ControlProducto.Designer.cs">
+      <DependentUpon>ControlProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\Graficos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="interfaz\ControlCliente.resx">
       <DependentUpon>ControlCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\ControlProducto.resx">
+      <DependentUpon>ControlProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Graficos.resx">
       <DependentUpon>Graficos.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +232,7 @@
     <Content Include="Resources\Info.png" />
     <Content Include="Resources\Inicio.png" />
     <None Include="Resources\PanelCliente-Articulo.png" />
+    <Content Include="Resources\medicamento.png" />
     <Content Include="Resources\Recomendaciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

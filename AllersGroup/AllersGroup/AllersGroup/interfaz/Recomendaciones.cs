@@ -48,9 +48,24 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
-            //Treer información
+
+            List<String> productosImplicados = new List<string>();
+            productosImplicados = conexion.productosGenerados();
+           
+
+            for (int i = 0; i < productosImplicados.Count(); i++)
+            {
+                listBox1.Items.Insert(i, productosImplicados[i]);
+                ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
+                flowArticulo.Controls.Add(nuevo);
+            }
+            
+
+
             String mensaje = conexion.mensajeRecomenaciones();
             String confianza = conexion.darConfianza();
+
+         
 
             txtConfianza.Text = confianza + "%";
             richTextBox1.Text = mensaje; 
@@ -81,6 +96,30 @@ namespace AllersGroup.interfaz
         private void butInfoRecomendaciones_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Se aconseja ofrecer una serie de promociones según el marketing que maneje la empresa siguiendo las recomendaciones presentandas de los productos implicados por categoria de clientes");
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            List<String> productosImplicados = new List<string>();
+            productosImplicados = conexion.productosGenerados();
+            
+            for (int i = 0; i < productosImplicados.Count(); i++)
+            {
+                //listBox1.Items.Insert(i, productosImplicados[i]);
+                ControlProducto nuevo = new ControlProducto (conexion,productosImplicados[i]);
+                flowArticulo.Controls.Add(nuevo);
+
+            }
+
+
+
+
+        }
+
+        private void flowArticulo_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

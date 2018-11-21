@@ -22,7 +22,7 @@ public class Controlador
     private List<Cliente> clientes;
     private List<Venta> ventas;
     private List<String> asociaciones;
-    private List<Articulo> productosGenerados;
+    private List<String> productosGenerados;
     private int numArticulos;
     private int tamanhoAgrupaciones;
     private int[,] matrizDeSimilitud;
@@ -54,7 +54,7 @@ public class Controlador
         fkmin = new FkMinus(minSup, minConf);
         minCon = minConf;
         minSuport = minSup;
-        productosGenerados = new List<Articulo>();
+        productosGenerados = new List<String>();
         
     }
 
@@ -119,6 +119,13 @@ public class Controlador
             throw new Exception("Error al cargar los articulos");
         }
     }
+
+    public List<String> darProductos()
+    {
+        return productosGenerados;
+    }
+
+
     public void CargarClientes()
     {
         String line;
@@ -217,6 +224,8 @@ public class Controlador
         }
         return buscado;
     }
+    
+
     public void CargarItemsClientes()
     {
         foreach(var x in ventas)
@@ -527,11 +536,11 @@ public class Controlador
             }
             asociacion += "\n Implica que su cliente puede comprar estos productos adicionales:\n";
 
-            Articulo productosGenerados = null;
+           
             foreach (var x in der)
             {
                 temporal = this.BuscarItem(x);
-                productosGenerados = this.BuscarItem(x);
+                
                 asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
@@ -539,12 +548,18 @@ public class Controlador
             asociaciones.Add(asociacion);
         }
     }
+
+    
+
     public void ConvertirAsociacionesCompletas(List<int> com)
     {
         String asociacion = "\nAl comprar cualquiera de los siguientes Items\n";
+
         foreach(var n in com)
         {
             asociacion +="- " + BuscarItem(n).ItemName + " ItemCode: " + n + "\n";
+            productosGenerados.Add(n+"");
+
         }
         asociacion += "Implica que puede comprar cualquiera de los demás\n------------------------------------------------------------------------------------------------ -\n";;
         asociaciones.Add(asociacion);

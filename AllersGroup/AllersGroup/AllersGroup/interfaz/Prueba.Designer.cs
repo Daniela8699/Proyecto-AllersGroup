@@ -217,6 +217,7 @@
             this.flowClientes.Name = "flowClientes";
             this.flowClientes.Size = new System.Drawing.Size(772, 446);
             this.flowClientes.TabIndex = 0;
+            this.flowClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.flowClientes_Paint);
             // 
             // Prueba
             // 

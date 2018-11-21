@@ -26,6 +26,7 @@ namespace AllersGroup
         public Controlador modelo;
 
         private string mensaje;
+        private List<string> productos;
         private double conf;
         public InterfazPrincipal()
         {
@@ -36,6 +37,7 @@ namespace AllersGroup
             grafi = new Graficos(this);
             recup = new PanelRecuperar(this);
             parametro = new Parametros(this);
+
 
         }
 
@@ -55,6 +57,23 @@ namespace AllersGroup
             vent.ShowDialog();
         }
 
+        internal void mostrarProducto(String codProducto)
+        {
+            try
+            {
+                //Articulo encontrado = modelo.buscarArticuloEnReglas(Convert.ToInt32(codProducto)); 
+                Articulo encontrado = modelo.BuscarItem(Convert.ToInt32(codProducto));
+                PanelArticulo vent = new PanelArticulo(encontrado.ItemCode + "", encontrado.ItemName, encontrado.ItemClasification);
+                vent.StartPosition = FormStartPosition.CenterParent;
+                vent.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("No se encontro el articulo");
+            }
+            
+        }
+
         internal void RecuperarCliente(string codigoCliente)
         {
             prueba.mostrarArticulos(modelo.ItemsRecuperar(codigoCliente));
@@ -69,6 +88,7 @@ namespace AllersGroup
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
             MessageBox.Show("Los datos han sido analizados");
             mensaje = modelo.Promociones();
+            productos = modelo.darProductos();
             conf = confianza;
         
         }
@@ -91,6 +111,13 @@ namespace AllersGroup
         {
             return mensaje;
         }
+
+
+        public List<String> productosGenerados()
+        { 
+            return productos;
+        }
+
 
         public String darConfianza()
         {
