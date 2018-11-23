@@ -374,7 +374,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1171, 557);
+            this.ClientSize = new System.Drawing.Size(1202, 685);
             this.Controls.Add(this.recup);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

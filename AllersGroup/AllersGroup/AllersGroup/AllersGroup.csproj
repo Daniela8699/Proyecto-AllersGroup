@@ -96,20 +96,17 @@
     <Compile Include="interfaz\PanelCliente.Designer.cs">
       <DependentUpon>PanelCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\PanelRecuperar.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="interfaz\Parametros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="interfaz\Parametros.Designer.cs">
       <DependentUpon>Parametros.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\Prueba.cs">
+    <Compile Include="interfaz\PanelRecuperar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\Prueba.Designer.cs">
-      <DependentUpon>Prueba.cs</DependentUpon>
+    <Compile Include="interfaz\PanelRecuperar.Designer.cs">
+      <DependentUpon>PanelRecuperar.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaz\Recomendaciones.cs">
       <SubType>Form</SubType>
@@ -203,14 +200,11 @@
     <EmbeddedResource Include="interfaz\PanelCliente.resx">
       <DependentUpon>PanelCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\PanelRecuperar.resx">
-      <DependentUpon>PanelRecuperar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Parametros.resx">
       <DependentUpon>Parametros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\Prueba.resx">
-      <DependentUpon>Prueba.cs</DependentUpon>
+    <EmbeddedResource Include="interfaz\PanelRecuperar.resx">
+      <DependentUpon>PanelRecuperar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Recomendaciones.resx">
       <DependentUpon>Recomendaciones.cs</DependentUpon>

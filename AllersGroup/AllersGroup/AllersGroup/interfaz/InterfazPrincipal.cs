@@ -20,7 +20,7 @@ namespace AllersGroup
         private Form grafi;
         private Form recup;
         private Form parametro;
-        public Prueba prueba;
+        public PanelRecuperar prueba;
         public Recomendaciones recomendacion;
 
         public Controlador modelo;
@@ -30,7 +30,7 @@ namespace AllersGroup
         private double conf;
         public InterfazPrincipal()
         {
-            prueba = new Prueba(this);
+            prueba = new PanelRecuperar(this);
             InitializeComponent();
             infor = new Info(this);
             recome = new Recomendaciones(this);

@@ -66,30 +66,27 @@
             // inicio
             // 
             this.inicio.BackColor = System.Drawing.Color.Transparent;
-            this.inicio.Location = new System.Drawing.Point(999, 62);
-            this.inicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.inicio.Location = new System.Drawing.Point(1218, 724);
             this.inicio.Name = "inicio";
-            this.inicio.Size = new System.Drawing.Size(69, 28);
+            this.inicio.Size = new System.Drawing.Size(52, 23);
             this.inicio.TabIndex = 0;
             this.inicio.Click += new System.EventHandler(this.inicio_Click);
             // 
             // info
             // 
             this.info.BackColor = System.Drawing.Color.Transparent;
-            this.info.Location = new System.Drawing.Point(1064, 62);
-            this.info.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.info.Location = new System.Drawing.Point(798, 50);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(115, 41);
+            this.info.Size = new System.Drawing.Size(86, 33);
             this.info.TabIndex = 1;
             this.info.Click += new System.EventHandler(this.info_Click);
             // 
             // graf
             // 
             this.graf.BackColor = System.Drawing.Color.Transparent;
-            this.graf.Location = new System.Drawing.Point(1484, 62);
-            this.graf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.graf.Location = new System.Drawing.Point(1113, 50);
             this.graf.Name = "graf";
-            this.graf.Size = new System.Drawing.Size(80, 28);
+            this.graf.Size = new System.Drawing.Size(60, 23);
             this.graf.TabIndex = 2;
             this.graf.Click += new System.EventHandler(this.graf_Click);
             // 
@@ -203,10 +200,10 @@
             this.butDistribuidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDistribuidor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butDistribuidor.Location = new System.Drawing.Point(104, 112);
-            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.butDistribuidor.Location = new System.Drawing.Point(78, 91);
+            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2);
             this.butDistribuidor.Name = "butDistribuidor";
-            this.butDistribuidor.Size = new System.Drawing.Size(167, 63);
+            this.butDistribuidor.Size = new System.Drawing.Size(125, 51);
             this.butDistribuidor.TabIndex = 7;
             this.butDistribuidor.Text = "Generar Asociaciones";
             this.butDistribuidor.UseVisualStyleBackColor = false;
@@ -214,6 +211,7 @@
             // 
             // butInfoRecomendaciones
             // 
+            this.butInfoRecomendaciones.BackColor = System.Drawing.Color.Transparent;
             this.butInfoRecomendaciones.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
             this.butInfoRecomendaciones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.butInfoRecomendaciones.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -222,22 +220,22 @@
             this.butInfoRecomendaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.butInfoRecomendaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoRecomendaciones.Location = new System.Drawing.Point(1227, 648);
-            this.butInfoRecomendaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.butInfoRecomendaciones.Location = new System.Drawing.Point(714, 94);
+            this.butInfoRecomendaciones.Margin = new System.Windows.Forms.Padding(2);
             this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
-            this.butInfoRecomendaciones.Size = new System.Drawing.Size(59, 37);
+            this.butInfoRecomendaciones.Size = new System.Drawing.Size(36, 30);
             this.butInfoRecomendaciones.TabIndex = 22;
-            this.butInfoRecomendaciones.UseVisualStyleBackColor = true;
+            this.butInfoRecomendaciones.UseVisualStyleBackColor = false;
             this.butInfoRecomendaciones.Click += new System.EventHandler(this.butInfoRecomendaciones_Click);
             // 
             // txtConfianza
             // 
             this.txtConfianza.Enabled = false;
             this.txtConfianza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfianza.Location = new System.Drawing.Point(611, 132);
-            this.txtConfianza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConfianza.Location = new System.Drawing.Point(458, 107);
+            this.txtConfianza.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfianza.Name = "txtConfianza";
-            this.txtConfianza.Size = new System.Drawing.Size(117, 27);
+            this.txtConfianza.Size = new System.Drawing.Size(89, 23);
             this.txtConfianza.TabIndex = 21;
             // 
             // label1
@@ -245,19 +243,20 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(413, 132);
+            this.label1.Location = new System.Drawing.Point(310, 107);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 20);
+            this.label1.Size = new System.Drawing.Size(154, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Con una confianza de: ";
             // 
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(391, 345);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Location = new System.Drawing.Point(293, 280);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(407, 173);
+            this.richTextBox1.Size = new System.Drawing.Size(306, 141);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -265,10 +264,9 @@
             // recup
             // 
             this.recup.BackColor = System.Drawing.Color.Transparent;
-            this.recup.Location = new System.Drawing.Point(1376, 62);
-            this.recup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.recup.Location = new System.Drawing.Point(1032, 50);
             this.recup.Name = "recup";
-            this.recup.Size = new System.Drawing.Size(80, 41);
+            this.recup.Size = new System.Drawing.Size(60, 33);
             this.recup.TabIndex = 19;
             this.recup.Click += new System.EventHandler(this.recup_Click);
             // 
@@ -277,9 +275,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 221);
+            this.label2.Location = new System.Drawing.Point(32, 180);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 23);
+            this.label2.Size = new System.Drawing.Size(91, 18);
             this.label2.TabIndex = 23;
             this.label2.Text = "Productos";
             // 
@@ -288,9 +287,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(387, 221);
+            this.label3.Location = new System.Drawing.Point(290, 180);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 23);
+            this.label3.Size = new System.Drawing.Size(215, 18);
             this.label3.TabIndex = 25;
             this.label3.Text = "Productos recomendados";
             // 
@@ -299,19 +299,20 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(387, 562);
+            this.label4.Location = new System.Drawing.Point(290, 457);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(246, 23);
+            this.label4.Size = new System.Drawing.Size(201, 18);
             this.label4.TabIndex = 26;
             this.label4.Text = "Producto más frecuente";
             // 
             // txtMasFrecuente
             // 
             this.txtMasFrecuente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMasFrecuente.Location = new System.Drawing.Point(391, 599);
-            this.txtMasFrecuente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMasFrecuente.Location = new System.Drawing.Point(293, 487);
+            this.txtMasFrecuente.Margin = new System.Windows.Forms.Padding(2);
             this.txtMasFrecuente.Name = "txtMasFrecuente";
-            this.txtMasFrecuente.Size = new System.Drawing.Size(275, 27);
+            this.txtMasFrecuente.Size = new System.Drawing.Size(207, 23);
             this.txtMasFrecuente.TabIndex = 27;
             // 
             // butBuscarMasFrecuente
@@ -326,10 +327,10 @@
             this.butBuscarMasFrecuente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butBuscarMasFrecuente.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butBuscarMasFrecuente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butBuscarMasFrecuente.Location = new System.Drawing.Point(391, 647);
-            this.butBuscarMasFrecuente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.butBuscarMasFrecuente.Location = new System.Drawing.Point(293, 526);
+            this.butBuscarMasFrecuente.Margin = new System.Windows.Forms.Padding(2);
             this.butBuscarMasFrecuente.Name = "butBuscarMasFrecuente";
-            this.butBuscarMasFrecuente.Size = new System.Drawing.Size(233, 38);
+            this.butBuscarMasFrecuente.Size = new System.Drawing.Size(175, 31);
             this.butBuscarMasFrecuente.TabIndex = 28;
             this.butBuscarMasFrecuente.Text = "Buscar más frecuente";
             this.butBuscarMasFrecuente.UseVisualStyleBackColor = false;
@@ -340,9 +341,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(861, 221);
+            this.label5.Location = new System.Drawing.Point(646, 180);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 23);
+            this.label5.Size = new System.Drawing.Size(113, 18);
             this.label5.TabIndex = 29;
             this.label5.Text = "Promociones";
             // 
@@ -351,19 +353,20 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(861, 277);
+            this.label7.Location = new System.Drawing.Point(646, 225);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 20);
+            this.label7.Size = new System.Drawing.Size(120, 17);
             this.label7.TabIndex = 30;
             this.label7.Text = "Por compras de : ";
             // 
             // txtProductoFrecuente
             // 
             this.txtProductoFrecuente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoFrecuente.Location = new System.Drawing.Point(1010, 274);
-            this.txtProductoFrecuente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProductoFrecuente.Location = new System.Drawing.Point(758, 223);
+            this.txtProductoFrecuente.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductoFrecuente.Name = "txtProductoFrecuente";
-            this.txtProductoFrecuente.Size = new System.Drawing.Size(194, 27);
+            this.txtProductoFrecuente.Size = new System.Drawing.Size(146, 23);
             this.txtProductoFrecuente.TabIndex = 31;
             // 
             // label8
@@ -371,19 +374,20 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(861, 325);
+            this.label8.Location = new System.Drawing.Point(646, 264);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(337, 40);
+            this.label8.Size = new System.Drawing.Size(285, 34);
             this.label8.TabIndex = 32;
             this.label8.Text = "Se recomienda aplicar descuentos del 20% \r\nen productos como: \r\n";
             // 
             // richTextBox2
             // 
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(865, 405);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox2.Location = new System.Drawing.Point(649, 329);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(407, 113);
+            this.richTextBox2.Size = new System.Drawing.Size(306, 93);
             this.richTextBox2.TabIndex = 33;
             this.richTextBox2.Text = "";
             // 
@@ -391,9 +395,10 @@
             // 
             this.flowArticulo.AutoScroll = true;
             this.flowArticulo.BackColor = System.Drawing.Color.White;
-            this.flowArticulo.Location = new System.Drawing.Point(47, 277);
+            this.flowArticulo.Location = new System.Drawing.Point(35, 225);
+            this.flowArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.flowArticulo.Name = "flowArticulo";
-            this.flowArticulo.Size = new System.Drawing.Size(264, 422);
+            this.flowArticulo.Size = new System.Drawing.Size(198, 343);
             this.flowArticulo.TabIndex = 34;
             this.flowArticulo.Paint += new System.Windows.Forms.PaintEventHandler(this.flowArticulo_Paint);
             // 
@@ -402,19 +407,20 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(387, 265);
+            this.label9.Location = new System.Drawing.Point(290, 215);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(345, 60);
+            this.label9.Size = new System.Drawing.Size(296, 51);
             this.label9.TabIndex = 35;
             this.label9.Text = "Según los patrones de ventas encontrados, \r\nal comprar un producto de cada grupo " +
     "podrá \r\nrealizar un ofrecmiento de los demas.";
             // 
             // Recomendaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1571, 750);
+            this.ClientSize = new System.Drawing.Size(1178, 609);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.flowArticulo);
             this.Controls.Add(this.richTextBox2);
@@ -438,7 +444,6 @@
             this.Controls.Add(this.inicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Recomendaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
