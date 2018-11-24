@@ -136,5 +136,15 @@ namespace AllersGroup.interfaz
 
 
         }
+
+        private void txtConfianza_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

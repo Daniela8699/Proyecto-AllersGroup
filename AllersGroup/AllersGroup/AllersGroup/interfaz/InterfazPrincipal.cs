@@ -131,7 +131,7 @@ namespace AllersGroup
         public String darConfianza()
         {
 
-            double porcentaje = conf * 100;
+            double porcentaje = conf * 100 ;
             String confianza = ""+porcentaje;
             return confianza;
         }
