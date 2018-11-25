@@ -85,7 +85,11 @@ namespace AllersGroup
             prueba.mostrarArticulos(modelo.ItemsRecuperar(codigoCliente));
         }
         
-     
+        public List<int> mostrarImplicados(String codProducto)
+        {
+
+           return modelo.mostrarProductosImplicados(codProducto);
+        }
 
 
         public int num;

@@ -48,7 +48,9 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
+            
 
+            String mensaje = "";
             List<String> productosImplicados = new List<string>();
             productosImplicados = conexion.productosGenerados();
            
@@ -58,11 +60,14 @@ namespace AllersGroup.interfaz
                 
                 ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
                 flowArticulo.Controls.Add(nuevo);
+
+                listBoxProductos.Items.Add(productosImplicados[i]);
+
             }
             
 
 
-            String mensaje = conexion.mensajeRecomenaciones();
+            //String mensaje = conexion.mensajeRecomenaciones();
             String confianza = conexion.darConfianza();
 
          
@@ -128,11 +133,36 @@ namespace AllersGroup.interfaz
 
         private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
         {
+            int valorInicio = 0;
+            int valorFinal = 0;
+            int aumento = 0;
+            String producto = listBoxProductos.SelectedItem.ToString();
+            labelProducto.Text = producto;
 
-            List<String> productosGenerados = new List<string>();
-            productosGenerados = conexion.productosGenerados();
 
-            conexion.productoMasFrecuente(productosGenerados);
+
+            //Filtrado de asociaciones
+
+            try
+            {
+                List<int> mostrar = conexion.mostrarImplicados(producto);
+               
+                for (int i = 0; i < mostrar.Count(); i++)
+                {
+                    richTextBox1.Text += mostrar[i] + "\n";
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("No se encuentran implicantes para este producto");
+            }
+            
+
+
+            txtValorInicial.Text = valorInicio + "";
+            txtValorFinal.Text = valorFinal + "";
+            txtAumento.Text = aumento + "";
 
 
         }

@@ -27,9 +27,6 @@ namespace AllersGroup.interfaz
 
             this.conexion = conexion;
             InitializeComponent();
-      
-            
-
             pictureBox1.Visible = false;
         }
 

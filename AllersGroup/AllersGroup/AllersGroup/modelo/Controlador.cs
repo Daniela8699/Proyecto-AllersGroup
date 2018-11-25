@@ -18,6 +18,8 @@ public class Controlador
     public const String rutaVentasPrueba = "../../DatosPrueba/Ventas.csv";
 
 
+    private List<List<int>> izq;
+    private List<List<int>> der;
     private List<Articulo> articulos;
     private List<Cliente> clientes;
     private List<Venta> ventas;
@@ -44,6 +46,8 @@ public class Controlador
 
     public Controlador(double minConf, double minSup)
     {
+        izq = new List<List<int>>();
+        der = new List<List<int>>();
         articulos = new List<Articulo>();
         clientes = new List<Cliente>();
         ventas = new List<Venta>();
@@ -120,9 +124,20 @@ public class Controlador
         }
     }
 
-    public List<String> darProductos()
+    public List<string> darProductos()
     {
-        return productosGenerados;
+
+        var noRepetidos = new List<string>();
+        foreach (var x in productosGenerados)
+        {
+            if (!noRepetidos.Contains(x))
+            {
+                noRepetidos.Add(x);
+            }
+        }
+
+            
+        return noRepetidos;
     }
 
 
@@ -277,6 +292,34 @@ public class Controlador
             }
         }
     }
+
+
+    public List<int> mostrarProductosImplicados(String codProducto)
+    {
+        int itemBuscado = Convert.ToInt32(codProducto);
+        //Como solo es 1
+        int index = BuscarIndexImplicante(itemBuscado);
+        return der.ElementAt(index);
+        
+    }
+    public int BuscarIndexImplicante(int itemBuscado)
+    {
+        int index = 0;
+        foreach(var x in izq)
+        {
+            if(x.Count() == 1)
+            {
+                if (x.Contains(itemBuscado))
+                {
+                    break;
+                }
+            }
+            index++;
+        }
+        return index;
+    }
+
+
     
     public String ReporteSimiliares(String cardCodeBuscado)
     {
@@ -417,8 +460,8 @@ public class Controlador
         NumArticulos = numArticulos;
         int[] darItemCode = masFrecuentesMetodo(numArti);
         apriori.Generar(tamanho, ventas, darItemCode);
-        List<List<int>> izq = apriori.Implicantes;
-        List<List<int>> der = apriori.Implicados;
+        izq = apriori.Implicantes;
+        der = apriori.Implicados;
         List<List<int>> completas = apriori.Completas;
         int reglas = izq.Count;
         for(int i = 0; i < reglas; i++)
@@ -542,6 +585,8 @@ public class Controlador
                 temporal = this.BuscarItem(x);
                 
                 asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
+                productosGenerados.Add(x+"");
+
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";
