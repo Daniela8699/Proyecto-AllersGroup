@@ -149,7 +149,7 @@ namespace AllersGroup.interfaz
                
                 for (int i = 0; i < mostrar.Count(); i++)
                 {
-                    richTextBox1.Text += mostrar[i] + "";
+                    richTextBox1.Text += mostrar[i] + "\n";
                 }
 
             }
