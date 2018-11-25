@@ -208,10 +208,10 @@
             this.butDistribuidor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDistribuidor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butDistribuidor.Location = new System.Drawing.Point(104, 112);
+            this.butDistribuidor.Location = new System.Drawing.Point(65, 116);
             this.butDistribuidor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butDistribuidor.Name = "butDistribuidor";
-            this.butDistribuidor.Size = new System.Drawing.Size(167, 63);
+            this.butDistribuidor.Size = new System.Drawing.Size(292, 43);
             this.butDistribuidor.TabIndex = 7;
             this.butDistribuidor.Text = "Generar Asociaciones";
             this.butDistribuidor.UseVisualStyleBackColor = false;

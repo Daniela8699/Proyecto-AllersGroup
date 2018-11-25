@@ -48,6 +48,8 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
+            
+
             String mensaje = "";
             List<String> productosImplicados = new List<string>();
             productosImplicados = conexion.productosGenerados();
@@ -147,7 +149,7 @@ namespace AllersGroup.interfaz
                
                 for (int i = 0; i < mostrar.Count(); i++)
                 {
-                    richTextBox1.Text += mostrar[i] + "\n";
+                    richTextBox1.Text += mostrar[i] + "";
                 }
 
             }
