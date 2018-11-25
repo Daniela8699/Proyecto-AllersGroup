@@ -45,35 +45,34 @@ namespace AllersGroup.interfaz
         {
 
         }
-
+        public bool selec = false;
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
-            
-
-            String mensaje = "";
-            List<String> productosImplicados = new List<string>();
-            productosImplicados = conexion.productosGenerados();
-           
-
-            for (int i = 0; i < productosImplicados.Count(); i++)
-            {
-                
-                ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
-                flowArticulo.Controls.Add(nuevo);
-
-                listBoxProductos.Items.Add(productosImplicados[i]);
-
-            }
-            
+                String mensaje = "";
+                List<String> productosImplicados = new List<string>();
+                productosImplicados = conexion.productosGenerados();
 
 
-            //String mensaje = conexion.mensajeRecomenaciones();
-            String confianza = conexion.darConfianza();
+                for (int i = 0; i < productosImplicados.Count(); i++)
+                {
 
-         
+                    ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
+                    flowArticulo.Controls.Add(nuevo);
 
-            txtConfianza.Text = confianza + "%";
-            richTextBox1.Text = mensaje; 
+                    listBoxProductos.Items.Add(productosImplicados[i]);
+
+                }
+
+
+
+                //String mensaje = conexion.mensajeRecomenaciones();
+                String confianza = conexion.darConfianza();
+
+
+            selec = true;
+                txtConfianza.Text = confianza + "%";
+                richTextBox1.Text = mensaje;
+
 
         }
 
@@ -133,37 +132,44 @@ namespace AllersGroup.interfaz
 
         private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
         {
-            int valorInicio = 0;
-            int valorFinal = 0;
-            int aumento = 0;
-            String producto = listBoxProductos.SelectedItem.ToString();
-            labelProducto.Text = producto;
-
-
-
-            //Filtrado de asociaciones
-
-            try
+            if( selec==true)
             {
-                List<int> mostrar = conexion.mostrarImplicados(producto);
-               
-                for (int i = 0; i < mostrar.Count(); i++)
+                int valorInicio = 0;
+                int valorFinal = 0;
+                int aumento = 0;
+                if (listBoxProductos.SelectedItem != null)
                 {
-                    richTextBox1.Text += mostrar[i] + "\n";
+                    String producto = listBoxProductos.SelectedItem.ToString();
+                    labelProducto.Text = producto;
+
+
+
+                    //Filtrado de asociaciones
+
+                    try
+                    {
+                        List<int> mostrar = conexion.mostrarImplicados(producto);
+
+                        for (int i = 0; i < mostrar.Count(); i++)
+                        {
+                            richTextBox1.Text += mostrar[i] + "\n";
+                        }
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("No se encuentran implicantes para este producto");
+                    }
+
+
+
+                    txtValorInicial.Text = valorInicio + "";
+                    txtValorFinal.Text = valorFinal + "";
+                    txtAumento.Text = aumento + "";
                 }
-
+                else MessageBox.Show("Primero seleccione algo de la lista.");
             }
-            catch
-            {
-                MessageBox.Show("No se encuentran implicantes para este producto");
-            }
-            
-
-
-            txtValorInicial.Text = valorInicio + "";
-            txtValorFinal.Text = valorFinal + "";
-            txtAumento.Text = aumento + "";
-
+            else MessageBox.Show("Primero genere las asociaciones."); 
 
         }
 

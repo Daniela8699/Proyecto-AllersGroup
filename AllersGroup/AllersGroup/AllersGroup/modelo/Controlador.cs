@@ -9,9 +9,9 @@ public class Controlador
 {
     public String reporte = "";
 
-    public const String rutaArticulos = "../../Data/Articulos.csv";
-    public const String rutaClientes = "../../Data/Clientes.csv";
-    public const String rutaVentas = "../../Data/Ventas.csv";
+    public const String rutaArticulos = "/Articulos.csv";
+    public const String rutaClientes = "/Clientes.csv";
+    public const String rutaVentas = "/Ventas.csv";
 
     public const String rutaArticulosPrueba = "../../DatosPrueba/Articulos.csv";
     public const String rutaClientesPrueba = "../../DatosPrueba/Clientes.csv";
@@ -30,6 +30,7 @@ public class Controlador
     private int[,] matrizDeSimilitud;
     public double minSuport = 0;
     public double minCon = 0;
+    private String rutaFolder;
 
     List<List<Articulo>> combinaciones;
 
@@ -44,8 +45,9 @@ public class Controlador
     public int NumArticulos { get => numArticulos; set => numArticulos = value; }
     public int TamanhoAgrupaciones { get => tamanhoAgrupaciones; set => tamanhoAgrupaciones = value; }
 
-    public Controlador(double minConf, double minSup)
+    public Controlador(double minConf, double minSup, string ruta)
     {
+        rutaFolder = ruta;
         izq = new List<List<int>>();
         der = new List<List<int>>();
         articulos = new List<Articulo>();
@@ -102,7 +104,7 @@ public class Controlador
         String line;
         try
         {
-            StreamReader sr = new StreamReader(rutaArticulos);
+            StreamReader sr = new StreamReader(rutaFolder+rutaArticulos);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -147,7 +149,7 @@ public class Controlador
         try
         {
             int index = 0;
-            StreamReader sr = new StreamReader(rutaClientes);
+            StreamReader sr = new StreamReader(rutaFolder + rutaClientes);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -180,7 +182,7 @@ public class Controlador
         try
         {
 
-            StreamReader sr = new StreamReader(ruta);
+            StreamReader sr = new StreamReader(rutaFolder + ruta);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -491,7 +493,7 @@ public class Controlador
 
     // APLICACIÓN ESTRATEGIA FP   *****************
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
-
+    public string RutaFolder { get => rutaFolder; set => rutaFolder = value; }
 
     public List<string> estrategiaFP(List<Venta> ventas)
     {

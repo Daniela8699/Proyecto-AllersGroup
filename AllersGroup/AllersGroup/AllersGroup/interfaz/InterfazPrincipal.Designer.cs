@@ -34,6 +34,7 @@
             this.graf = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.butParametrosCargar = new System.Windows.Forms.Button();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // info
@@ -91,6 +92,16 @@
             this.butParametrosCargar.UseVisualStyleBackColor = false;
             this.butParametrosCargar.Click += new System.EventHandler(this.butParametrosCargar_Click);
             // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(78, 610);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(221, 35);
+            this.btnCargar.TabIndex = 7;
+            this.btnCargar.Text = "Seleccionar Carpeta";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
             // InterfazPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -99,6 +110,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.butParametrosCargar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.graf);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Label graf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butParametrosCargar;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
