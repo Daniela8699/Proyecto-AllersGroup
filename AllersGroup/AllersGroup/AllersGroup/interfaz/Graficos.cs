@@ -43,17 +43,25 @@ namespace AllersGroup.interfaz
         }
         private void Graficos_Load(object sender, EventArgs e)
         {
-            int[] masfrecuentes= a.modelo.masFrecuentesMetodo(a.num);
+            int[] masfrecuentes = a.modelo.masFrecuentesMetodo(a.num);
+            cargar(a.num);
+   
+        }
+        private void cargar(int numero)
+        {
+            int[] masfrecuentes = a.modelo.masFrecuentesMetodo(numero);
 
+            texto.Text = "Los " + numero + " productos mas vendidos ordenados de mayor a menor son: ";
             for (int i = 0; i < masfrecuentes.Length; i++)
             {
-            chart1.Series["Series1"].Points.AddXY(a.modelo.BuscarItem(masfrecuentes[i]).ItemName,a.modelo.apariciones(masfrecuentes[i]));
-            }
-            //chart1.Series["Series1"].LabelForeColor = Color.White;
-            chart1.Series["Series1"].IsValueShownAsLabel = false;
-            chart1.Series["Series1"]["PieLabelStyle"] = "Disabled";
-        }
+                string x = a.modelo.BuscarItem(masfrecuentes[i]).ItemName;
+                int y = a.modelo.apariciones(masfrecuentes[i]);
+                int num = i + 1;
+                texto2.Text += "["+num+"] "+ x + " con un total de apariciones en las transacciones de " + y + "\n\n";
+                chartControl1.Series[0].Points.AddPoint(x, y);
 
+            }
+        }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
@@ -63,6 +71,25 @@ namespace AllersGroup.interfaz
         {
             a.label1_Click(sender, e);
             Visible = false;
+        }
+
+      
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartControl1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butSelec_Click(object sender, EventArgs e)
+        {
+            texto2.Text = "";
+            chartControl1.Series[0].Points.Clear();
+            int numero = Int32.Parse(textBox1.Text);
+            cargar(numero);
         }
     }
 }

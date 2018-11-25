@@ -28,17 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Graficos));
+            DevExpress.XtraCharts.SimpleDiagram3D simpleDiagram3D1 = new DevExpress.XtraCharts.SimpleDiagram3D();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Pie3DSeriesView pie3DSeriesView1 = new DevExpress.XtraCharts.Pie3DSeriesView();
             this.inicio = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.Label();
             this.recom = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.recup = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.texto = new System.Windows.Forms.Label();
+            this.texto2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.butSelec = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram3D1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // inicio
@@ -68,31 +82,6 @@
             this.recom.TabIndex = 2;
             this.recom.Click += new System.EventHandler(this.recom_Click);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(494, 145);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(518, 474);
-            this.chart1.TabIndex = 3;
-            this.chart1.Text = "chart1";
-            // 
             // recup
             // 
             this.recup.BackColor = System.Drawing.Color.Transparent;
@@ -102,14 +91,136 @@
             this.recup.TabIndex = 4;
             this.recup.Click += new System.EventHandler(this.recup_Click);
             // 
+            // texto
+            // 
+            this.texto.AutoSize = true;
+            this.texto.BackColor = System.Drawing.Color.Transparent;
+            this.texto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texto.Location = new System.Drawing.Point(3, 0);
+            this.texto.Name = "texto";
+            this.texto.Size = new System.Drawing.Size(0, 22);
+            this.texto.TabIndex = 6;
+            // 
+            // texto2
+            // 
+            this.texto2.AutoSize = true;
+            this.texto2.BackColor = System.Drawing.Color.Transparent;
+            this.texto2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texto2.Location = new System.Drawing.Point(3, 110);
+            this.texto2.Name = "texto2";
+            this.texto2.Size = new System.Drawing.Size(0, 15);
+            this.texto2.TabIndex = 7;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.texto2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(28, 134);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(571, 486);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label1);
+            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.butSelec);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(563, 46);
+            this.flowLayoutPanel3.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 36);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Escoge el numero de productos\r\nmas frecuentes que deseas ver:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(272, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(98, 25);
+            this.textBox1.TabIndex = 10;
+            // 
+            // butSelec
+            // 
+            this.butSelec.BackColor = System.Drawing.Color.Transparent;
+            this.butSelec.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butSelec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butSelec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butSelec.FlatAppearance.BorderSize = 0;
+            this.butSelec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.butSelec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.butSelec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butSelec.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSelec.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.butSelec.Location = new System.Drawing.Point(375, 2);
+            this.butSelec.Margin = new System.Windows.Forms.Padding(2);
+            this.butSelec.Name = "butSelec";
+            this.butSelec.Size = new System.Drawing.Size(125, 31);
+            this.butSelec.TabIndex = 29;
+            this.butSelec.Text = "Escoger";
+            this.butSelec.UseVisualStyleBackColor = false;
+            this.butSelec.Click += new System.EventHandler(this.butSelec_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.texto);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 55);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(563, 52);
+            this.flowLayoutPanel2.TabIndex = 9;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.BackColor = System.Drawing.Color.Transparent;
+            this.chartControl1.BackImage.Image = ((System.Drawing.Image)(resources.GetObject("chartControl1.BackImage.Image")));
+            this.chartControl1.BackImage.Stretch = true;
+            this.chartControl1.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            simpleDiagram3D1.RotationMatrixSerializable = "0.0086049544499355;0.893275443411166;-0.44942734335768;0;0.849718830198564;0.2304" +
+    "08377226638;0.47422556796297;0;0.527165879363356;-0.38596756586844;-0.7570503112" +
+    "29507;0;0;0;0;1";
+            this.chartControl1.Diagram = simpleDiagram3D1;
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Location = new System.Drawing.Point(600, 186);
+            this.chartControl1.Name = "chartControl1";
+            series1.Name = "Serie1";
+            series1.View = pie3DSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.Size = new System.Drawing.Size(600, 434);
+            this.chartControl1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(527, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "label2";
+            // 
             // Graficos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.ClientSize = new System.Drawing.Size(1190, 685);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.chartControl1);
             this.Controls.Add(this.recup);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.recom);
             this.Controls.Add(this.info);
             this.Controls.Add(this.inicio);
@@ -120,8 +231,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AllersGroup";
             this.Load += new System.EventHandler(this.Graficos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(simpleDiagram3D1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pie3DSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,8 +251,16 @@
         private System.Windows.Forms.Label inicio;
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Label recom;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label recup;
+        private System.Windows.Forms.Label texto;
+        private System.Windows.Forms.Label texto2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button butSelec;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.Label label2;
     }
 }
