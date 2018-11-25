@@ -60,21 +60,15 @@ namespace AllersGroup.interfaz
                 
                 ControlProducto nuevo = new ControlProducto(conexion, productosImplicados[i]);
                 flowArticulo.Controls.Add(nuevo);
-
                 listBoxProductos.Items.Add(productosImplicados[i]);
 
             }
-            
 
+            mensaje = conexion.mensajeRecomenaciones();
+            richTextAsociacionesCompletas.Text = mensaje;
 
-            //String mensaje = conexion.mensajeRecomenaciones();
             String confianza = conexion.darConfianza();
-
-         
-
             txtConfianza.Text = confianza + "%";
-            richTextBox1.Text = mensaje; 
-
         }
 
         private void butCPrivada_Click(object sender, EventArgs e)
@@ -133,6 +127,9 @@ namespace AllersGroup.interfaz
 
         private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
         {
+
+            richTextBox1.Clear();
+
             int valorInicio = 0;
             int valorFinal = 0;
             int aumento = 0;
@@ -149,8 +146,12 @@ namespace AllersGroup.interfaz
                
                 for (int i = 0; i < mostrar.Count(); i++)
                 {
-                    richTextBox1.Text += mostrar[i] + "\n";
+                    richTextBox1.Text += "- " + mostrar[i] + "\n";
                 }
+
+                valorInicio = conexion.valorInicial(producto);
+                valorFinal = conexion.valorFinal(producto);
+                aumento = conexion.aumento(producto);
 
             }
             catch

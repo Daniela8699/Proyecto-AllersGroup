@@ -30,6 +30,10 @@ public class Controlador
     private int[,] matrizDeSimilitud;
     public double minSuport = 0;
     public double minCon = 0;
+    public double inicial;
+    public double adicion;
+    public double aumento;
+
 
     List<List<Articulo>> combinaciones;
 
@@ -59,7 +63,9 @@ public class Controlador
         minCon = minConf;
         minSuport = minSup;
         productosGenerados = new List<String>();
-        
+        inicial = 0;
+        adicion = 0;
+        aumento = 0;
     }
 
     public void CargarDatos()
@@ -319,7 +325,22 @@ public class Controlador
         return index;
     }
 
+    public int mostrarValorInicial(string codProducto)
+    {
+        return int.Parse(inicial+"");
+    }
 
+    public int mostrarValorFinal(string codProducto)
+    {
+
+        double op = inicial + adicion;
+        return int.Parse(op+"");
+    }
+    public int mostrarAumento(string codProducto)
+    {
+        double op = adicion * 100;
+        return int.Parse(op+"");
+    }
     
     public String ReporteSimiliares(String cardCodeBuscado)
     {
@@ -470,7 +491,7 @@ public class Controlador
         }
         foreach (var n in completas)
         {
-            ConvertirAsociacionesCompletas(n);
+            ConvertirAsociacionesCompletas(n); 
         }
 
         reporte += apriori.Reporte;
@@ -567,9 +588,9 @@ public class Controlador
         if (izq.Count() != 0)
         {
             double [] precios = BuscarPrecioEnLista(izq, der);
-            double inicial = precios[0];
-            double adicion = precios[1];
-            double aumento = precios[2];
+            inicial = precios[0];
+            adicion = precios[1];
+            aumento = precios[2];
             String asociacion = " \nAl comprar los siguientes Items\n";
             Articulo temporal = null;
             foreach (var n in izq)

@@ -91,6 +91,20 @@ namespace AllersGroup
            return modelo.mostrarProductosImplicados(codProducto);
         }
 
+        public int valorInicial(string producto)
+        {
+            return modelo.mostrarValorInicial(producto);
+        }
+
+        public int valorFinal(string producto)
+        {
+            return modelo.mostrarValorFinal(producto);
+        }
+        public int aumento(string producto)
+        {
+            return modelo.mostrarAumento(producto);
+        }
+
 
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
