@@ -59,7 +59,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.butSeleccionarProducto = new System.Windows.Forms.Button();
             this.txtValorInicial = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxProductos = new System.Windows.Forms.ListBox();
             this.labelProducto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -397,24 +397,24 @@
             this.txtValorInicial.Size = new System.Drawing.Size(139, 27);
             this.txtValorInicial.TabIndex = 27;
             // 
-            // listBox1
+            // listBoxProductos
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 22;
-            this.listBox1.Location = new System.Drawing.Point(391, 274);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(155, 70);
-            this.listBox1.TabIndex = 36;
+            this.listBoxProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxProductos.FormattingEnabled = true;
+            this.listBoxProductos.ItemHeight = 22;
+            this.listBoxProductos.Location = new System.Drawing.Point(391, 274);
+            this.listBoxProductos.Name = "listBoxProductos";
+            this.listBoxProductos.Size = new System.Drawing.Size(155, 70);
+            this.listBoxProductos.TabIndex = 36;
             // 
             // labelProducto
             // 
             this.labelProducto.AutoSize = true;
             this.labelProducto.BackColor = System.Drawing.Color.Transparent;
-            this.labelProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducto.Location = new System.Drawing.Point(585, 385);
+            this.labelProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProducto.Location = new System.Drawing.Point(579, 385);
             this.labelProducto.Name = "labelProducto";
-            this.labelProducto.Size = new System.Drawing.Size(77, 20);
+            this.labelProducto.Size = new System.Drawing.Size(83, 20);
             this.labelProducto.TabIndex = 37;
             this.labelProducto.Text = "CODIGO";
             // 
@@ -483,7 +483,7 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.labelProducto);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxProductos);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.flowArticulo);
             this.Controls.Add(this.label8);
@@ -548,7 +548,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button butSeleccionarProducto;
         private System.Windows.Forms.TextBox txtValorInicial;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxProductos;
         private System.Windows.Forms.Label labelProducto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

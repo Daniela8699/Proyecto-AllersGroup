@@ -18,6 +18,8 @@ public class Controlador
     public const String rutaVentasPrueba = "../../DatosPrueba/Ventas.csv";
 
 
+    private List<List<int>> izq;
+    private List<List<int>> der;
     private List<Articulo> articulos;
     private List<Cliente> clientes;
     private List<Venta> ventas;
@@ -44,6 +46,8 @@ public class Controlador
 
     public Controlador(double minConf, double minSup)
     {
+        izq = new List<List<int>>();
+        der = new List<List<int>>();
         articulos = new List<Articulo>();
         clientes = new List<Cliente>();
         ventas = new List<Venta>();
@@ -277,6 +281,16 @@ public class Controlador
             }
         }
     }
+
+
+    public List<int> mostrarProductosImplicados(String codProducto)
+    {
+        var x = izq.Where((a,b) =>  a.Equals(codProducto) && a.Count==1).Select((a,b)=>b).First();
+        return der.ElementAt(x);
+    }
+
+
+
     
     public String ReporteSimiliares(String cardCodeBuscado)
     {
@@ -417,8 +431,8 @@ public class Controlador
         NumArticulos = numArticulos;
         int[] darItemCode = masFrecuentesMetodo(numArti);
         apriori.Generar(tamanho, ventas, darItemCode);
-        List<List<int>> izq = apriori.Implicantes;
-        List<List<int>> der = apriori.Implicados;
+        izq = apriori.Implicantes;
+        der = apriori.Implicados;
         List<List<int>> completas = apriori.Completas;
         int reglas = izq.Count;
         for(int i = 0; i < reglas; i++)
