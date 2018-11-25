@@ -296,18 +296,28 @@ public class Controlador
 
     public List<int> mostrarProductosImplicados(String codProducto)
     {
-        var x = izq.Where((a,b) =>  a.Equals(codProducto) && a.Count==1).Select((a,b)=>b).First();
-
-        //List<int> p = new List<int>();
-        //p = der[0];
-        //for (int i=0; i<p.Count();i++)
-        //{
-        //    Console.WriteLine(p[i]);
-        //}
-
-        return der.ElementAt(x);
+        int itemBuscado = Convert.ToInt32(codProducto);
+        //Como solo es 1
+        int index = BuscarIndexImplicante(itemBuscado);
+        return der.ElementAt(index);
+        
     }
-
+    public int BuscarIndexImplicante(int itemBuscado)
+    {
+        int index = 0;
+        foreach(var x in izq)
+        {
+            if(x.Count() == 1)
+            {
+                if (x.Contains(itemBuscado))
+                {
+                    break;
+                }
+            }
+            index++;
+        }
+        return index;
+    }
 
 
     
