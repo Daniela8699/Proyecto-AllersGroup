@@ -124,9 +124,20 @@ public class Controlador
         }
     }
 
-    public List<String> darProductos()
+    public List<string> darProductos()
     {
-        return productosGenerados;
+
+        var noRepetidos = new List<string>();
+        foreach (var x in productosGenerados)
+        {
+            if (!noRepetidos.Contains(x))
+            {
+                noRepetidos.Add(x);
+            }
+        }
+
+            
+        return noRepetidos;
     }
 
 
@@ -286,6 +297,14 @@ public class Controlador
     public List<int> mostrarProductosImplicados(String codProducto)
     {
         var x = izq.Where((a,b) =>  a.Equals(codProducto) && a.Count==1).Select((a,b)=>b).First();
+
+        //List<int> p = new List<int>();
+        //p = der[0];
+        //for (int i=0; i<p.Count();i++)
+        //{
+        //    Console.WriteLine(p[i]);
+        //}
+
         return der.ElementAt(x);
     }
 
@@ -556,6 +575,8 @@ public class Controlador
                 temporal = this.BuscarItem(x);
                 
                 asociacion += "- " + temporal.ItemName + " ItemCode: " + x + "\n";
+                productosGenerados.Add(x+"");
+
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";

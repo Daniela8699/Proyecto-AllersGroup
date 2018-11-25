@@ -144,7 +144,7 @@ namespace AllersGroup.interfaz
             try
             {
                 List<int> mostrar = conexion.mostrarImplicados(producto);
-                richTextBox1.Text = "Hola BITCHHH ";
+               
                 for (int i = 0; i < mostrar.Count(); i++)
                 {
                     richTextBox1.Text = mostrar[i] + "";
@@ -159,8 +159,8 @@ namespace AllersGroup.interfaz
 
 
             txtValorInicial.Text = valorInicio + "";
-            txtValorFinal.Text = txtValorFinal + "";
-            txtAumento.Text = txtAumento + "";
+            txtValorFinal.Text = valorFinal + "";
+            txtAumento.Text = aumento + "";
 
 
         }
