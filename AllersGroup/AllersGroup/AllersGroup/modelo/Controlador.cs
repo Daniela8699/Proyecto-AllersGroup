@@ -33,7 +33,7 @@ public class Controlador
     public double inicial;
     public double adicion;
     public double aumento;
-
+    public bool asociacionCompleta;
 
     List<List<Articulo>> combinaciones;
 
@@ -66,6 +66,7 @@ public class Controlador
         inicial = 0;
         adicion = 0;
         aumento = 0;
+        asociacionCompleta = false; 
     }
 
     public void CargarDatos()
@@ -453,11 +454,20 @@ public class Controlador
     }
     public String Promociones()
     {
-        String mensaje = "\n";
-        foreach(var n in asociaciones)
+        String mensaje = "";
+        if (asociacionCompleta)
         {
-            mensaje += n;
+            mensaje = "\n";
+            foreach (var n in asociaciones)
+            {
+                mensaje += n;
+            }
         }
+        else
+        {
+            mensaje = "No existen asociaciones completas ";
+        }
+        
         return mensaje;
     }
    
@@ -474,9 +484,14 @@ public class Controlador
     }
     //FIN APLICACION ESTRATEGIA DE FUERZA BRUTA *************
 
+    
+
     // APLICACIÓN ESTRATEGIA A-PRIORI *****************
     public void AprioriMethod(int tamanho, int numArti)
     {
+
+       
+
         TamanhoAgrupaciones = tamanho;
         NumArticulos = numArticulos;
         int[] darItemCode = masFrecuentesMetodo(numArti);
@@ -488,10 +503,18 @@ public class Controlador
         for(int i = 0; i < reglas; i++)
         {
             ConvertirAsociaciones(izq.ElementAt(i), der.ElementAt(i));
+            
         }
-        foreach (var n in completas)
+
+        if (completas.Count()!=0)
         {
-            ConvertirAsociacionesCompletas(n); 
+            asociacionCompleta = true;
+            foreach (var n in completas)
+            {
+                ConvertirAsociacionesCompletas(n);
+
+            }
+
         }
 
         reporte += apriori.Reporte;
@@ -611,7 +634,7 @@ public class Controlador
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";
-            asociaciones.Add(asociacion);
+            //asociaciones.Add(asociacion);
         }
     }
 
@@ -623,6 +646,7 @@ public class Controlador
 
         foreach(var n in com)
         {
+            asociacion = "\n";
             asociacion +="- " + BuscarItem(n).ItemName + "\n";
             productosGenerados.Add(n+"");
 

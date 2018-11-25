@@ -233,7 +233,7 @@
             this.butInfoRecomendaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.butInfoRecomendaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoRecomendaciones.Location = new System.Drawing.Point(952, 116);
+            this.butInfoRecomendaciones.Location = new System.Drawing.Point(1131, 715);
             this.butInfoRecomendaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
             this.butInfoRecomendaciones.Size = new System.Drawing.Size(48, 37);
@@ -357,7 +357,7 @@
             this.flowArticulo.Location = new System.Drawing.Point(47, 277);
             this.flowArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowArticulo.Name = "flowArticulo";
-            this.flowArticulo.Size = new System.Drawing.Size(264, 464);
+            this.flowArticulo.Size = new System.Drawing.Size(264, 475);
             this.flowArticulo.TabIndex = 34;
             this.flowArticulo.Paint += new System.Windows.Forms.PaintEventHandler(this.flowArticulo_Paint);
             // 
@@ -482,7 +482,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(387, 590);
+            this.label13.Location = new System.Drawing.Point(387, 582);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(383, 60);
             this.label13.TabIndex = 43;
@@ -506,7 +506,7 @@
             this.richTextAsociacionesCompletas.Location = new System.Drawing.Point(391, 664);
             this.richTextAsociacionesCompletas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextAsociacionesCompletas.Name = "richTextAsociacionesCompletas";
-            this.richTextAsociacionesCompletas.Size = new System.Drawing.Size(407, 77);
+            this.richTextAsociacionesCompletas.Size = new System.Drawing.Size(407, 88);
             this.richTextAsociacionesCompletas.TabIndex = 45;
             this.richTextAsociacionesCompletas.Text = "";
             // 
