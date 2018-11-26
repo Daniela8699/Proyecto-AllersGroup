@@ -65,13 +65,13 @@ namespace AllersGroup.interfaz
 
 
 
-                //String mensaje = conexion.mensajeRecomenaciones();
+                mensaje = conexion.mensajeRecomenaciones();
                 String confianza = conexion.darConfianza();
 
 
-            selec = true;
+                selec = true;
                 txtConfianza.Text = confianza + "%";
-                richTextBox1.Text = mensaje;
+                richTextAsociacionesCompletas.Text = mensaje;
 
 
         }
@@ -161,7 +161,9 @@ namespace AllersGroup.interfaz
                         MessageBox.Show("No se encuentran implicantes para este producto");
                     }
 
-
+                    valorInicio = conexion.valorInicial(producto);
+                    valorFinal = conexion.valorFinal(producto);
+                    aumento = conexion.aumento(producto);
 
                     txtValorInicial.Text = valorInicio + "";
                     txtValorFinal.Text = valorFinal + "";
