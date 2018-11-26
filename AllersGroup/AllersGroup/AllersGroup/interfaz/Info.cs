@@ -55,7 +55,7 @@ namespace AllersGroup.interfaz
         private void butDistribuidorC_Click(object sender, EventArgs e)
         {
             categoria = "DISTRIBUIDORES";
-            gMapControl1.Overlays.Clear();
+           
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -85,7 +85,7 @@ namespace AllersGroup.interfaz
         private void butDrogFarmaciaMiscC_Click(object sender, EventArgs e)
         {
             categoria = "DROG FARMACIA Y MISC";
-            gMapControl1.Overlays.Clear();
+            
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -124,7 +124,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PRIVADAS";
-            gMapControl1.Overlays.Clear();
+           
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -153,7 +153,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PUBLICAS";
-            gMapControl1.Overlays.Clear();
+            
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -182,7 +182,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "NO DEDICADO A SALUD";
-            gMapControl1.Overlays.Clear();
+           
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -211,7 +211,7 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "ALMACENES DE CADENA";
-            gMapControl1.Overlays.Clear();
+           
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -240,7 +240,7 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "BELLEZA Y ESTETICA";
-            gMapControl1.Overlays.Clear();
+          
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -269,7 +269,7 @@ namespace AllersGroup.interfaz
         {
          
             categoria = "VETERINARIOS";
-            gMapControl1.Overlays.Clear();
+            
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -298,7 +298,7 @@ namespace AllersGroup.interfaz
         {
            
             categoria = "ODONTO CENTRO ODONTO";
-            gMapControl1.Overlays.Clear();
+            
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -327,7 +327,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "MED LAB OP AMBUL";
-            gMapControl1.Overlays.Clear();
+           
             GMapOverlay overlay = new GMapOverlay();
             MessageBox.Show("Espera a que se carguen los datos");
             List<Cliente> clientes2 = a.clientesCategoria(categoria);
@@ -391,6 +391,11 @@ namespace AllersGroup.interfaz
         private void butInfo_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Se presenta las ubicaciones de los clientes segun sus categorias.");
+        }
+
+        private void butSelec_Click(object sender, EventArgs e)
+        {
+            gMapControl1.Overlays.Clear();
         }
     }
 }

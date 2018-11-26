@@ -46,6 +46,7 @@
             this.recup = new System.Windows.Forms.Label();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.butInfo = new System.Windows.Forms.Button();
+            this.butSelec = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -321,7 +322,7 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(771, 447);
+            this.gMapControl1.Size = new System.Drawing.Size(747, 447);
             this.gMapControl1.TabIndex = 30;
             this.gMapControl1.Zoom = 2D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
@@ -340,12 +341,34 @@
             this.butInfo.UseVisualStyleBackColor = false;
             this.butInfo.Click += new System.EventHandler(this.butInfo_Click);
             // 
+            // butSelec
+            // 
+            this.butSelec.BackColor = System.Drawing.Color.Transparent;
+            this.butSelec.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
+            this.butSelec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butSelec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butSelec.FlatAppearance.BorderSize = 0;
+            this.butSelec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.butSelec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.butSelec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butSelec.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butSelec.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.butSelec.Location = new System.Drawing.Point(1081, 181);
+            this.butSelec.Margin = new System.Windows.Forms.Padding(2);
+            this.butSelec.Name = "butSelec";
+            this.butSelec.Size = new System.Drawing.Size(101, 42);
+            this.butSelec.TabIndex = 32;
+            this.butSelec.Text = "Eliminar Marcadores";
+            this.butSelec.UseVisualStyleBackColor = false;
+            this.butSelec.Click += new System.EventHandler(this.butSelec_Click);
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.butSelec);
             this.Controls.Add(this.butInfo);
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.recup);
@@ -384,5 +407,6 @@
         private System.Windows.Forms.Button butInfoFrecuentes;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.Button butInfo;
+        private System.Windows.Forms.Button butSelec;
     }
 }
