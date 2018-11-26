@@ -101,7 +101,7 @@ namespace AllersGroup.interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Explicación:\n\n\n Support: \n\n Confianza: \n\n Tamaño dde Agrupaciones: \n\n Número de Articulos:");
+            MessageBox.Show("Explicación:\n\n\n-Soporte: Es el porcentaje de apariciones que debe cumplir las agrupaciones dentro de las ventas.\n\n-Confianza: Es el porcentaje, calculado matematicamente, en el que se asegura que un item logra implicar a otro. \n\n-Tamaño de Agrupaciones: Es el tamaño determinado para generar los conjuntos de articulos frecuentes.\nCabe resaltar que solo puede escoger un tamaño enre 1 a 7.\n\n-Número de Articulos: Cantidad de articulos con los que desea analizar sus datos. Estos articulos son mas frecuentes en sus ventas, asi podemos obtener datos confiables.");
         }
     }
 }
