@@ -90,7 +90,12 @@ namespace AllersGroup
 
            return modelo.mostrarProductosImplicados(codProducto);
         }
-
+        public double[] TraerPrecios(int izq, List<int> der)
+        {
+            List<int> izqu = new List<int>();
+            izqu.Add(izq);
+            return modelo.BuscarPrecioEnLista(izqu, der);
+        }
 
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
@@ -99,7 +104,7 @@ namespace AllersGroup
             num = numArticulos;
             modelo.CargarDatos();
             modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
-            MessageBox.Show("Los datos han sido analizados");
+            MessageBox.Show("Los datos han sido analizados\nPor favor cierre la ventana parámetros.");
             mensaje = modelo.Promociones();
             productos = modelo.darProductos();
             conf = confianza;

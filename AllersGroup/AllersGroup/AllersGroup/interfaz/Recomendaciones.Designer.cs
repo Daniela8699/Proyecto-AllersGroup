@@ -206,7 +206,7 @@
             this.butDistribuidor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butDistribuidor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.butDistribuidor.Location = new System.Drawing.Point(49, 94);
-            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butDistribuidor.Margin = new System.Windows.Forms.Padding(2);
             this.butDistribuidor.Name = "butDistribuidor";
             this.butDistribuidor.Size = new System.Drawing.Size(219, 35);
             this.butDistribuidor.TabIndex = 7;
@@ -226,7 +226,7 @@
             this.butInfoRecomendaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butInfoRecomendaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butInfoRecomendaciones.Location = new System.Drawing.Point(714, 94);
-            this.butInfoRecomendaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butInfoRecomendaciones.Margin = new System.Windows.Forms.Padding(2);
             this.butInfoRecomendaciones.Name = "butInfoRecomendaciones";
             this.butInfoRecomendaciones.Size = new System.Drawing.Size(36, 30);
             this.butInfoRecomendaciones.TabIndex = 22;
@@ -238,7 +238,7 @@
             this.txtConfianza.Enabled = false;
             this.txtConfianza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfianza.Location = new System.Drawing.Point(458, 107);
-            this.txtConfianza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConfianza.Margin = new System.Windows.Forms.Padding(2);
             this.txtConfianza.Name = "txtConfianza";
             this.txtConfianza.Size = new System.Drawing.Size(89, 23);
             this.txtConfianza.TabIndex = 21;
@@ -260,7 +260,7 @@
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(293, 388);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(306, 141);
             this.richTextBox1.TabIndex = 0;
@@ -329,7 +329,7 @@
             // 
             this.txtValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorFinal.Location = new System.Drawing.Point(646, 378);
-            this.txtValorFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtValorFinal.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorFinal.Name = "txtValorFinal";
             this.txtValorFinal.Size = new System.Drawing.Size(105, 23);
             this.txtValorFinal.TabIndex = 31;
@@ -352,7 +352,7 @@
             this.flowArticulo.AutoScroll = true;
             this.flowArticulo.BackColor = System.Drawing.Color.White;
             this.flowArticulo.Location = new System.Drawing.Point(35, 225);
-            this.flowArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.flowArticulo.Name = "flowArticulo";
             this.flowArticulo.Size = new System.Drawing.Size(198, 343);
             this.flowArticulo.TabIndex = 34;
@@ -383,7 +383,7 @@
             this.butSeleccionarProducto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butSeleccionarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.butSeleccionarProducto.Location = new System.Drawing.Point(446, 240);
-            this.butSeleccionarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butSeleccionarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.butSeleccionarProducto.Name = "butSeleccionarProducto";
             this.butSeleccionarProducto.Size = new System.Drawing.Size(125, 31);
             this.butSeleccionarProducto.TabIndex = 28;
@@ -395,7 +395,7 @@
             // 
             this.txtValorInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorInicial.Location = new System.Drawing.Point(646, 307);
-            this.txtValorInicial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtValorInicial.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorInicial.Name = "txtValorInicial";
             this.txtValorInicial.Size = new System.Drawing.Size(105, 23);
             this.txtValorInicial.TabIndex = 27;
@@ -406,7 +406,7 @@
             this.listBoxProductos.FormattingEnabled = true;
             this.listBoxProductos.ItemHeight = 17;
             this.listBoxProductos.Location = new System.Drawing.Point(293, 223);
-            this.listBoxProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxProductos.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxProductos.Name = "listBoxProductos";
             this.listBoxProductos.Size = new System.Drawing.Size(117, 55);
             this.listBoxProductos.TabIndex = 36;
@@ -416,7 +416,7 @@
             this.labelProducto.AutoSize = true;
             this.labelProducto.BackColor = System.Drawing.Color.Transparent;
             this.labelProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducto.Location = new System.Drawing.Point(434, 313);
+            this.labelProducto.Location = new System.Drawing.Point(445, 313);
             this.labelProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProducto.Name = "labelProducto";
             this.labelProducto.Size = new System.Drawing.Size(69, 17);
@@ -428,7 +428,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(501, 313);
+            this.label10.Location = new System.Drawing.Point(527, 313);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 17);
@@ -475,7 +475,7 @@
             // 
             this.txtAumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAumento.Location = new System.Drawing.Point(646, 442);
-            this.txtAumento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAumento.Margin = new System.Windows.Forms.Padding(2);
             this.txtAumento.Name = "txtAumento";
             this.txtAumento.Size = new System.Drawing.Size(105, 23);
             this.txtAumento.TabIndex = 42;

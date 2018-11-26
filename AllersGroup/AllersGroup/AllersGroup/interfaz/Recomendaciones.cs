@@ -18,6 +18,26 @@ namespace AllersGroup.interfaz
         {
             this.conexion = conexion;
             InitializeComponent();
+            butSeleccionarProducto.Visible = false;
+            butInfoRecomendaciones.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            txtConfianza.Visible = false;
+            listBoxProductos.Visible = false;
+            label9.Visible = false;
+            labelProducto.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            richTextBox1.Visible = false;
+            label5.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label12.Visible = false;
+            label4.Visible = false;
+            txtAumento.Visible = false;
+            txtValorFinal.Visible = false;
+            txtValorInicial.Visible = false;
         }
 
         private void inicio_Click(object sender, EventArgs e)
@@ -48,7 +68,27 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
-            
+            butSeleccionarProducto.Visible = true;
+            butInfoRecomendaciones.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            txtConfianza.Visible = true;
+            listBoxProductos.Visible = true;
+            label9.Visible = true;
+            labelProducto.Visible = true;
+            label10.Visible = true;
+            label11.Visible = true;
+            richTextBox1.Visible = true;
+            label5.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label12.Visible = true;
+            label4.Visible = true;
+            txtAumento.Visible = true;
+            txtValorFinal.Visible = true;
+            txtValorInicial.Visible = true;
+
 
             String mensaje = "";
             List<String> productosImplicados = new List<string>();
@@ -133,10 +173,12 @@ namespace AllersGroup.interfaz
 
         private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
         {
-            int valorInicio = 0;
-            int valorFinal = 0;
-            int aumento = 0;
+            richTextBox1.Clear();
+            double valorInicio = 0;
+            double valorFinal = 0;
+            double aumento = 0;
             String producto = listBoxProductos.SelectedItem.ToString();
+            int product = Convert.ToInt32(producto);
             labelProducto.Text = producto;
 
 
@@ -146,6 +188,10 @@ namespace AllersGroup.interfaz
             try
             {
                 List<int> mostrar = conexion.mostrarImplicados(producto);
+                double[] precios = conexion.TraerPrecios(product, mostrar);
+                valorInicio = precios[0];
+                valorFinal = valorInicio + precios[1];
+                aumento = precios[2]*100;
                
                 for (int i = 0; i < mostrar.Count(); i++)
                 {
@@ -158,11 +204,9 @@ namespace AllersGroup.interfaz
                 MessageBox.Show("No se encuentran implicantes para este producto");
             }
             
-
-
             txtValorInicial.Text = valorInicio + "";
             txtValorFinal.Text = valorFinal + "";
-            txtAumento.Text = aumento + "";
+            txtAumento.Text = aumento + "%";
 
 
         }
