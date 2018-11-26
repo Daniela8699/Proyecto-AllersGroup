@@ -76,7 +76,9 @@ namespace AllersGroup.interfaz
                 int TamAgrupaciones = Convert.ToInt32(txtTamAgrupaciones.Text);
 
                 conexion.cargar(soporte,confianza,NumArticulos,TamAgrupaciones);
-                
+                MessageBox.Show("Los datos han sido analizados");
+
+
             }
 
            

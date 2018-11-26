@@ -109,7 +109,7 @@ namespace AllersGroup
                 num = numArticulos;
                 modelo.CargarDatos();
                 modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
-                MessageBox.Show("Los datos han sido analizados");
+              //  MessageBox.Show("Los datos han sido analizados");
                 mensaje = modelo.Promociones();
                 productos = modelo.darProductos();
                 conf = confianza;
