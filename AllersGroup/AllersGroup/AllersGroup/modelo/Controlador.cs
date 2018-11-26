@@ -9,9 +9,9 @@ public class Controlador
 {
     public String reporte = "";
 
-    public const String rutaArticulos = "../../Data/Articulos.csv";
-    public const String rutaClientes = "../../Data/Clientes.csv";
-    public const String rutaVentas = "../../Data/Ventas.csv";
+    public const String rutaArticulos = "/Articulos.csv";
+    public const String rutaClientes = "/Clientes.csv";
+    public const String rutaVentas = "/Ventas.csv";
 
     public const String rutaArticulosPrueba = "../../DatosPrueba/Articulos.csv";
     public const String rutaClientesPrueba = "../../DatosPrueba/Clientes.csv";
@@ -30,6 +30,10 @@ public class Controlador
     private int[,] matrizDeSimilitud;
     public double minSuport = 0;
     public double minCon = 0;
+    public double inicial;
+    public double adicion;
+    public double aumento;
+    private String rutaFolder;
 
     List<List<Articulo>> combinaciones;
 
@@ -44,8 +48,9 @@ public class Controlador
     public int NumArticulos { get => numArticulos; set => numArticulos = value; }
     public int TamanhoAgrupaciones { get => tamanhoAgrupaciones; set => tamanhoAgrupaciones = value; }
 
-    public Controlador(double minConf, double minSup)
+    public Controlador(double minConf, double minSup, string ruta)
     {
+        rutaFolder = ruta;
         izq = new List<List<int>>();
         der = new List<List<int>>();
         articulos = new List<Articulo>();
@@ -58,6 +63,10 @@ public class Controlador
         fkmin = new FkMinus(minSup, minConf);
         minCon = minConf;
         minSuport = minSup;
+        inicial = 0;
+        adicion = 0;
+        aumento = 0;
+
         productosGenerados = new List<String>();
         
     }
@@ -102,7 +111,7 @@ public class Controlador
         String line;
         try
         {
-            StreamReader sr = new StreamReader(rutaArticulos);
+            StreamReader sr = new StreamReader(rutaFolder+rutaArticulos);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -147,7 +156,7 @@ public class Controlador
         try
         {
             int index = 0;
-            StreamReader sr = new StreamReader(rutaClientes);
+            StreamReader sr = new StreamReader(rutaFolder + rutaClientes);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -180,7 +189,7 @@ public class Controlador
         try
         {
 
-            StreamReader sr = new StreamReader(ruta);
+            StreamReader sr = new StreamReader(rutaFolder + ruta);
             line = sr.ReadLine();
             while ((line = sr.ReadLine()) != null)
             {
@@ -302,6 +311,30 @@ public class Controlador
         return der.ElementAt(index);
         
     }
+
+
+    public int mostrarValorInicial(string codProducto)
+    {
+        return int.Parse(inicial + "");
+        
+    }
+
+    public int mostrarValorFinal(string codProducto)
+    {
+
+        double op = inicial + adicion;
+        return int.Parse(op + "");
+    }
+    public int mostrarAumento(string codProducto)
+    {
+        double op = adicion * 100;
+        return int.Parse(op + "");
+    }
+
+
+
+
+
     public int BuscarIndexImplicante(int itemBuscado)
     {
         int index = 0;
@@ -491,7 +524,7 @@ public class Controlador
 
     // APLICACIÓN ESTRATEGIA FP   *****************
     public FP AlgoritmoFP { get => algoritmoFP; set => algoritmoFP = value; }
-
+    public string RutaFolder { get => rutaFolder; set => rutaFolder = value; }
 
     public List<string> estrategiaFP(List<Venta> ventas)
     {
@@ -567,9 +600,9 @@ public class Controlador
         if (izq.Count() != 0)
         {
             double [] precios = BuscarPrecioEnLista(izq, der);
-            double inicial = precios[0];
-            double adicion = precios[1];
-            double aumento = precios[2];
+            inicial = precios[0];
+            adicion = precios[1];
+            aumento = precios[2];
             String asociacion = " \nAl comprar los siguientes Items\n";
             Articulo temporal = null;
             foreach (var n in izq)
@@ -590,7 +623,7 @@ public class Controlador
             }
             asociacion += "Esto significa que en una compra unitaria de estos artículos, ocurría esto:\nValor Inicial (sin los productos adicionales): " + inicial + "$\nValor Final (con los productos adicionales): " + (adicion + inicial) + "$\nAumentando el valor de la compra en un " + (aumento * 100) + "%\n";
             asociacion += "-------------------------------------------------------------------------------------------------\n";
-            asociaciones.Add(asociacion);
+            //asociaciones.Add(asociacion);
         }
     }
 

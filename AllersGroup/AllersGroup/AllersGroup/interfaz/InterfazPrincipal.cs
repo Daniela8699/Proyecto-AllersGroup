@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AllersGroup.interfaz;
 using Transitions;
+using System.Threading;
 
 namespace AllersGroup
 {
@@ -22,6 +23,7 @@ namespace AllersGroup
         private Form parametro;
         public PanelRecuperar prueba;
         public Recomendaciones recomendacion;
+        public String folder;
 
         public Controlador modelo;
 
@@ -90,24 +92,41 @@ namespace AllersGroup
 
            return modelo.mostrarProductosImplicados(codProducto);
         }
-        public double[] TraerPrecios(int izq, List<int> der)
+
+        public int valorInicial(string producto)
         {
-            List<int> izqu = new List<int>();
-            izqu.Add(izq);
-            return modelo.BuscarPrecioEnLista(izqu, der);
+            return modelo.mostrarValorInicial(producto);
         }
+
+        public int valorFinal(string producto)
+        {
+            return modelo.mostrarValorFinal(producto);
+        }
+        public int aumento(string producto)
+        {
+            return modelo.mostrarAumento(producto);
+        }
+
 
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
-        {          
-            modelo = new Controlador(confianza,support);
-            num = numArticulos;
-            modelo.CargarDatos();
-            modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
-            MessageBox.Show("Los datos han sido analizados\nPor favor cierre la ventana parámetros.");
-            mensaje = modelo.Promociones();
-            productos = modelo.darProductos();
-            conf = confianza;
+        {
+            try
+            {
+                modelo = new Controlador(confianza, support, folder);
+                num = numArticulos;
+                modelo.CargarDatos();
+                modelo.AprioriMethod(tamanhoAgrupaciones, numArticulos);
+                MessageBox.Show("Los datos han sido analizados");
+                mensaje = modelo.Promociones();
+                productos = modelo.darProductos();
+                conf = confianza;
+            }
+            catch
+            {
+                MessageBox.Show("Error al cargar los datos");
+            }
+
         
         }
 
@@ -148,32 +167,44 @@ namespace AllersGroup
 
         public void info_Click(object sender, EventArgs e)
         {
-            Transition t = new Transition(new TransitionType_CriticalDamping(2000));
-            t.add(infor, "Left", -10);
-            Visible = false;
-            infor.Show();
-            t.run();
-           
+            if (modelo != null)
+            {
+                Transition t = new Transition(new TransitionType_CriticalDamping(2000));
+                t.add(infor, "Left", -10);
+                Visible = false;
+                infor.Show();
+                t.run();
+            }
+            else MessageBox.Show("Primero especifique los parametros para analizar los datos.");
+
         }
 
         public void recom_Click(object sender, EventArgs e)
         {
-            Transition t = new Transition(new TransitionType_Bounce(2000));
-            t.add(recome, "Left", 10);
+            if (modelo != null)
+            {
+                Transition t = new Transition(new TransitionType_Bounce(2000));
+                t.add(recome, "Left", 10);
 
 
-            Visible = false;
-            recome.Show();
-            t.run();
+                Visible = false;
+                recome.Show();
+                t.run();
+            }
+            else MessageBox.Show("Primero especifique los parametros para analizar los datos.");
         }
 
         public void graf_Click(object sender, EventArgs e)
         {
-            Transition t = new Transition(new TransitionType_Bounce(2000));
-            t.add(grafi, "Top", -10);
-            Visible = false;
-            grafi.Show();
-            t.run();
+            if (modelo != null)
+            {
+                Transition t = new Transition(new TransitionType_Bounce(2000));
+                t.add(grafi, "Top", -10);
+                Visible = false;
+                grafi.Show();
+                t.run();
+            }
+            else MessageBox.Show("Primero especifique los parametros para analizar los datos.");
         }
 
     
@@ -181,11 +212,16 @@ namespace AllersGroup
 
         public void label1_Click(object sender, EventArgs e)
         {
-            Transition t = new Transition(new TransitionType_CriticalDamping(2000));
-            t.add(infor, "Left", -10);
-            Visible = false;
-            prueba.Show();
-            t.run();
+            if (modelo != null)
+            {
+                Transition t = new Transition(new TransitionType_CriticalDamping(2000));
+                t.add(infor, "Left", -10);
+                Visible = false;
+                prueba.Show();
+                t.run();
+            }
+            else MessageBox.Show("Primero especifique los parametros para analizar los datos.");
+
         }
 
         private void parametros_Click(object sender, EventArgs e)
@@ -198,10 +234,33 @@ namespace AllersGroup
 
         private void butParametrosCargar_Click(object sender, EventArgs e)
         {
+            if (folder != null)
+            {
+                Parametros vent = new Parametros(this);
+                vent.StartPosition = FormStartPosition.CenterParent;
+                vent.ShowDialog();
+            }
+            else MessageBox.Show("Primero especifique la carpeta de datos");
 
-            Parametros vent = new Parametros(this);
-            vent.StartPosition = FormStartPosition.CenterParent;
-            vent.ShowDialog();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+
+            var t = new Thread((ThreadStart)(() => {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.RootFolder = System.Environment.SpecialFolder.MyComputer;
+                fbd.ShowNewFolderButton = true;
+                if (fbd.ShowDialog() == DialogResult.Cancel)
+                    return;
+
+                folder = fbd.SelectedPath;
+            }));
+
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
 
         }
     }
