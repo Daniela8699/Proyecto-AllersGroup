@@ -125,7 +125,7 @@ namespace AllersGroup
                 mensaje = modelo.Promociones();
                 productos = modelo.darProductos();
                 conf = confianza;
-                distri = clientesCat("DISTRIBUIDORES");
+                //distri = clientesCat("DISTRIBUIDORES");
                 // cliPriv = clientesCat("CLINICAS PRIVADAS");
                 //cliPub = clientesCat("CLINICAS PUBLICAS");
                 //noSalud = clientesCat("NO DEDICADO A SALUD");
