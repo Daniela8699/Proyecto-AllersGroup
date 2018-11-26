@@ -321,6 +321,7 @@
             // 
             // gMapControl1
             // 
+            this.gMapControl1.BackColor = System.Drawing.Color.Transparent;
             this.gMapControl1.Bearing = 0F;
             this.gMapControl1.CanDragMap = true;
             this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
