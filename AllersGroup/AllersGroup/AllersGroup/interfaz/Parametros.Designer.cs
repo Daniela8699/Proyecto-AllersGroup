@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parametros));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboxSoporte = new System.Windows.Forms.ComboBox();
             this.comBoxConfianza = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +98,7 @@
             // 
             this.txtTamAgrupaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTamAgrupaciones.Location = new System.Drawing.Point(249, 188);
-            this.txtTamAgrupaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTamAgrupaciones.Margin = new System.Windows.Forms.Padding(2);
             this.txtTamAgrupaciones.Name = "txtTamAgrupaciones";
             this.txtTamAgrupaciones.Size = new System.Drawing.Size(66, 23);
             this.txtTamAgrupaciones.TabIndex = 6;
@@ -105,7 +107,7 @@
             // 
             this.txtNumArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumArticulos.Location = new System.Drawing.Point(249, 229);
-            this.txtNumArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNumArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.txtNumArticulos.Name = "txtNumArticulos";
             this.txtNumArticulos.Size = new System.Drawing.Size(66, 23);
             this.txtNumArticulos.TabIndex = 7;
@@ -134,7 +136,7 @@
             this.butIniciarProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butIniciarProgram.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butIniciarProgram.Location = new System.Drawing.Point(154, 306);
-            this.butIniciarProgram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butIniciarProgram.Margin = new System.Windows.Forms.Padding(2);
             this.butIniciarProgram.Name = "butIniciarProgram";
             this.butIniciarProgram.Size = new System.Drawing.Size(93, 28);
             this.butIniciarProgram.TabIndex = 9;
@@ -147,7 +149,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::AllersGroup.Properties.Resources.loading_icon;
             this.pictureBox1.Location = new System.Drawing.Point(303, 277);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(72, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -192,7 +194,7 @@
             "0,2",
             "0,1"});
             this.comboxSoporte.Location = new System.Drawing.Point(249, 110);
-            this.comboxSoporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboxSoporte.Margin = new System.Windows.Forms.Padding(2);
             this.comboxSoporte.Name = "comboxSoporte";
             this.comboxSoporte.Size = new System.Drawing.Size(66, 25);
             this.comboxSoporte.TabIndex = 13;
@@ -222,11 +224,30 @@
             "15",
             "10"});
             this.comBoxConfianza.Location = new System.Drawing.Point(249, 146);
-            this.comBoxConfianza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comBoxConfianza.Margin = new System.Windows.Forms.Padding(2);
             this.comBoxConfianza.Name = "comBoxConfianza";
             this.comBoxConfianza.Size = new System.Drawing.Size(66, 25);
             this.comBoxConfianza.TabIndex = 14;
             this.comBoxConfianza.SelectedIndexChanged += new System.EventHandler(this.comBoxConfianza_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(386, 38);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 30);
+            this.button1.TabIndex = 25;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Parametros
             // 
@@ -234,6 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AllersGroup.Properties.Resources.Info;
             this.ClientSize = new System.Drawing.Size(431, 372);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comBoxConfianza);
             this.Controls.Add(this.comboxSoporte);
             this.Controls.Add(this.label7);
@@ -247,7 +269,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Parametros";
             this.Text = "Parametros";
             this.Load += new System.EventHandler(this.Parametros_Load);
@@ -272,5 +295,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboxSoporte;
         private System.Windows.Forms.ComboBox comBoxConfianza;
+        private System.Windows.Forms.Button button1;
     }
 }

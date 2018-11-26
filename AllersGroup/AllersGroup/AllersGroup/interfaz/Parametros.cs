@@ -56,7 +56,7 @@ namespace AllersGroup.interfaz
             hilo.Start();
 
             mostrarGif();
-            
+         
         }
 
         public void cargarHilo()
@@ -97,6 +97,11 @@ namespace AllersGroup.interfaz
         private void comBoxConfianza_SelectedIndexChanged(object sender, EventArgs e)
         {
             //confianza = Double.Parse(comBoxConfianza.SelectedText);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Explicación:\n\n\n Support: \n\n Confianza: \n\n Tamaño dde Agrupaciones: \n\n Número de Articulos:");
         }
     }
 }
