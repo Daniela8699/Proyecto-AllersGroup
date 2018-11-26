@@ -64,6 +64,7 @@ public class Controlador
 
         productosGenerados = new List<String>();
 
+        posiciones = new List<PosicionCiudad>();
         posiciones.Add(new PosicionCiudad("Arauca", 7.0847101, -70.759079));
         posiciones.Add(new PosicionCiudad("Armenia", 4.5338898, -75.6811066));
         posiciones.Add(new PosicionCiudad("Barranquilla", 10.9685402, -74.7813187));
@@ -558,7 +559,7 @@ public class Controlador
   
     public List<Cliente> agruparLista(string cat)
     {
-       
+
         List<Cliente> clientes2 = clientes.Where(t => t.GroupName.Equals(cat)).ToList();
         return clientes2;
     }

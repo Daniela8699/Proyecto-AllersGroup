@@ -51,6 +51,7 @@ namespace AllersGroup
             recup = new PanelRecuperar(this);
             parametro = new Parametros(this);
             recomendacion = new Recomendaciones(this);
+           
 
         }
 
@@ -124,7 +125,6 @@ namespace AllersGroup
                 mensaje = modelo.Promociones();
                 productos = modelo.darProductos();
                 conf = confianza;
-
                 distri = clientesCat("DISTRIBUIDORES");
                 // cliPriv = clientesCat("CLINICAS PRIVADAS");
                 //cliPub = clientesCat("CLINICAS PUBLICAS");
@@ -135,6 +135,7 @@ namespace AllersGroup
                 //odonto = clientesCat("ODONTO CENTRO ODONTO");
                 //drog = clientesCat("DROG FARMACIA Y MISC");
                 //med = clientesCat("MED LAB OP AMBUL");
+
             }
             catch
             {
@@ -155,7 +156,8 @@ namespace AllersGroup
 
         public List<double[]> clientesCat(string cat)
         {
-           List<Cliente> clientesCategoria = modelo.agruparLista(cat);
+           
+            List<Cliente> clientesCategoria = modelo.agruparLista(cat);
 
             return modelo.posicionesClientes(clientesCategoria);
         }

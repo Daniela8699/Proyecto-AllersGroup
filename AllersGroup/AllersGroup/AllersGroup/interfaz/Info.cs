@@ -168,8 +168,8 @@ namespace AllersGroup.interfaz
         {
             GMapOverlay overlay = new GMapOverlay();
             gMapControl1.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
-            gMapControl1.SetPositionByKeywords("Cali, Colombia.");
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            gMapControl1.SetPositionByKeywords("Cali, Colombia");
             gMapControl1.ShowCenter = true;
             List<double[]> lista = a.distri;
             for (int i = 0; i <lista.Count(); i++)
