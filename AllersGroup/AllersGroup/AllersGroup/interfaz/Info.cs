@@ -55,15 +55,58 @@ namespace AllersGroup.interfaz
         private void butDistribuidorC_Click(object sender, EventArgs e)
         {
             categoria = "DISTRIBUIDORES";
-           
-            MessageBox.Show("Productos Cargados");
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.blue);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
+        
+        MessageBox.Show("Productos Cargados");
 
         }
 
         private void butDrogFarmaciaMiscC_Click(object sender, EventArgs e)
         {
             categoria = "DROG FARMACIA Y MISC";
-         
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.yellow);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -81,7 +124,28 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PRIVADAS";
-            
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.pink);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -89,7 +153,28 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PUBLICAS";
-           
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.red);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -97,7 +182,28 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "NO DEDICADO A SALUD";
-            
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.orange);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -105,7 +211,28 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "ALMACENES DE CADENA";
-          
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.purple);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -113,7 +240,28 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "BELLEZA Y ESTETICA";
-          
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.green);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -121,7 +269,28 @@ namespace AllersGroup.interfaz
         {
          
             categoria = "VETERINARIOS";
-            
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.lightblue);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -129,7 +298,28 @@ namespace AllersGroup.interfaz
         {
            
             categoria = "ODONTO CENTRO ODONTO";
-          
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.blue_pushpin);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -137,7 +327,28 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "MED LAB OP AMBUL";
-           
+            gMapControl1.Overlays.Clear();
+            GMapOverlay overlay = new GMapOverlay();
+            MessageBox.Show("Espera a que se carguen los datos");
+            List<Cliente> clientes2 = a.clientesCategoria(categoria);
+            List<double[]> lista = a.clientesCat(categoria);
+            for (int i = 0; i < lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.yellow_pushpin);
+                marker.IsVisible = (true);
+                marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                overlay.Markers.Add(marker);
+
+
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
             MessageBox.Show("Productos Cargados");
         }
 
@@ -162,33 +373,18 @@ namespace AllersGroup.interfaz
         {
             
         }
-      
-      
+
+
 
         private void gMapControl1_Load(object sender, EventArgs e)
         {
-            GMapOverlay overlay = new GMapOverlay();
+
             gMapControl1.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             gMapControl1.SetPositionByKeywords("Cali, Colombia");
+
+            gMapControl1.Zoom = 4;
            
-            List<double[]> lista = a.distri;
-            for (int i = 0; i <lista.Count(); i++)
-            {
-
-                double[] pos = lista[i];
-                double x = pos[0];
-                double y = pos[1];
-                    GMapMarker marker = new GMarkerGoogle(new PointLatLng(x,y), GMarkerGoogleType.blue);
-                    marker.IsVisible = (true);
-                    marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                    //marker.ToolTipText = string.Format("Nombre:\n {0} \n Codigo: \n {1}", modelo.Grupos[i].Nombre, modelo.Grupos[i].Codigo);
-                    overlay.Markers.Add(marker);
-                    
-                
-            }
-
-            gMapControl1.Overlays.Add(overlay);
 
         }
     }

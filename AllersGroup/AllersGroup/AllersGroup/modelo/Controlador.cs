@@ -571,21 +571,12 @@ public class Controlador
         for (int i = 0; i < clientes2.Count; i++)
         {
             string city = clientes2[i].City;
-            Random num = new Random();
-            int num2 = num.Next(0, 99);
-            string a = "0.0000000000000" + num2 ;
-            double b = Double.Parse(a);
-
-            Random num3 = new Random();
-            int num4 = num.Next(0, 99);
-            string a1 = "0.0000000000000" + num3;
-            double b1 = Double.Parse(a1);
+           
 
             double[] pos = posicion(city);
-            if (pos[0] == 0 && pos[1] == 0)
+            if (pos[0] != 0 && pos[1] != 0)
             {
-                pos[0] = pos[0] + b;
-                pos[1] = pos[1] + b1;
+               
                 posiciones.Add(pos);
             }
 
@@ -594,10 +585,22 @@ public class Controlador
     }
     public double[] posicion(string city)
     {
-        var posi = posiciones.Where(a => a.Nombre.Equals(city)).First();
+        PosicionCiudad posi = null;
+        for (int i = 0; i < posiciones.Count; i++)
+        {
+            string ciudad = posiciones[i].Nombre;
+            if (city.ToLower().Equals(ciudad.ToLower()))
+            {
+                posi = posiciones[i];
+            }
+        }
+       
         double[] pos = new double[2];
-        pos[0] = posi.X;
-        pos[1] = posi.Y;
+        if (posi != null)
+        {
+            pos[0] = posi.X;
+            pos[1] = posi.Y;
+        }
 
         return pos;
       

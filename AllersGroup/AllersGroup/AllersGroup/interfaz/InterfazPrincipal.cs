@@ -31,16 +31,7 @@ namespace AllersGroup
         private List<string> productos;
         private double conf;
 
-        public List<double[]> distri = new List<double[]>();
-        public List<double[]> cliPriv = new List<double[]>();
-        public List<double[]> cliPub = new List<double[]>();
-        public List<double[]> noSalud = new List<double[]>();
-        public List<double[]> almace = new List<double[]>();
-        public List<double[]> belleza = new List<double[]>();
-        public List<double[]> veter = new List<double[]>();
-        public List<double[]> odonto = new List<double[]>();
-        public List<double[]> drog = new List<double[]>();
-        public List<double[]> med = new List<double[]>();
+       
         public InterfazPrincipal()
         {
             prueba = new PanelRecuperar(this);
@@ -125,16 +116,7 @@ namespace AllersGroup
                 mensaje = modelo.Promociones();
                 productos = modelo.darProductos();
                 conf = confianza;
-                //distri = clientesCat("DISTRIBUIDORES");
-                // cliPriv = clientesCat("CLINICAS PRIVADAS");
-                //cliPub = clientesCat("CLINICAS PUBLICAS");
-                //noSalud = clientesCat("NO DEDICADO A SALUD");
-                //almace = clientesCat("ALMACENES DE CADENA");
-                //belleza = clientesCat("BELLEZA Y ESTETICA");
-                //veter = clientesCat("VETERINARIOS");
-                //odonto = clientesCat("ODONTO CENTRO ODONTO");
-                //drog = clientesCat("DROG FARMACIA Y MISC");
-                //med = clientesCat("MED LAB OP AMBUL");
+             
 
             }
             catch
@@ -145,21 +127,24 @@ namespace AllersGroup
         
         }
 
-        
-
+       
         
         private void InterfazPrincipal_Load(object sender, EventArgs e)
         {
             
 
         }
-
+        public List<Cliente> clientesCategoria(string cate)
+        {
+            return modelo.agruparLista(cate);
+        }
         public List<double[]> clientesCat(string cat)
         {
            
-            List<Cliente> clientesCategoria = modelo.agruparLista(cat);
-
-            return modelo.posicionesClientes(clientesCategoria);
+            List<Cliente> clientesCategoria2 = clientesCategoria(cat);
+            List<double[]> posiciones = modelo.posicionesClientes(clientesCategoria2);
+            Console.WriteLine(posiciones.Count);
+            return posiciones;
         }
 
 
