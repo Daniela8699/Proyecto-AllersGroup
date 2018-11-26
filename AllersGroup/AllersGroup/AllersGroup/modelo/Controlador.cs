@@ -30,9 +30,6 @@ public class Controlador
     private int[,] matrizDeSimilitud;
     public double minSuport = 0;
     public double minCon = 0;
-    public double inicial;
-    public double adicion;
-    public double aumento;
     private String rutaFolder;
 
     List<List<Articulo>> combinaciones;
@@ -63,9 +60,6 @@ public class Controlador
         fkmin = new FkMinus(minSup, minConf);
         minCon = minConf;
         minSuport = minSup;
-        inicial = 0;
-        adicion = 0;
-        aumento = 0;
 
         productosGenerados = new List<String>();
         
@@ -311,30 +305,6 @@ public class Controlador
         return der.ElementAt(index);
         
     }
-
-
-    public int mostrarValorInicial(string codProducto)
-    {
-        return int.Parse(inicial + "");
-        
-    }
-
-    public int mostrarValorFinal(string codProducto)
-    {
-
-        double op = inicial + adicion;
-        return int.Parse(op + "");
-    }
-    public int mostrarAumento(string codProducto)
-    {
-        double op = adicion * 100;
-        return int.Parse(op + "");
-    }
-
-
-
-
-
     public int BuscarIndexImplicante(int itemBuscado)
     {
         int index = 0;
@@ -600,9 +570,9 @@ public class Controlador
         if (izq.Count() != 0)
         {
             double [] precios = BuscarPrecioEnLista(izq, der);
-            inicial = precios[0];
-            adicion = precios[1];
-            aumento = precios[2];
+            double inicial = precios[0];
+            double adicion = precios[1];
+            double aumento = precios[2];
             String asociacion = " \nAl comprar los siguientes Items\n";
             Articulo temporal = null;
             foreach (var n in izq)

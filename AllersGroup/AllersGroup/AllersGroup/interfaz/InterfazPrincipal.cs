@@ -93,21 +93,13 @@ namespace AllersGroup
            return modelo.mostrarProductosImplicados(codProducto);
         }
 
-        public int valorInicial(string producto)
+        public double[] TraerPrecios(string producto, List<int> der)
         {
-            return modelo.mostrarValorInicial(producto);
+            int itemCode = Convert.ToInt32(producto);
+            List<int> product = new List<int>();
+            product.Add(itemCode);
+            return modelo.BuscarPrecioEnLista(product, der);
         }
-
-        public int valorFinal(string producto)
-        {
-            return modelo.mostrarValorFinal(producto);
-        }
-        public int aumento(string producto)
-        {
-            return modelo.mostrarAumento(producto);
-        }
-
-
         public int num;
         public void cargar(double support,double confianza, int numArticulos, int tamanhoAgrupaciones)
         {

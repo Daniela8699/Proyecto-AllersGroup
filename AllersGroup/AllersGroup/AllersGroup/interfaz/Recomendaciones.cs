@@ -18,6 +18,31 @@ namespace AllersGroup.interfaz
         {
             this.conexion = conexion;
             InitializeComponent();
+            butSeleccionarProducto.Visible = false;
+            butInfoRecomendaciones.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            txtConfianza.Visible = false;
+            listBoxProductos.Visible = false;
+            label9.Visible = false;
+            labelProducto.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            richTextBox1.Visible = false;
+            label14.Visible = false;
+            label13.Visible = false;
+            richTextAsociacionesCompletas.Visible = false;
+            label5.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label12.Visible = false;
+            label4.Visible = false;
+            label15.Visible = false;
+            label16.Visible = false;
+            txtAumento.Visible = false;
+            txtValorFinal.Visible = false;
+            txtValorInicial.Visible = false;
         }
 
         private void inicio_Click(object sender, EventArgs e)
@@ -48,7 +73,32 @@ namespace AllersGroup.interfaz
         public bool selec = false;
         private void butDistribuidor_Click(object sender, EventArgs e)
         {
-                String mensaje = "";
+            butSeleccionarProducto.Visible = true;
+            butInfoRecomendaciones.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            txtConfianza.Visible = true;
+            listBoxProductos.Visible = true;
+            label9.Visible = true;
+            labelProducto.Visible = true;
+            label10.Visible = true;
+            label11.Visible = true;
+            richTextBox1.Visible = true;
+            label14.Visible = true;
+            label13.Visible = true;
+            richTextAsociacionesCompletas.Visible = true;
+            label5.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label12.Visible = true;
+            label4.Visible = true;
+            label15.Visible = true;
+            label16.Visible = true;
+            txtAumento.Visible = true;
+            txtValorFinal.Visible = true;
+            txtValorInicial.Visible = true;
+            String mensaje = "";
                 List<String> productosImplicados = new List<string>();
                 productosImplicados = conexion.productosGenerados();
 
@@ -132,11 +182,12 @@ namespace AllersGroup.interfaz
 
         private void butBuscarMasFrecuente_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
             if( selec==true)
             {
-                int valorInicio = 0;
-                int valorFinal = 0;
-                int aumento = 0;
+                double valorInicio = 0;
+                double valorFinal = 0;
+                double aumento = 0;
                 if (listBoxProductos.SelectedItem != null)
                 {
                     String producto = listBoxProductos.SelectedItem.ToString();
@@ -149,6 +200,10 @@ namespace AllersGroup.interfaz
                     try
                     {
                         List<int> mostrar = conexion.mostrarImplicados(producto);
+                        double[] precios = conexion.TraerPrecios(producto, mostrar);
+                        valorInicio = precios[0];
+                        valorFinal = valorInicio + precios[1];
+                        aumento = precios[2]*100;
 
                         for (int i = 0; i < mostrar.Count(); i++)
                         {
@@ -161,13 +216,11 @@ namespace AllersGroup.interfaz
                         MessageBox.Show("No se encuentran implicantes para este producto");
                     }
 
-                    valorInicio = conexion.valorInicial(producto);
-                    valorFinal = conexion.valorFinal(producto);
-                    aumento = conexion.aumento(producto);
+                 
 
                     txtValorInicial.Text = valorInicio + "";
                     txtValorFinal.Text = valorFinal + "";
-                    txtAumento.Text = aumento + "";
+                    txtAumento.Text = aumento + "%";
                 }
                 else MessageBox.Show("Primero seleccione algo de la lista.");
             }
