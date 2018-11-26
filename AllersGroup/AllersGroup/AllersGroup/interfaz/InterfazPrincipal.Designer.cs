@@ -94,17 +94,26 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(78, 610);
+            this.btnCargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCargar.BackgroundImage = global::AllersGroup.Properties.Resources.BotonClaro;
+            this.btnCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargar.FlatAppearance.BorderSize = 0;
+            this.btnCargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(101, 610);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(221, 35);
-            this.btnCargar.TabIndex = 7;
+            this.btnCargar.Size = new System.Drawing.Size(162, 35);
+            this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "Seleccionar Carpeta";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // InterfazPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));

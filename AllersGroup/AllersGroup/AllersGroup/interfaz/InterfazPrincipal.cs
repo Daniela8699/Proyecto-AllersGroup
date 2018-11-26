@@ -130,9 +130,9 @@ namespace AllersGroup
             
 
         }
-        public string[] frecuentesCategoria(string cat)
+        public string[] frecuentesCategoria(int num,string cat)
         {
-            return modelo.masFrecuentesMetodo2(4, cat);
+            return modelo.masFrecuentesMetodo2(num, cat);
         }
 
 
@@ -255,5 +255,7 @@ namespace AllersGroup
 
 
         }
+
+     
     }
 }

@@ -14,6 +14,7 @@ namespace AllersGroup.interfaz
     public partial class Info : Form
     {
         private InterfazPrincipal a;
+        private string categoria;
         public Info(InterfazPrincipal b)
         {
             a = b;
@@ -49,32 +50,16 @@ namespace AllersGroup.interfaz
 
         private void butDistribuidorC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("DISTRIBUIDORES");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+            categoria = "DISTRIBUIDORES";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
-
-        }
-
-        private void butLimpiarInfoPF_Click(object sender, EventArgs e)
-        {
-
-            richTextBox1.Clear();
-           
 
         }
 
         private void butDrogFarmaciaMiscC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("DROG FARMACIA Y MISC");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+            categoria = "DROG FARMACIA Y MISC";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
@@ -90,90 +75,65 @@ namespace AllersGroup.interfaz
 
         private void butCPrivadaC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("CLINICAS PRIVADAS");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-
-            }
+            
+            categoria = "CLINICAS PRIVADAS";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butCPublicasC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("CLINICAS PUBLICAS");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+            
+            categoria = "CLINICAS PUBLICAS";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butNoDedicadoSaludC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("NO DEDICADO A SALUD");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+            
+            categoria = "NO DEDICADO A SALUD";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butAlmacenCadenaC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("ALMACENES DE CADENA");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+          
+            categoria = "ALMACENES DE CADENA";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butBellezayEsteticaC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("BELLEZA Y ESTETICA");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+          
+            categoria = "BELLEZA Y ESTETICA";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butVeterinarioC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("VETERINARIOS");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+         
+            categoria = "VETERINARIOS";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butOdontoCentroOdontoC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("ODONTO CENTRO ODONTO");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+           
+            categoria = "ODONTO CENTRO ODONTO";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
         private void butMedAmbulC_Click(object sender, EventArgs e)
         {
-            string[] frec = a.frecuentesCategoria("MED LAB OP AMBUL");
-            richTextBox1.Text = "Los 4 productos mas vendidos de esta categoría son: \n";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                richTextBox1.Text += "- " + frec[i] + "\n";
-            }
+            
+            categoria = "MED LAB OP AMBUL";
+            cargar(a.modelo.NumArticulos, categoria);
             MessageBox.Show("Productos Cargados");
         }
 
@@ -197,6 +157,23 @@ namespace AllersGroup.interfaz
         private void butInfoFrecuentes_MouseMove(object sender, MouseEventArgs e)
         {
             
+        }
+        private void cargar(int num, string categoria)
+        {
+            string[] frec = a.frecuentesCategoria(num, categoria);
+
+            texto.Text = "Los" + a.modelo.NumArticulos + " productos mas vendidos de esta categoría son:";
+            for (int i = 0; i < frec.Count(); i++)
+            {
+                texto2.Text += "- " + frec[i] + "\n";
+            }
+        }
+        private void butSelec_Click(object sender, EventArgs e)
+        {
+            texto2.Text = "";
+           
+            int numero = Int32.Parse(textBox1.Text);
+            cargar(numero,categoria);
         }
     }
 }
