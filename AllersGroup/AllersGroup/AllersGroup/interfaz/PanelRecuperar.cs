@@ -40,7 +40,7 @@ namespace AllersGroup.interfaz
             try
             {
 
-            if (txtDias.Text.Equals(""))
+            if (!txtDias.Text.Equals(""))
             {
                 int dias = Convert.ToInt32(txtDias.Text);
 
