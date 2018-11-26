@@ -39,6 +39,7 @@ public class Controlador
     private FkMinus fkmin;
     private FP algoritmoFP;
 
+    private List<PosicionCiudad> posiciones;
     public List<Articulo> Articulos { get => articulos; set => articulos = value; }
     public List<Cliente> Clientes { get => clientes; set => clientes = value; }
     public List<Venta> Ventas { get => ventas; set => ventas = value; }
@@ -62,7 +63,38 @@ public class Controlador
         minSuport = minSup;
 
         productosGenerados = new List<String>();
-        
+
+        posiciones.Add(new PosicionCiudad("Arauca", 7.0847101, -70.759079));
+        posiciones.Add(new PosicionCiudad("Armenia", 4.5338898, -75.6811066));
+        posiciones.Add(new PosicionCiudad("Barranquilla", 10.9685402, -74.7813187));
+        posiciones.Add(new PosicionCiudad("Bogota", 4.6097102, -74.081749));
+        posiciones.Add(new PosicionCiudad("Bucaramanga", 7.1253901, -73.1197968));
+        posiciones.Add(new PosicionCiudad("Buenaventura ", 3.5833299, -77));
+        posiciones.Add(new PosicionCiudad("Buga", 3.9008901, -76.2978287));
+        posiciones.Add(new PosicionCiudad("Cali", 3.4372201, -76.5224991));
+        posiciones.Add(new PosicionCiudad("Candelaria", 3.4067099, -76.3481903));
+        posiciones.Add(new PosicionCiudad("Cartagena", 10.3997202, -75.5144424));
+        posiciones.Add(new PosicionCiudad("Cartago", 4.7463899, -75.9116669));
+        posiciones.Add(new PosicionCiudad("Cucuta", 7.8939099, -72.5078201));
+        posiciones.Add(new PosicionCiudad("Envigado", 6.17591, -75.5917435));
+        posiciones.Add(new PosicionCiudad("Florencia", 1.61438, -75.6062317));
+        posiciones.Add(new PosicionCiudad("Ibague", 4.43889, -75.2322235));
+        posiciones.Add(new PosicionCiudad("Jamundi", 3.26074, -76.5349884));
+        posiciones.Add(new PosicionCiudad("Manizales", 5.0688901, -75.5173798));
+        posiciones.Add(new PosicionCiudad("Medellin", 6.2518401, -75.563591));
+        posiciones.Add(new PosicionCiudad("Neiva", 2.9273, -75.2818909));
+        posiciones.Add(new PosicionCiudad("Palmira", 3.5394399, -76.3036118));
+        posiciones.Add(new PosicionCiudad("Pasto ", 1.2136101, -77.2811127));
+        posiciones.Add(new PosicionCiudad("Pereira ", 4.8133302, -75.6961136));
+        posiciones.Add(new PosicionCiudad("Popayan ", 2.43823, -76.6131592));
+        posiciones.Add(new PosicionCiudad("Santa Marta", 11.2407904, -74.1990433));
+        posiciones.Add(new PosicionCiudad("Tulua", 4.0846601, -76.1953583));
+        posiciones.Add(new PosicionCiudad("Valledupar", 10.4631395, -73.2532196));
+        posiciones.Add(new PosicionCiudad("Villavicencio", 4.1420002, -73.6266403));
+        posiciones.Add(new PosicionCiudad("Yopal", 5.33775, -72.3958588));
+        posiciones.Add(new PosicionCiudad("Yumbo", 3.58234, -76.4914627));
+
+
     }
 
     public void CargarDatos()
@@ -364,39 +396,7 @@ public class Controlador
         }
         return contador;
     }
-    public string[] masFrecuentesMetodo2(int num,String cat)
-    {
-        int[] respuesta = new int[num];
-        Dictionary<string, int> apariciones = new Dictionary<string, int>();
-        List<Venta> ventass = agruparLista(cat);
-        foreach (var a in ventass)
-        {
-            if (!apariciones.ContainsKey(a.ItemCode))
-            {
-                apariciones.Add(a.ItemCode, 0);
-            }
-            else
-            {
-                apariciones[a.ItemCode] = apariciones[a.ItemCode] + 1;
-            }
-
-        }
-        int[] respuestas = apariciones.Values.ToArray();
-        Organizar(respuestas);
-        for (int i = 0; i < num; i++)
-        {
-            String Key = apariciones.FirstOrDefault(x => x.Value == respuestas[i]).Key;
-            respuesta[i] = Convert.ToInt32(Key);
-            apariciones[Key] = -1;
-        }
-        string[] respuesta2 = new string[num];
-        for (int i = 0; i < respuesta.Count(); i++)
-        {
-            
-            respuesta2[i] = busquedaNombreItem(respuesta[i]+"");
-        }
-        return respuesta2;
-    }
+   
     public void Organizar(int[] A)
     {
         QuickSort(A, 0, A.Length - 1);
@@ -556,13 +556,52 @@ public class Controlador
         return cliente;
     }
   
-    public List<Venta> agruparLista(string cat)
+    public List<Cliente> agruparLista(string cat)
     {
        
-        List<Venta> ventas2 = ventas.Where(t => busquedaCliente(t.CardCode) != null&&busquedaCliente(t.CardCode).GroupName.Equals(cat)).ToList();
-        return ventas2;
+        List<Cliente> clientes2 = clientes.Where(t => t.GroupName.Equals(cat)).ToList();
+        return clientes2;
     }
+    public List<double[]> posicionesClientes( List<Cliente> clientes2)
+    {
+        List<double[]> posiciones = new List<double[]>();
+        for (int i = 0; i < clientes2.Count; i++)
+        {
+            string city = clientes2[i].City;
+            Random num = new Random();
+            int num2 = num.Next(0, 99);
+            string a = "0.0000000000000" + num2 ;
+            double b = Double.Parse(a);
 
+            Random num3 = new Random();
+            int num4 = num.Next(0, 99);
+            string a1 = "0.0000000000000" + num3;
+            double b1 = Double.Parse(a1);
+
+            double[] pos = posicion(city);
+            if (pos[0] == 0 && pos[1] == 0)
+            {
+                pos[0] = pos[0] + b;
+                pos[1] = pos[1] + b1;
+                posiciones.Add(pos);
+            }
+
+        }
+        return posiciones;
+    }
+    public double[] posicion(string city)
+    {
+        var posi = posiciones.Where(a => a.Nombre.Equals(city)).First();
+        double[] pos = new double[2];
+        pos[0] = posi.X;
+        pos[1] = posi.Y;
+
+        return pos;
+      
+    }
+    
+
+  
     // FIN APLIACION ESTRATEGIA FP----------------------------------------------------------------------------------------------------------------
 
     public void ConvertirAsociaciones(List<int> izq, List<int> der)

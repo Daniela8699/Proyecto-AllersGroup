@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GMap.NET;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +54,7 @@ namespace AllersGroup.interfaz
         private void butDistribuidorC_Click(object sender, EventArgs e)
         {
             categoria = "DISTRIBUIDORES";
-            cargar(a.modelo.NumArticulos, categoria);
+           
             MessageBox.Show("Productos Cargados");
 
         }
@@ -59,7 +62,7 @@ namespace AllersGroup.interfaz
         private void butDrogFarmaciaMiscC_Click(object sender, EventArgs e)
         {
             categoria = "DROG FARMACIA Y MISC";
-            cargar(a.modelo.NumArticulos, categoria);
+         
             MessageBox.Show("Productos Cargados");
         }
 
@@ -77,7 +80,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PRIVADAS";
-            cargar(a.modelo.NumArticulos, categoria);
+            
             MessageBox.Show("Productos Cargados");
         }
 
@@ -85,7 +88,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "CLINICAS PUBLICAS";
-            cargar(a.modelo.NumArticulos, categoria);
+           
             MessageBox.Show("Productos Cargados");
         }
 
@@ -93,7 +96,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "NO DEDICADO A SALUD";
-            cargar(a.modelo.NumArticulos, categoria);
+            
             MessageBox.Show("Productos Cargados");
         }
 
@@ -101,7 +104,7 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "ALMACENES DE CADENA";
-            cargar(a.modelo.NumArticulos, categoria);
+          
             MessageBox.Show("Productos Cargados");
         }
 
@@ -109,7 +112,7 @@ namespace AllersGroup.interfaz
         {
           
             categoria = "BELLEZA Y ESTETICA";
-            cargar(a.modelo.NumArticulos, categoria);
+          
             MessageBox.Show("Productos Cargados");
         }
 
@@ -117,7 +120,7 @@ namespace AllersGroup.interfaz
         {
          
             categoria = "VETERINARIOS";
-            cargar(a.modelo.NumArticulos, categoria);
+            
             MessageBox.Show("Productos Cargados");
         }
 
@@ -125,7 +128,7 @@ namespace AllersGroup.interfaz
         {
            
             categoria = "ODONTO CENTRO ODONTO";
-            cargar(a.modelo.NumArticulos, categoria);
+          
             MessageBox.Show("Productos Cargados");
         }
 
@@ -133,7 +136,7 @@ namespace AllersGroup.interfaz
         {
             
             categoria = "MED LAB OP AMBUL";
-            cargar(a.modelo.NumArticulos, categoria);
+           
             MessageBox.Show("Productos Cargados");
         }
 
@@ -151,29 +154,41 @@ namespace AllersGroup.interfaz
         private void butInfoFrecuentes_Click(object sender, EventArgs e)
         {
             
-            MessageBox.Show("Se presentan los articulos que son mas frecuentes \n por cada tipo de cliente de la empresa");
+            MessageBox.Show("Se presenta las ubicaciones de los clientes segun sus categorias.");
         }
 
         private void butInfoFrecuentes_MouseMove(object sender, MouseEventArgs e)
         {
             
         }
-        private void cargar(int num, string categoria)
-        {
-            string[] frec = a.frecuentesCategoria(num, categoria);
+      
+      
 
-            texto.Text = "Los" + a.modelo.NumArticulos + " productos mas vendidos de esta categoría son:";
-            for (int i = 0; i < frec.Count(); i++)
-            {
-                texto2.Text += "- " + frec[i] + "\n";
-            }
-        }
-        private void butSelec_Click(object sender, EventArgs e)
+        private void gMapControl1_Load(object sender, EventArgs e)
         {
-            texto2.Text = "";
-           
-            int numero = Int32.Parse(textBox1.Text);
-            cargar(numero,categoria);
+            GMapOverlay overlay = new GMapOverlay();
+            gMapControl1.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            gMapControl1.SetPositionByKeywords("Cali, Colombia.");
+            gMapControl1.ShowCenter = true;
+            List<double[]> lista = a.distri;
+            for (int i = 0; i <lista.Count(); i++)
+            {
+
+                double[] pos = lista[i];
+                double x = pos[0];
+                double y = pos[1];
+                    GMapMarker marker = new GMarkerGoogle(new PointLatLng(x,y), GMarkerGoogleType.blue);
+                    marker.IsVisible = (true);
+                    marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                    //marker.ToolTipText = string.Format("Nombre:\n {0} \n Codigo: \n {1}", modelo.Grupos[i].Nombre, modelo.Grupos[i].Codigo);
+                    overlay.Markers.Add(marker);
+                    
+                
+            }
+
+            gMapControl1.Overlays.Add(overlay);
+
         }
     }
 }

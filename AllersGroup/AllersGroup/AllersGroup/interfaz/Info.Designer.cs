@@ -45,18 +45,8 @@
             this.butCPrivadaC = new System.Windows.Forms.Button();
             this.butDistribuidorC = new System.Windows.Forms.Button();
             this.recup = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.butSelec = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.texto = new System.Windows.Forms.Label();
-            this.texto2 = new System.Windows.Forms.Label();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.groupBox2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // inicio
@@ -97,7 +87,7 @@
             this.butInfoFrecuentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.butInfoFrecuentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butInfoFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoFrecuentes.Location = new System.Drawing.Point(504, 2);
+            this.butInfoFrecuentes.Location = new System.Drawing.Point(1040, 143);
             this.butInfoFrecuentes.Margin = new System.Windows.Forms.Padding(2);
             this.butInfoFrecuentes.Name = "butInfoFrecuentes";
             this.butInfoFrecuentes.Size = new System.Drawing.Size(33, 30);
@@ -329,97 +319,32 @@
             this.recup.TabIndex = 29;
             this.recup.Click += new System.EventHandler(this.recup_Click);
             // 
-            // flowLayoutPanel1
+            // gMapControl1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanel1.Controls.Add(this.texto2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(316, 134);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(573, 381);
-            this.flowLayoutPanel1.TabIndex = 30;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label1);
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
-            this.flowLayoutPanel3.Controls.Add(this.butSelec);
-            this.flowLayoutPanel3.Controls.Add(this.butInfoFrecuentes);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(563, 46);
-            this.flowLayoutPanel3.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 36);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Escoge el numero de productos\r\nmas frecuentes que deseas ver:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(272, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 25);
-            this.textBox1.TabIndex = 10;
-            // 
-            // butSelec
-            // 
-            this.butSelec.BackColor = System.Drawing.Color.Transparent;
-            this.butSelec.BackgroundImage = global::AllersGroup.Properties.Resources.BotonOscuro;
-            this.butSelec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.butSelec.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.butSelec.FlatAppearance.BorderSize = 0;
-            this.butSelec.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.butSelec.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.butSelec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butSelec.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butSelec.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.butSelec.Location = new System.Drawing.Point(375, 2);
-            this.butSelec.Margin = new System.Windows.Forms.Padding(2);
-            this.butSelec.Name = "butSelec";
-            this.butSelec.Size = new System.Drawing.Size(125, 31);
-            this.butSelec.TabIndex = 29;
-            this.butSelec.Text = "Escoger";
-            this.butSelec.UseVisualStyleBackColor = false;
-            this.butSelec.Click += new System.EventHandler(this.butSelec_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Controls.Add(this.texto);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 55);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(563, 39);
-            this.flowLayoutPanel2.TabIndex = 9;
-            // 
-            // texto
-            // 
-            this.texto.AutoSize = true;
-            this.texto.BackColor = System.Drawing.Color.Transparent;
-            this.texto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texto.Location = new System.Drawing.Point(3, 0);
-            this.texto.Name = "texto";
-            this.texto.Size = new System.Drawing.Size(0, 22);
-            this.texto.TabIndex = 6;
-            // 
-            // texto2
-            // 
-            this.texto2.AutoSize = true;
-            this.texto2.BackColor = System.Drawing.Color.Transparent;
-            this.texto2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texto2.Location = new System.Drawing.Point(3, 97);
-            this.texto2.Name = "texto2";
-            this.texto2.Size = new System.Drawing.Size(0, 15);
-            this.texto2.TabIndex = 7;
+            this.gMapControl1.Bearing = 0F;
+            this.gMapControl1.CanDragMap = true;
+            this.gMapControl1.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapControl1.GrayScaleMode = false;
+            this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapControl1.LevelsKeepInMemmory = 5;
+            this.gMapControl1.Location = new System.Drawing.Point(313, 143);
+            this.gMapControl1.MarkersEnabled = true;
+            this.gMapControl1.MaxZoom = 2;
+            this.gMapControl1.MinZoom = 2;
+            this.gMapControl1.MouseWheelZoomEnabled = true;
+            this.gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapControl1.Name = "gMapControl1";
+            this.gMapControl1.NegativeMode = false;
+            this.gMapControl1.PolygonsEnabled = true;
+            this.gMapControl1.RetryLoadTile = 0;
+            this.gMapControl1.RoutesEnabled = true;
+            this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapControl1.ShowTileGridLines = false;
+            this.gMapControl1.Size = new System.Drawing.Size(722, 372);
+            this.gMapControl1.TabIndex = 30;
+            this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // Info
             // 
@@ -427,9 +352,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1202, 685);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.recup);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.butInfoFrecuentes);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
             this.Controls.Add(this.inicio);
@@ -441,12 +367,6 @@
             this.Text = "AllersGroup";
             this.Load += new System.EventHandler(this.Info_Load);
             this.groupBox2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -468,13 +388,6 @@
         private System.Windows.Forms.Button butDistribuidorC;
         private System.Windows.Forms.Label recup;
         private System.Windows.Forms.Button butInfoFrecuentes;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button butSelec;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Label texto;
-        private System.Windows.Forms.Label texto2;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
     }
 }
