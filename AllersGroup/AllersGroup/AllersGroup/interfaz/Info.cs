@@ -312,7 +312,7 @@ namespace AllersGroup.interfaz
                 GMapMarker marker = new GMarkerGoogle(new PointLatLng(x, y), GMarkerGoogleType.blue_pushpin);
                 marker.IsVisible = (true);
                 marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
-                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1} \n ", clientes2[i].CardCode, clientes2[i].GroupName);
+                marker.ToolTipText = string.Format("CardCode:\n {0} \n Categoria: {1}", clientes2[i].CardCode, clientes2[i].GroupName);
                 overlay.Markers.Add(marker);
 
 
@@ -363,11 +363,8 @@ namespace AllersGroup.interfaz
 
         }
 
-        private void butInfoFrecuentes_Click(object sender, EventArgs e)
-        {
-            
-            MessageBox.Show("Se presenta las ubicaciones de los clientes segun sus categorias.");
-        }
+      
+
 
         private void butInfoFrecuentes_MouseMove(object sender, MouseEventArgs e)
         {
@@ -386,6 +383,11 @@ namespace AllersGroup.interfaz
             gMapControl1.Zoom = 4;
            
 
+        }
+
+        private void butInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se presenta las ubicaciones de los clientes segun sus categorias.");
         }
     }
 }

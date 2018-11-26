@@ -46,6 +46,7 @@
             this.butDistribuidorC = new System.Windows.Forms.Button();
             this.recup = new System.Windows.Forms.Label();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.butInfo = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -347,12 +348,27 @@
             this.gMapControl1.Zoom = 2D;
             this.gMapControl1.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
+            // butInfo
+            // 
+            this.butInfo.BackColor = System.Drawing.Color.Transparent;
+            this.butInfo.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
+            this.butInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.butInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butInfo.ForeColor = System.Drawing.Color.Transparent;
+            this.butInfo.Location = new System.Drawing.Point(1109, 134);
+            this.butInfo.Name = "butInfo";
+            this.butInfo.Size = new System.Drawing.Size(45, 41);
+            this.butInfo.TabIndex = 31;
+            this.butInfo.UseVisualStyleBackColor = false;
+            this.butInfo.Click += new System.EventHandler(this.butInfo_Click);
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1202, 685);
+            this.Controls.Add(this.butInfo);
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.recup);
             this.Controls.Add(this.groupBox2);
@@ -390,5 +406,6 @@
         private System.Windows.Forms.Label recup;
         private System.Windows.Forms.Button butInfoFrecuentes;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Button butInfo;
     }
 }
