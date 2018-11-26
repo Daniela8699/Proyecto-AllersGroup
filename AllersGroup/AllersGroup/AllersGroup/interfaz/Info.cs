@@ -363,8 +363,11 @@ namespace AllersGroup.interfaz
 
         }
 
-      
-
+        private void butInfoFrecuentes_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("Se presenta las ubicaciones de los clientes segun sus categorias.");
+        }
 
         private void butInfoFrecuentes_MouseMove(object sender, MouseEventArgs e)
         {

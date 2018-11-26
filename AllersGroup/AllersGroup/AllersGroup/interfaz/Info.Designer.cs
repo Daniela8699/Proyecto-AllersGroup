@@ -32,7 +32,6 @@
             this.inicio = new System.Windows.Forms.Label();
             this.recom = new System.Windows.Forms.Label();
             this.graf = new System.Windows.Forms.Label();
-            this.butInfoFrecuentes = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.butMedAmbulC = new System.Windows.Forms.Button();
             this.butDrogFarmaciaMiscC = new System.Windows.Forms.Button();
@@ -76,27 +75,6 @@
             this.graf.Size = new System.Drawing.Size(64, 17);
             this.graf.TabIndex = 3;
             this.graf.Click += new System.EventHandler(this.graf_Click);
-            // 
-            // butInfoFrecuentes
-            // 
-            this.butInfoFrecuentes.BackColor = System.Drawing.Color.Transparent;
-            this.butInfoFrecuentes.BackgroundImage = global::AllersGroup.Properties.Resources.iconoInfo;
-            this.butInfoFrecuentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.butInfoFrecuentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.butInfoFrecuentes.FlatAppearance.BorderSize = 0;
-            this.butInfoFrecuentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.butInfoFrecuentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.butInfoFrecuentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butInfoFrecuentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butInfoFrecuentes.Location = new System.Drawing.Point(1040, 143);
-            this.butInfoFrecuentes.Margin = new System.Windows.Forms.Padding(2);
-            this.butInfoFrecuentes.Name = "butInfoFrecuentes";
-            this.butInfoFrecuentes.Size = new System.Drawing.Size(33, 30);
-            this.butInfoFrecuentes.TabIndex = 12;
-            this.butInfoFrecuentes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butInfoFrecuentes.UseVisualStyleBackColor = false;
-            this.butInfoFrecuentes.Click += new System.EventHandler(this.butInfoFrecuentes_Click);
-            this.butInfoFrecuentes.MouseMove += new System.Windows.Forms.MouseEventHandler(this.butInfoFrecuentes_MouseMove);
             // 
             // groupBox2
             // 
@@ -372,7 +350,6 @@
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.recup);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.butInfoFrecuentes);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.recom);
             this.Controls.Add(this.inicio);

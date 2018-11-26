@@ -143,7 +143,7 @@ namespace AllersGroup
            
             List<Cliente> clientesCategoria2 = clientesCategoria(cat);
             List<double[]> posiciones = modelo.posicionesClientes(clientesCategoria2);
-            Console.WriteLine(posiciones.Count);
+           
             return posiciones;
         }
 
