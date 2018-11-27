@@ -66,6 +66,7 @@ namespace AllersGroup.interfaz
         }
         public void mostrarArticulos(List<String> lista)
         {
+            flowArticulos.Controls.Clear();
             for (int i = 0; i < lista.Count(); i++)
             {
                 ControlArticulo nuevo = new ControlArticulo(conexion, lista[i]);
