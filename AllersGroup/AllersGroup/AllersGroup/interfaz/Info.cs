@@ -396,6 +396,7 @@ namespace AllersGroup.interfaz
         private void butSelec_Click(object sender, EventArgs e)
         {
             gMapControl1.Overlays.Clear();
+            gMapControl1_Load(sender, e);
         }
     }
 }
